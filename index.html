@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FameBit Media — Influencer marketing for Indian brands</title>
+<meta name="description" content="Shortlist vetted Indian creators with real audience data, or let the FameBit team run your influencer campaign end to end. Book a free 30-minute strategy call.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ---------- Hero ---------- */
+.hero{padding:72px 0 0;text-align:center;background:linear-gradient(180deg,#fff 0%,#fff 62%,var(--soft) 100%);overflow:hidden}
+.trust{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:var(--r-pill);padding:6px 14px 6px 6px;font-size:14px;background:#fff}
+.trust .faces{display:flex}.trust .faces .av{width:26px;height:26px;font-size:10px;border:2px solid #fff;margin-left:-8px}.trust .faces .av:first-child{margin-left:0}
+.hero h1{max-width:880px;margin:24px auto 0}
+.hero .sub{max-width:620px;margin:20px auto 0;font-size:19px;color:var(--mut)}
+.hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.demo-wrap{position:relative;max-width:940px;margin:56px auto 0}
+.demo{text-align:left;border-radius:22px 22px 0 0;border-bottom:0;padding:20px 20px 8px;box-shadow:0 -10px 60px rgba(124,58,237,.12)}
+.demo-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.demo-top b{font-size:15px}
+.demo-chips{display:flex;gap:8px;flex-wrap:wrap}
+.demo-chips .chip{padding:6px 14px;font-size:13px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{font-size:12px;font-weight:500;color:var(--mut);text-align:left;padding:10px 10px;border-bottom:1px solid var(--line)}
+.tbl td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+.tbl tr:last-child td{border-bottom:0}
+.who{display:flex;align-items:center;gap:10px}.who b{display:block;font-size:14px}.who small{font-size:12px;color:var(--mut)}
+.lockprice{color:var(--mut);letter-spacing:2px}
+.float-chip{position:absolute;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:0 16px 36px rgba(21,17,42,.12);text-align:left;animation:bob 6s ease-in-out infinite}
+.float-chip i{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:17px}
+.float-chip b{display:block;font-size:14px}.float-chip span{font-size:12px;color:var(--mut)}
+.fc1{left:-222px;top:60px}.fc2{right:-200px;top:150px;animation-delay:-2s}.fc3{left:-190px;top:230px;animation-delay:-4s}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.row-in{animation:rowin .35s ease both}
+@keyframes rowin{from{opacity:0;transform:translateY(6px)}}
+
+/* ---------- Logo strip (from V2) ---------- */
+.logos{background:var(--soft);padding:36px 0 8px}
+.logos p{text-align:center;font-size:14px;color:var(--mut);margin-bottom:18px}
+.logos .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.logos .marquee-track{display:flex;gap:48px;width:max-content;animation:mq 40s linear infinite;padding:4px 0}
+.logos .marquee:hover .marquee-track{animation-play-state:paused}
+.logos .marquee span{font-weight:800;font-size:19px;letter-spacing:-.01em;color:#A7A2BC;white-space:nowrap;text-transform:uppercase}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- Proof (three aligned stat cards) ---------- */
+.proof{padding:40px 0 32px;background:linear-gradient(180deg,var(--soft),#fff)}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stat{border-radius:var(--r-lg);padding:28px;min-height:260px;display:flex;flex-direction:column}
+.stat .vis{height:40px;display:flex;align-items:center}
+.stat .big{margin-top:auto;font-size:44px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.stat .lbl{font-size:15px;font-weight:500;margin-top:10px}
+.stat .foot{font-size:13px;line-height:1.55;color:var(--mut);margin-top:18px;padding-top:14px;border-top:1px solid rgba(21,17,42,.08);min-height:calc(2 * 1.55em + 15px)}
+.stat.s1{background:var(--lav)}.stat.s2{background:var(--mint)}.stat.s3{background:var(--peach)}
+.stat .faces{display:flex}.stat .faces .av{width:36px;height:36px;font-size:12px;border:2px solid #fff;margin-left:-10px}.stat .faces .av:first-child{margin-left:0}
+.stat .fmt{display:flex;gap:6px}
+.stat .fmt span{background:#fff;border-radius:var(--r-pill);padding:6px 12px;font-size:12px;font-weight:600;color:var(--mint-ink)}
+.stat .rupee{width:40px;height:40px;border-radius:12px;background:#fff;color:var(--peach-ink);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+
+/* ---------- Compare (from V2) ---------- */
+.cmp-wrap{display:grid;grid-template-columns:320px minmax(0,1fr);gap:48px;align-items:start}
+.cmp-side h2{font-size:clamp(28px,3.2vw,40px)}
+.cmp-side p{color:var(--mut);margin-top:14px;font-size:17px}
+.cmp-side .btn{margin-top:24px}
+.cmp-side p.micro{font-size:13px;margin-top:14px}
+.cmp{padding:0;overflow:hidden}
+.cmp-scroll{overflow-x:auto}
+.cmp-grid{display:grid;min-width:560px}
+.cmp-grid>div{padding:14px 16px;border-top:1px solid var(--line);font-size:15px;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px}
+.cmp-grid>.lab{justify-content:flex-start;text-align:left;color:var(--mut);font-size:14px;position:sticky;left:0;z-index:1;background:#fff}
+.cmp-grid>.hd{border-top:0;flex-direction:column;padding:30px 12px 16px;position:relative}
+.cmp-grid .col-best{background:var(--lav)}
+.cmp-grid .hd .av{width:52px;height:52px;font-size:17px}
+.cmp-grid .hd b{font-size:15px;margin-top:8px;line-height:1.3}
+.cmp-grid .hd small{color:var(--mut);font-size:12px}
+.cmp-grid .win{font-weight:700;color:var(--mint-ink)}
+.cmp-grid .lock a{text-decoration:underline;color:var(--mut)}
+.badge{position:absolute;top:8px;left:50%;transform:translateX(-50%);background:var(--p);color:#fff;border-radius:var(--r-pill);padding:2px 10px;font-size:11px;font-weight:700;white-space:nowrap}
+.rm{margin-top:8px;border:0;background:none;color:var(--mut);font-size:13px;text-decoration:underline;padding:4px;cursor:pointer}
+.rm:hover{color:#B42318}
+.slot-empty{color:#8C88A2;font-size:13px;border:1.5px dashed #D9D4E8;border-radius:var(--r-md);padding:18px;display:flex;flex-direction:column;align-items:center;gap:4px;width:100%}
+.slot-empty .plus{font-size:20px;line-height:1}
+.verdict{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:18px 20px;background:var(--soft);border-top:1px solid var(--line);font-size:15px}
+.ex-note{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--peach-ink);background:var(--peach);padding:4px 12px;border-radius:var(--r-pill);margin:16px 16px 0}
+
+/* Selection tray (from V2: "2 / 3 selected · Compare now") */
+.tray{position:fixed;left:50%;bottom:24px;transform:translate(-50%,150%);z-index:56;background:var(--ink);color:#fff;border-radius:var(--r-pill);padding:8px 8px 8px 12px;display:flex;align-items:center;gap:12px;box-shadow:0 18px 40px rgba(21,17,42,.3);transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility .35s;visibility:hidden;max-width:calc(100vw - 24px)}
+.tray.show{transform:translate(-50%,0);visibility:visible}
+.tray .faces{display:flex}
+.tray .faces .av{width:32px;height:32px;font-size:11px;border:2px solid var(--ink);margin-left:-8px}
+.tray .faces .av:first-child{margin-left:0}
+.tray .t{font-size:14px;white-space:nowrap}
+.tray .t small{display:block;color:#B9B3CF;font-size:12px}
+.tray .clr{border:0;background:none;color:#C9C3DD;font-size:13px;padding:8px;text-decoration:underline;cursor:pointer}
+.tray .btn{min-height:40px}
+body.tray-on .nudge{bottom:100px}
+
+/* ---------- Testimonials (carousel) ---------- */
+.tst-head{text-align:center;max-width:680px;margin:0 auto 44px}
+.tst-head .pill{background:var(--lav);border-color:var(--p-soft);color:var(--p);font-weight:600}
+.tst-head h2{margin-top:16px}
+.tst-head p{color:var(--mut);margin-top:14px;font-size:17px}
+.tcar{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 8px}
+.tcar::-webkit-scrollbar{display:none}
+.tcard{flex:0 0 calc(50% - 10px);scroll-snap-align:start;padding:28px;border-radius:var(--r-lg);display:flex;flex-direction:column;background:#fff radial-gradient(420px 220px at 100% 100%,var(--lav),transparent 70%);border:1px solid var(--line)}
+.tcard .who{display:flex;gap:16px;align-items:center}
+.tcard .ph{width:64px;height:64px;border-radius:16px;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;box-shadow:0 0 0 3px #fff,0 0 0 5px var(--p-soft)}
+.tcard .tag{display:inline-block;background:var(--mint);color:var(--mint-ink);font-size:11px;font-weight:700;border-radius:var(--r-pill);padding:3px 10px;letter-spacing:.02em}
+.tcard .who b{display:block;font-size:16px;margin-top:6px}
+.tcard .who small{color:var(--mut);font-size:13px}
+.tcard blockquote{margin:20px 0 22px;font-size:16.5px;line-height:1.65;flex:1;position:relative;padding-left:22px}
+.tcard blockquote::before{content:"“";position:absolute;left:0;top:-8px;font-size:38px;line-height:1;color:var(--p);font-weight:700}
+.tcard .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.tcard .mets{display:flex;gap:10px}
+.tcard .mets div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.tcard .mets b{display:block;font-size:20px;color:var(--p);letter-spacing:-.02em;line-height:1.1}
+.tcard .mets span{font-size:12px;color:var(--mut)}
+.tcard .more{font-size:14px;font-weight:600;color:var(--p);background:none;border:0;cursor:pointer;padding:6px 0}
+.tnav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:28px}
+.tnav .arr{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-size:16px}
+.tnav .arr:disabled{opacity:.4;cursor:default}
+.dots{display:flex;gap:6px}
+.dots i{width:7px;height:7px;border-radius:50%;background:#D9D4E8;transition:width .2s,background .2s}
+.dots i.on{width:22px;border-radius:4px;background:var(--p)}
+
+/* ---------- Case studies ---------- */
+.cs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.cs-head .sec-head{margin-bottom:0}
+.cs{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start}
+.cs-list{display:grid;gap:6px;max-height:560px;overflow:auto;padding-right:4px}
+.cs-item{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;border:1.5px solid transparent;background:#fff;border-radius:14px;padding:12px 16px;cursor:pointer}
+.cs-item b{font-size:15px}
+.cs-item small{display:block;font-size:12px;color:var(--mut)}
+.cs-item em{font-style:normal;font-size:13px;font-weight:700;color:var(--p);white-space:nowrap}
+.cs-item:hover{border-color:var(--line)}
+.cs-item[aria-selected="true"]{border-color:var(--p);background:var(--lav)}
+.cs-card{padding:32px;border-radius:var(--r-lg)}
+.cs-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.cs-top h3{font-size:30px;letter-spacing:-.02em}
+.cs-top .chan{margin-top:8px}
+.cs-band{display:flex;flex-wrap:wrap;margin-top:22px;border-radius:16px;overflow:hidden;background:linear-gradient(100deg,var(--p-deep),var(--p) 55%,#B57CF8);color:#fff}
+.cs-band div{flex:1 1 120px;padding:16px 20px;border-right:1px solid rgba(255,255,255,.18)}
+.cs-band div:last-child{border-right:0}
+.cs-band b{display:block;font-size:28px;letter-spacing:-.02em;line-height:1.1}
+.cs-band span{font-size:13px;opacity:.85}
+.cs-hl{margin-top:14px;display:inline-flex;gap:8px;align-items:center;background:var(--mint);color:var(--mint-ink);font-weight:600;font-size:14px;border-radius:var(--r-pill);padding:6px 14px}
+.cs-body{display:grid;grid-template-columns:1fr 1fr;gap:28px 36px;margin-top:28px}
+.cs-body h4{margin:0 0 8px;font-size:14px;font-weight:700;color:var(--p)}
+.cs-body p{font-size:15px;color:var(--mut)}
+.cs-body ul{margin:0;padding-left:18px;font-size:15px;color:var(--mut);display:grid;gap:4px}
+.cs-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+
+/* ---------- Meeting (booking with gradient border) ---------- */
+.meet-head{text-align:center;max-width:720px;margin:0 auto 44px}
+.meet-head .pill{background:var(--lav);border-color:var(--p-soft);color:var(--p);font-weight:600}
+.meet-head h2{margin-top:16px}
+.meet-head p{color:var(--mut);margin-top:14px;font-size:17px}
+.frame{max-width:1000px;margin:0 auto;padding:10px;border-radius:30px;background:linear-gradient(135deg,var(--p) 0%,#C026D3 45%,#FB923C 100%);box-shadow:0 30px 70px rgba(124,58,237,.22)}
+.sched{background:#fff;border-radius:22px;display:grid;grid-template-columns:250px minmax(0,1fr) 220px;min-height:470px;overflow:hidden}
+.sched>div{padding:26px}
+.s-info{border-right:1px solid var(--line)}
+.s-info .org{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mut)}
+.s-info .org i{width:34px;height:34px;border-radius:10px;background:var(--p);color:#fff;font-style:normal;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.s-info h3{font-size:20px;margin-top:14px;line-height:1.3}
+.s-info ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px;font-size:14px;color:var(--mut)}
+.s-info li{display:flex;gap:10px;align-items:center}
+.s-info .pick{margin-top:22px;padding:12px 14px;background:var(--lav);border-radius:12px;font-size:14px;font-weight:600;color:var(--p)}
+.s-cal .mh{display:flex;justify-content:space-between;align-items:center}
+.s-cal .mh b{font-size:16px}
+.s-cal .mh div{display:flex;gap:6px}
+.s-cal .mh button{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer}
+.s-cal .mh button:disabled{opacity:.35;cursor:default}
+.dow,.dates{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.dow{margin-top:18px;font-size:12px;font-weight:600;color:var(--mut)}
+.dates{margin-top:8px}
+.dates button{aspect-ratio:1;border:0;border-radius:12px;background:var(--soft);font-weight:600;font-size:14px;cursor:pointer;color:var(--ink);position:relative}
+.dates button:disabled{background:transparent;color:#C4C0D4;cursor:default;font-weight:500}
+.dates button:not(:disabled):hover{background:var(--p-soft)}
+.dates button[aria-pressed="true"]{background:var(--p);color:#fff}
+.dates button.today::after{content:"";position:absolute;bottom:6px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:currentColor}
+.s-slots{border-left:1px solid var(--line);display:flex;flex-direction:column}
+.s-slots .sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.s-slots .sh b{font-size:15px}
+.fmt24{display:flex;border:1.5px solid var(--line);border-radius:8px;overflow:hidden}
+.fmt24 button{border:0;background:#fff;font-size:12px;padding:4px 8px;cursor:pointer}
+.fmt24 button[aria-pressed="true"]{background:var(--lav);color:var(--p);font-weight:700}
+.slotlist{display:grid;gap:8px;overflow:auto;max-height:360px}
+.slotlist button{min-height:44px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-weight:600;cursor:pointer}
+.slotlist button:hover{border-color:var(--p);color:var(--p)}
+.s-form{grid-column:2/4;border-left:0}
+.s-form h3{font-size:19px}
+.s-form .row{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;margin-top:18px}
+.s-form .back{background:none;border:0;color:var(--p);font-weight:600;cursor:pointer;padding:0;margin-bottom:10px}
+.s-done{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px}
+.s-done .tick{width:60px;height:60px;border-radius:50%;background:var(--mint);color:var(--mint-ink);font-size:28px;display:flex;align-items:center;justify-content:center}
+.s-err{color:#B42318;font-size:14px;min-height:20px}
+.meet-note{text-align:center;font-size:13px;color:var(--mut);margin-top:18px}
+
+/* ---------- Problem ---------- */
+.prob{background:var(--soft);border:1px solid var(--line);border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.prob h3{font-size:28px;line-height:1.25}
+.prob p{margin-top:14px;color:var(--mut)}
+.qs{display:grid;gap:10px}
+.q{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:15px}
+.q .x{flex:none;width:22px;height:22px;border-radius:50%;background:#FDE2E2;color:#C0392B;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.q.yes{background:var(--mint);border-color:#B5EACD;font-weight:600}
+.q.yes .x{background:var(--mint-ink);color:#fff}
+
+/* ---------- Paths ---------- */
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.path{padding:32px;display:flex;flex-direction:column}
+.path .ico{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;background:var(--lav)}
+.path h3{margin-top:20px}
+.path p{margin:10px 0 24px;color:var(--mut);font-size:15px;flex:1}
+.path .tagline{font-size:13px;font-weight:600;margin-top:18px}
+.path.dark{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-12px)}
+.path.dark p{color:#C9C4DA}
+.path.dark .ico{background:rgba(255,255,255,.1)}
+.path.dark .tagline{color:#FDBA74}
+
+/* ---------- Browse ---------- */
+.browse-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
+.filters select{min-height:42px;border:1.5px solid var(--line);border-radius:var(--r-pill);padding:0 38px 0 16px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23625E78' stroke-width='2'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 14px center;appearance:none;font-size:14px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cc{padding:22px;border-radius:20px;display:flex;flex-direction:column;gap:14px;transition:border-color .15s}
+.cc.sel{border-color:var(--p);box-shadow:0 0 0 3px var(--lav)}
+.cc .top{display:flex;gap:12px;align-items:center}
+.cc .av{width:52px;height:52px;font-size:17px}
+.cc .top b{display:block;font-size:15px;line-height:1.3}.cc .top small{color:var(--mut);font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--soft);border-radius:12px;padding:10px}
+.stats div{text-align:center}.stats b{display:block;font-size:15px}.stats span{font-size:11px;color:var(--mut)}
+.cc .acts{display:flex;gap:8px}
+.cc .acts .btn{flex:1;min-height:38px;padding:0 10px;font-size:13px}
+.cc .acts .btn[aria-pressed="true"]{background:var(--lav);border-color:var(--p);color:var(--p)}
+.empty{grid-column:1/-1;text-align:center;padding:48px;border:1.5px dashed var(--line);border-radius:20px}
+.see-all{text-align:center;margin-top:32px}
+
+/* ---------- Lists ---------- */
+.lists{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.list{border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:6px;min-height:210px;cursor:pointer;border:1px solid transparent;text-align:left;transition:border-color .15s}
+.list:hover{border-color:rgba(21,17,42,.15)}
+.list .faces{display:flex;margin-bottom:12px}.list .faces .av{width:34px;height:34px;font-size:11px;border:2px solid #fff;margin-left:-8px}.list .faces .av:first-child{margin-left:0}
+.list b{font-size:18px;line-height:1.3}
+.list .m{margin-top:auto;font-size:13px;font-weight:600}
+
+/* ---------- Services ---------- */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svc .card{padding:26px;border-radius:20px}
+.svc h3{font-size:18px;margin:16px 0 8px}
+.svc p{font-size:14px;color:var(--mut)}
+.svc a.more{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;color:var(--p)}
+
+/* ---------- Results ---------- */
+.camps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:56px}
+.camp{border-radius:18px;aspect-ratio:9/13;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.camp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(21,17,42,.75))}
+.camp>*{position:relative;z-index:1}
+.camp b{font-size:13px;letter-spacing:.02em}.camp span{font-size:12px;opacity:.9}
+.camp .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;color:var(--ink);z-index:1}
+/* ---------- Closing CTA ---------- */
+.band{background:linear-gradient(135deg,var(--p-deep),var(--p) 60%,#9D5CF6);border-radius:32px;padding:64px;color:#fff;display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.band h2{color:#fff}
+.band p{opacity:.88;margin-top:16px;font-size:17px}
+.band .ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.band ul{list-style:none;margin:0;padding:28px;background:rgba(255,255,255,.1);border-radius:22px;display:grid;gap:14px}
+.band li{display:flex;gap:12px;align-items:flex-start}
+.band li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:#fff;color:var(--p);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+
+/* ---------- Floating card + nudge + modal ---------- */
+.fcard{position:fixed;right:24px;bottom:24px;z-index:54;display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 18px 12px 12px;box-shadow:0 18px 40px rgba(21,17,42,.14);opacity:0;pointer-events:none;transform:translateY(12px);transition:.25s}
+.fcard.show{opacity:1;pointer-events:auto;transform:none}
+.fcard i{width:40px;height:40px;border-radius:12px;background:var(--p);color:#fff;display:flex;align-items:center;justify-content:center;font-style:normal}
+.fcard b{display:block;font-size:14px}.fcard span{font-size:12px;color:var(--mut)}
+.nudge{position:fixed;right:24px;bottom:24px;z-index:58;width:380px;max-width:calc(100vw - 32px);background:#fff;border:2px solid var(--p);border-radius:22px;padding:24px;box-shadow:0 24px 50px rgba(21,17,42,.2);transform:translateY(calc(100% + 40px));transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility .35s;visibility:hidden}
+.nudge.show{transform:none;visibility:visible}
+.nudge .x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:0;background:var(--soft);cursor:pointer;font-size:16px}
+.nudge h3{font-size:19px;line-height:1.35;padding-right:30px}
+.nudge p{font-size:14px;color:var(--mut);margin-top:10px}
+.nudge .ctas{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+.modal{position:fixed;inset:0;z-index:70;background:rgba(21,17,42,.5);display:none;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex}
+.modal .box{background:#fff;border-radius:24px;padding:32px;width:100%;max-width:460px;position:relative;max-height:calc(100vh - 32px);overflow:auto}
+.modal .x{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:0;background:var(--soft);cursor:pointer;font-size:16px}
+.modal h3{font-size:22px;padding-right:40px}
+.modal .lead{color:var(--mut);font-size:14px;margin:8px 0 20px}
+.done{text-align:center;padding:12px 0}
+.done .tick{width:56px;height:56px;border-radius:50%;background:var(--mint);color:var(--mint-ink);font-size:26px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.toast{position:fixed;left:50%;top:92px;transform:translate(-50%,-20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:var(--r-pill);font-size:14px;opacity:0;transition:.25s;z-index:80;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1380px){.fc1,.fc2,.fc3{display:none}}
+@media (max-width:980px){
+  .bento,.paths,.band,.prob,.cmp-wrap,.cs{grid-template-columns:1fr}
+  .cmp-wrap{gap:28px}
+  .tcard{flex-basis:88%}
+  .cs-list{display:flex;overflow-x:auto;max-height:none;padding:2px 2px 8px;scrollbar-width:thin}
+  .cs-item{flex:none}
+  .sched{grid-template-columns:1fr 1fr}
+  .s-info{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line)}
+  .s-form{grid-column:1/-1}
+  .path.dark{transform:none}
+  .grid,.lists,.svc{grid-template-columns:1fr 1fr}
+  .camps{grid-template-columns:repeat(3,1fr)}
+  .prob,.band{padding:32px}
+  .fcard{display:none}
+  .nudge{left:16px;right:16px;bottom:84px;width:auto}
+  .tray{bottom:calc(84px + env(safe-area-inset-bottom))}
+  body.tray-on .nudge{bottom:calc(150px + env(safe-area-inset-bottom))}
+  .demo .hide-m{display:none}
+}
+@media (max-width:600px){
+  .grid,.lists,.svc{grid-template-columns:1fr}
+  .camps{grid-template-columns:1fr 1fr}
+  .hero .ctas .btn{width:100%}
+  .stat{min-height:0}
+  .stat .big{margin-top:20px}
+  .cs-body,.s-form .row{grid-template-columns:1fr}
+  .cs-card{padding:22px}
+  .sched{grid-template-columns:1fr}
+  .s-slots{border-left:0;border-top:1px solid var(--line)}
+  .slotlist{grid-template-columns:repeat(3,1fr);max-height:none}
+  .tray .t small,.tray .faces{display:none}
+  .tray{padding-left:16px;gap:8px}
+  .frame{padding:6px;border-radius:24px}
+  .tcard .foot{flex-direction:column;align-items:flex-start}
+  .tbl .hide-s{display:none}
+}
+</style>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="index.html" class="logo" aria-label="FameBit Media home">FameBit<small>Media.com</small></a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false">Find Influencers <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
+        <div class="dd">
+          <a href="index.html#browse"><b>Browse all creators</b><span>Filter by niche, city and audience</span></a>
+          <a href="index.html#lists"><b>Ready-made lists</b><span>Hand-picked by our team</span></a>
+          <a href="index.html#compare"><b>Compare creators</b><span>Up to 3, side by side</span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false">Solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
+        <div class="dd">
+          <a href="hire-team.html" class="feat"><b>Hire the FameBit team</b><span>We run your campaign end to end</span></a>
+          <a href="index.html#services"><b>Influencer marketing</b><span>Discovery to final report</span></a>
+          <a href="index.html#services"><b>AI UGC content</b><span>Ad-ready creator videos</span></a>
+          <a href="index.html#services"><b>Meme marketing</b><span>Reach through meme pages</span></a>
+          <a href="index.html#services"><b>Telegram ads</b><span>Niche channel promotions</span></a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="hire-team.html#pricing">Pricing</a></div>
+      <div class="nav-item"><a class="nav-link" href="index.html#case-studies">Case studies</a></div>
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false">For creators <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
+        <div class="dd">
+          <a href="invoice.html"><b>Free invoice maker</b><span>GST-ready invoices in minutes</span></a>
+          <a href="#"><b>Talent management</b><span>Let us manage your brand deals</span></a>
+          <a href="#"><b>Join as a creator</b><span>Get brand deals from FameBit</span></a>
+        </div>
+      </div>
+    </nav>
+    <div class="hdr-cta">
+      <a class="login" href="#">Log in</a>
+      <a class="btn btn-sm" href="index.html#browse">Explore free</a>
+      <a class="btn btn-sm btn-p" href="book-call.html">Book a free call</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="trust"><span class="faces"><i class="av" style="background:#8B5CF6">S</i><i class="av" style="background:#F97316">P</i><i class="av" style="background:#10B981">F</i></span>Trusted by 300+ Indian brands</span>
+    <h1>Launch influencer campaigns that actually sell</h1>
+    <p class="sub">Shortlist vetted creators with real audience data, or let our team run the whole campaign for you.</p>
+    <div class="ctas">
+      <a class="btn btn-p btn-lg" href="book-call.html">Book a free strategy call</a>
+      <a class="btn btn-lg" href="#browse">Explore influencers</a>
+    </div>
+    <p class="micro">30-minute call. No commitment. Free creator shortlist in 48 hours.</p>
+
+    <div class="demo-wrap">
+      <div class="float-chip fc1"><i style="background:var(--lav)">🔎</i><div><b>Find creators</b><span>By niche, city and audience</span></div></div>
+      <div class="float-chip fc2"><i style="background:var(--mint)">⚖️</i><div><b>Compare side by side</b><span>Get a best-match pick</span></div></div>
+      <div class="float-chip fc3"><i style="background:var(--peach)">🤝</i><div><b>Or hire our team</b><span>We negotiate for you</span></div></div>
+      <div class="card demo" aria-label="Preview of the creator directory">
+        <div class="demo-top">
+          <b>Try it: pick a niche</b>
+          <div class="demo-chips" id="demoChips"></div>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Creator</th><th>Followers</th><th class="hide-s">Engagement</th><th>Audience trust</th><th class="hide-s">Price</th></tr></thead>
+          <tbody id="demoRows"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO STRIP (from V2) -->
+<div class="logos" aria-label="Brands we have worked with">
+  <p>Campaigns delivered for</p>
+  <!-- TODO (developer): swap the text for the real brand logo SVGs (grey, 28px tall) -->
+  <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
+</div>
+
+<!-- PROOF: three aligned stat cards -->
+<section class="proof" aria-label="FameBit in numbers">
+  <div class="wrap bento">
+    <div class="stat s1">
+      <div class="vis"><span class="faces"><i class="av" style="background:#8B5CF6">A</i><i class="av" style="background:#EC4899">R</i><i class="av" style="background:#0EA5E9">K</i><i class="av" style="background:#fff;color:var(--p)">+</i></span></div>
+      <div class="big">10,000+</div>
+      <div class="lbl">Creators vetted by our team</div>
+      <div class="foot">50+ categories, 20+ languages, creators across India</div>
+    </div>
+    <div class="stat s2">
+      <div class="vis"><span class="fmt"><span>Reels</span><span>UGC</span><span>Memes</span></span></div>
+      <div class="big">2,000+</div>
+      <div class="lbl">Performance content delivered</div>
+      <div class="foot">Made to drive views and sales, not just likes</div>
+    </div>
+    <div class="stat s3">
+      <div class="vis"><span class="rupee">₹</span></div>
+      <div class="big">₹10 Cr+</div>
+      <div class="lbl">Campaign budget managed</div>
+      <div class="foot">Influencer, UGC, meme and Telegram campaigns</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section style="padding-top:64px">
+  <div class="wrap">
+    <div class="sec-head center"><span class="kicker">Doing it in-house?</span><h2>Finding 30 good creators shouldn't take 300 DMs and three weeks</h2></div>
+    <div class="prob">
+      <div>
+        <h3>Choosing creators on follower count alone burns budget.</h3>
+        <p>Before you pay anyone, you need to know if the audience is real, what a fair rate looks like, and whether the creator just promoted your competitor.</p>
+      </div>
+      <div class="qs">
+        <div class="q"><span class="x">✕</span>Are these followers real, or bought?</div>
+        <div class="q"><span class="x">✕</span>Am I overpaying for this reel?</div>
+        <div class="q"><span class="x">✕</span>Who follows up when a creator goes silent?</div>
+        <div class="q yes"><span class="x">✓</span>FameBit answers all of this before you spend a rupee.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BROWSE -->
+<section id="browse" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="browse-head">
+      <div><h2>Browse creators</h2><p class="mut" style="margin-top:10px">Every creator is checked for fake followers before they're listed.</p></div>
+      <a class="btn" href="#">Join as a creator</a>
+    </div>
+    <div class="filters">
+      <div class="demo-chips" id="catChips"></div>
+      <label class="sr-only" for="fCity">City</label>
+      <select id="fCity"><option value="">All cities</option></select>
+      <label class="sr-only" for="fSize">Follower range</label>
+      <select id="fSize"><option value="">All sizes</option><option value="nano">Nano, under 10K</option><option value="micro">Micro, 10K–100K</option><option value="mid">Mid, 100K–500K</option><option value="macro">Macro, 500K–1M</option><option value="mega">Mega, 1M+</option></select>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="see-all"><a class="btn" href="#">See all creators in the directory</a></div>
+  </div>
+</section>
+
+<!-- COMPARE (from V2) -->
+<section id="compare">
+  <div class="wrap cmp-wrap">
+    <div class="cmp-side">
+      <span class="kicker">Compare</span>
+      <h2>Confused? Whom to choose</h2>
+      <p>We got you. Compare up to 3 creators side by side for free. We highlight the winner in every row and pick the best overall match.</p>
+      <a class="btn btn-p" href="#browse">+ Add creators</a>
+      <p class="micro" id="cmpNote">3 free comparisons a day as a guest. Log in for more.</p>
+    </div>
+    <div class="card cmp" id="cmpCard"></div>
+  </div>
+</section>
+
+<!-- PATHS -->
+<section style="background:var(--soft)">
+  <div class="wrap">
+    <div class="sec-head center"><h2>Do it yourself, or let us do it for you</h2><p>Start free and switch any time. Most brands start exploring, then hand the campaign to our team.</p></div>
+    <div class="paths">
+      <div class="card path"><div class="ico">🔎</div><div class="tagline" style="color:var(--p)">Free</div><h3>Explore and shortlist</h3><p>Browse vetted creators, filter by niche and city, compare up to three and request prices.</p><a class="btn btn-block" href="#browse">Explore influencers</a></div>
+      <div class="card path dark"><div class="ico">🤝</div><div class="tagline">Most brands choose this</div><h3>Hire the FameBit team</h3><p>We negotiate rates, brief creators, approve content and send one final report. You just approve.</p><a class="btn btn-p btn-block" href="book-call.html">Book a free call</a></div>
+      <div class="card path"><div class="ico">📦</div><div class="tagline" style="color:var(--peach-ink)">Fixed price</div><h3>Ready-made packages</h3><p>25, 50 or 100 creators with fixed deliverables and a fixed price. Launch in days.</p><a class="btn btn-block" href="hire-team.html#pricing">See packages</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTS -->
+<section id="lists">
+  <div class="wrap">
+    <div class="browse-head"><div><h2>Ready-made creator lists</h2><p class="mut" style="margin-top:10px">Hand-picked by our team. Send one enquiry, get prices for the whole list in 24 hours.</p></div><a class="btn" href="#">View all lists</a></div>
+    <div class="lists" id="listsGrid"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="sec-head"><h2>What we run for you</h2><p>From one creator to a hundred, across the channels your customers actually use.</p></div>
+    <div class="svc">
+      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--lav);display:flex;align-items:center;justify-content:center">📣</div><h3>Influencer marketing</h3><p>Discovery, negotiation, briefs, approvals, payouts and reporting.</p><a class="more" href="#">Learn more</a></div>
+      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center">🎬</div><h3>AI UGC content</h3><p>Ad-ready creator-style videos for Meta and YouTube ads.</p><a class="more" href="https://famebit.ai" target="_blank" rel="noopener">Visit famebit.ai</a></div>
+      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--peach);display:flex;align-items:center;justify-content:center">😂</div><h3>Meme marketing</h3><p>Placements on meme pages your audience already follows.</p><a class="more" href="#">Learn more</a></div>
+      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--sky);display:flex;align-items:center;justify-content:center">✈️</div><h3>Telegram ads</h3><p>Promote SKUs inside niche deal and interest channels.</p><a class="more" href="#">Learn more</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results">
+  <div class="wrap">
+    <div class="sec-head"><h2>Recent campaigns</h2><p>Real work for real brands. Tap a campaign to see the numbers.</p></div>
+    <div class="camps" id="camps"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="tst-head">
+      <span class="pill">What brands say</span>
+      <h2>This is why 300+ brands trust FameBit</h2>
+      <p>Marketing teams share how FameBit helped them pick creators, run campaigns and track what actually sold.</p>
+    </div>
+    <!-- TODO (content): replace the quotes, names and roles with real client testimonials and photos -->
+    <div class="tcar" id="tcar" tabindex="0" aria-label="Client testimonials"></div>
+    <div class="tnav"><button class="arr" id="tPrev" aria-label="Previous testimonial">←</button><div class="dots" id="tDots" aria-hidden="true"></div><button class="arr" id="tNext" aria-label="Next testimonial">→</button></div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section>
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <h2>Get a free shortlist of 10 creators in 48 hours</h2>
+        <p>Tell us your product and budget on a 30-minute call. We'll send matched creators with estimated prices.</p>
+        <div class="ctas"><a class="btn btn-light btn-lg" href="#meet">Book a free call</a><a class="btn btn-ghost-light btn-lg" href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp us</a></div>
+      </div>
+      <ul>
+        <li>Creators checked for fake followers</li>
+        <li>Rates negotiated for you, saving up to 20%</li>
+        <li>One report at the end, in your brand panel</li>
+        <li>A dedicated campaign manager on WhatsApp</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- CASE STUDIES (numbers from the FY26 cred deck) -->
+<section id="case-studies" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="cs-head">
+      <div class="sec-head"><span class="kicker">Case studies</span><h2>The numbers behind our campaigns</h2><p>Reach, content and cost per view from real FameBit campaigns. Pick a brand to see how we did it.</p></div>
+      <div class="demo-chips" id="csChips" role="group" aria-label="Filter by channel"></div>
+    </div>
+    <div class="cs">
+      <div class="cs-list" id="csList" role="tablist" aria-label="Case studies" aria-orientation="vertical"></div>
+      <article class="card cs-card" id="csCard" role="tabpanel" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+
+<!-- MEETING (booking, with gradient border) -->
+<section id="meet">
+  <div class="wrap">
+    <div class="meet-head">
+      <span class="pill">Free 30-minute call</span>
+      <h2>Influencer marketing is exhausting. Let us give you your weekends back.</h2>
+      <p>You've spent years building creator lists, chasing replies and stitching reports together. Tell us what you're launching and our team will run it, from shortlist to final report.</p>
+    </div>
+    <div class="frame">
+      <!-- TODO (developer): replace with a real Cal.com / Calendly embed, or load availability from the booking API -->
+      <div class="sched" id="sched">
+        <div class="s-info">
+          <div class="org"><i>F</i>FameBit Media</div>
+          <h3>Influencer strategy call</h3>
+          <ul><li>🕒 30 min</li><li>🎥 Google Meet</li><li>🌏 India time (IST)</li></ul>
+          <p class="mut" style="font-size:14px;margin-top:18px">We'll preview matching creators on the call and send your free shortlist of 10 within 48 hours.</p>
+          <div class="pick" id="sPick" hidden></div>
+        </div>
+        <div class="s-cal">
+          <div class="mh"><b id="sMonth"></b><div><button type="button" id="sPrevM" aria-label="Previous month">‹</button><button type="button" id="sNextM" aria-label="Next month">›</button></div></div>
+          <div class="dow" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+          <div class="dates" id="sDates"></div>
+        </div>
+        <div class="s-slots">
+          <div class="sh"><b id="sDay"></b><div class="fmt24" role="group" aria-label="Time format"><button type="button" data-h="12" aria-pressed="true">12h</button><button type="button" data-h="24" aria-pressed="false">24h</button></div></div>
+          <div class="slotlist" id="sSlots"></div>
+        </div>
+        <form class="s-form" id="sForm" hidden novalidate>
+          <button type="button" class="back" id="sBack">← Change time</button>
+          <h3>Your details</h3>
+          <div class="row">
+            <div class="field"><label for="mName">Your name</label><input class="input" id="mName" autocomplete="name"></div>
+            <div class="field"><label for="mBrand">Brand name</label><input class="input" id="mBrand" autocomplete="organization"></div>
+            <div class="field"><label for="mEmail">Work email</label><input class="input" id="mEmail" type="email" autocomplete="email"></div>
+            <div class="field"><label for="mPhone">WhatsApp number</label><input class="input" id="mPhone" inputmode="tel" placeholder="10-digit mobile number" autocomplete="tel"></div>
+          </div>
+          <p class="s-err" id="sErr" role="alert"></p>
+          <button class="btn btn-p btn-lg" type="submit" id="sConfirm">Confirm call</button>
+        </form>
+        <div class="s-done" id="sDone" hidden><div class="tick">✓</div><h3 style="font-size:24px">Call booked</h3><p class="mut" id="sDoneTxt" style="max-width:460px"></p><a class="btn btn-p" id="sGcal" target="_blank" rel="noopener" style="margin-top:8px">Add to Google Calendar</a></div>
+      </div>
+    </div>
+    <p class="meet-note">Prefer to chat first? <a href="https://wa.me/918115767101" target="_blank" rel="noopener" style="color:var(--p);font-weight:600">WhatsApp our team</a></p>
+  </div>
+</section>
+</main>
+
+<!-- Compare / shortlist tray (from V2) -->
+<div class="tray" id="tray" role="region" aria-label="Your selection">
+  <div class="faces" id="trayFaces"></div>
+  <div class="t" id="trayTxt"></div>
+  <button type="button" class="clr" id="trayClear">Clear</button>
+  <a class="btn btn-sm btn-p" href="#compare" id="trayGo">Compare now →</a>
+</div>
+
+<!-- Floating CTA card -->
+<a class="fcard" id="fcard" href="book-call.html"><i>📅</i><div><b>Book a free call</b><span>30 min, free creator shortlist</span></div></a>
+
+<!-- Hire-team nudge (replaces the 1–2 minute pop-up) -->
+<aside class="nudge" id="nudge" aria-live="polite" aria-label="Suggestion">
+  <button class="x" id="nudgeX" aria-label="Close">✕</button>
+  <h3 id="nudgeTitle">Want us to negotiate with these creators for you?</h3>
+  <p>Brands save up to 20% when our team handles pricing, briefs and approvals.</p>
+  <div class="ctas"><a class="btn btn-sm btn-p" href="book-call.html">Book a free call</a><a class="btn btn-sm" href="hire-team.html">See how it works</a></div>
+</aside>
+
+<!-- Request price / enquiry modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="box">
+    <button class="x" data-close aria-label="Close">✕</button>
+    <div id="mForm">
+      <h3 id="mTitle">Request price</h3>
+      <p class="lead" id="mLead">Our team will call you with rates and availability within 24 hours.</p>
+      <form id="enqForm" novalidate>
+        <div class="field"><label for="eName">Your name</label><input class="input" id="eName" required autocomplete="name"></div>
+        <div class="field"><label for="ePhone">WhatsApp number</label><input class="input" id="ePhone" required inputmode="tel" placeholder="10-digit mobile number" autocomplete="tel"></div>
+        <div class="field"><label for="eBrand">Brand name</label><input class="input" id="eBrand" required autocomplete="organization"></div>
+        <div class="field"><label for="eBudget">Budget for this campaign</label><select class="input" id="eBudget"><option>Under ₹1 lakh</option><option>₹1–5 lakh</option><option>₹5–20 lakh</option><option>₹20 lakh+</option></select></div>
+        <p id="eErr" style="color:#B42318;font-size:14px;min-height:20px"></p>
+        <button class="btn btn-p btn-block" type="submit" id="eSubmit">Request price</button>
+      </form>
+    </div>
+    <div id="mDone" class="done" hidden><div class="tick">✓</div><h3 style="padding:0">Request sent</h3><p class="mut" style="margin-top:8px">We'll WhatsApp you within 24 hours. Want to talk sooner?</p><a class="btn btn-p" style="margin-top:18px" href="book-call.html">Book a free call</a></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <a href="index.html" class="logo">FameBit<small>Media.com</small></a>
+        <p style="margin-top:16px;max-width:280px">Influencer marketing and talent management for Indian brands. Vetted creators, fair prices, one report.</p>
+      </div>
+      <div><h4>For brands</h4><ul><li><a href="index.html#browse">Find influencers</a></li><li><a href="hire-team.html">Hire our team</a></li><li><a href="hire-team.html#pricing">Pricing</a></li><li><a href="book-call.html">Book a call</a></li></ul></div>
+      <div><h4>For creators</h4><ul><li><a href="invoice.html">Free invoice maker</a></li><li><a href="#">Talent management</a></li><li><a href="#">Join as a creator</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="index.html#case-studies">Case studies</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:brands@famebitmedia.com">brands@famebitmedia.com</a></li><li><a href="tel:+919631899862">+91 96318 99862</a></li><li><a href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp us</a></li></ul></div>
+    </div>
+    <div class="ftr-seo">
+      <div><h4>Top influencers by category</h4><p><a href="#">Fashion</a><a href="#">Beauty</a><a href="#">Food</a><a href="#">Fitness</a><a href="#">Health &amp; medical</a><a href="#">Tech</a><a href="#">Finance</a><a href="#">Comedy</a><a href="#">Travel</a><a href="#">Parenting</a><a href="#">Gaming</a><a href="#">Lifestyle</a></p></div>
+      <div><h4>Top influencers by city</h4><p><a href="#">Mumbai</a><a href="#">Delhi</a><a href="#">Bangalore</a><a href="#">Hyderabad</a><a href="#">Chennai</a><a href="#">Kolkata</a><a href="#">Pune</a><a href="#">Gurgaon</a><a href="#">Noida</a><a href="#">Indore</a><a href="#">Jaipur</a><a href="#">Ahmedabad</a></p></div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2026 FameBitMedia Private Limited · GSTIN [add] · CIN [add]</span>
+      <span><a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/famebitmedia/" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/company/famebitmedia" target="_blank" rel="noopener">LinkedIn</a></span>
+    </div>
+  </div>
+</footer>
+<div class="mbar"><a class="btn" href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-p" href="book-call.html">Book a free call</a></div>
+<script>
+/* Header: sticky border, dropdowns, mobile menu */
+(function(){
+  var h=document.getElementById('hdr');
+  addEventListener('scroll',function(){h.classList.toggle('scrolled',scrollY>80)},{passive:true});
+  document.querySelectorAll('.nav-item > button').forEach(function(b){
+    b.addEventListener('click',function(e){
+      var it=b.parentElement,open=!it.classList.contains('open');
+      document.querySelectorAll('.nav-item.open').forEach(function(x){x.classList.remove('open');x.firstElementChild.setAttribute('aria-expanded','false')});
+      if(open){it.classList.add('open');b.setAttribute('aria-expanded','true')}
+      e.stopPropagation();
+    });
+  });
+  document.addEventListener('click',function(){document.querySelectorAll('.nav-item.open').forEach(function(x){x.classList.remove('open')})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-item.open').forEach(function(x){x.classList.remove('open')})});
+  var bg=document.getElementById('burger');
+  bg.addEventListener('click',function(){var o=h.classList.toggle('menu-open');bg.setAttribute('aria-expanded',o)});
+})();
+</script>
+
+
+<script>
+/* ============ Sample data (replace with API data) ============ */
+var COLORS=['#8B5CF6','#EC4899','#F97316','#10B981','#0EA5E9','#6366F1','#14B8A6','#E11D48'];
+var CREATORS=[
+ {id:1,name:'Meera Nair',handle:'@meera.eats',cat:'Food',city:'Bangalore',f:684000,eng:7.8,trust:91,views:210000},
+ {id:2,name:'Dr. Arjun Rao',handle:'@drarjunrao',cat:'Health',city:'Hyderabad',f:1200000,eng:9.4,trust:94,views:420000},
+ {id:3,name:'Sana Qureshi',handle:'@sanaskin',cat:'Beauty',city:'Mumbai',f:412000,eng:6.2,trust:88,views:150000},
+ {id:4,name:'Kabir Malhotra',handle:'@kabirlifts',cat:'Fitness',city:'Delhi',f:936000,eng:5.1,trust:79,views:260000},
+ {id:5,name:'Ritika Jain',handle:'@moneywithritika',cat:'Finance',city:'Mumbai',f:318000,eng:8.9,trust:93,views:120000},
+ {id:6,name:'Ananth Iyer',handle:'@techwithananth',cat:'Tech',city:'Chennai',f:1540000,eng:4.6,trust:86,views:510000},
+ {id:7,name:'Pooja Bisht',handle:'@poojacooks',cat:'Food',city:'Delhi',f:88000,eng:11.2,trust:95,views:40000},
+ {id:8,name:'Dr. Neha Kapoor',handle:'@drnehaderm',cat:'Health',city:'Delhi',f:742000,eng:6.1,trust:90,views:190000},
+ {id:9,name:'Isha Menon',handle:'@ishaglow',cat:'Beauty',city:'Bangalore',f:56000,eng:9.8,trust:92,views:22000},
+ {id:10,name:'Rohan Das',handle:'@rohanruns',cat:'Fitness',city:'Kolkata',f:212000,eng:7.0,trust:74,views:80000},
+ {id:11,name:'Tanvi Shah',handle:'@tanviinvests',cat:'Finance',city:'Ahmedabad',f:1020000,eng:5.5,trust:89,views:300000},
+ {id:12,name:'Vikram Sethi',handle:'@vikramtech',cat:'Tech',city:'Pune',f:94000,eng:8.3,trust:91,views:36000}
+];
+CREATORS.forEach(function(c,i){c.color=COLORS[i%COLORS.length]});
+var CATS=['All','Food','Health','Beauty','Fitness','Finance','Tech'];
+
+/* ============ Helpers ============ */
+function $(s){return document.querySelector(s)}
+function fmt(n){return n>=1e6?(n/1e6).toFixed(1).replace('.0','')+'M':n>=1e3?Math.round(n/1e3)+'K':n}
+function initials(n){return n.replace('Dr. ','').split(' ').map(function(x){return x[0]}).join('').slice(0,2)}
+function av(c,cls){return '<i class="av'+(cls?' '+cls:'')+'" style="background:'+c.color+'">'+initials(c.name)+'</i>'}
+function scoreCls(t){return t>=85?'hi':'mid'}
+function sizeOf(f){return f<1e4?'nano':f<1e5?'micro':f<5e5?'mid':f<1e6?'macro':'mega'}
+function store(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k));localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
+function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){el.classList.remove('show')},2200)}
+
+/* ============ Hero demo ============ */
+(function(){
+  var cats=['Health','Food','Beauty','Finance'],box=$('#demoChips');
+  box.innerHTML=cats.map(function(c,i){return '<button class="chip" aria-pressed="'+(i==0)+'" data-c="'+c+'">'+c+'</button>'}).join('');
+  function draw(cat){
+    var rows=CREATORS.filter(function(c){return c.cat===cat}).concat(CREATORS.filter(function(c){return c.cat!==cat})).slice(0,3);
+    $('#demoRows').innerHTML=rows.map(function(c,i){return '<tr class="row-in" style="animation-delay:'+i*60+'ms"><td><div class="who">'+av(c)+'<div><b>'+c.name+'</b><small>'+c.handle+' · '+c.cat+'</small></div></div></td><td>'+fmt(c.f)+'</td><td class="hide-s">'+c.eng+'%</td><td><span class="score '+scoreCls(c.trust)+'">'+c.trust+'</span></td><td class="hide-s"><span class="lockprice">₹•••••</span></td></tr>'}).join('');
+  }
+  box.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;box.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b)});draw(b.dataset.c)});
+  draw('Health');
+})();
+
+/* ============ Logo strip (client names from the FY26 cred deck; replace text with real logo SVGs) ============ */
+(function(){var L=['HK Vitals','Fast&Up','Plix','Sova Health','BeBodywise','Waterscience','Netflix','Amazon','Pilgrim','Myupchar','Citykart','Panchamrit','Zakkas','Zapvi'];
+  var h=L.map(function(x){return '<span>'+x.replace('&','&amp;')+'</span>'}).join('');$('#marquee').innerHTML=h+h;$('#marquee').parentNode.setAttribute('aria-label',L.join(', '));})();
+
+/* ============ Shortlist + compare state ============ */
+var shortlist=store('fb_shortlist')||[];
+var compare=(store('fb_compare')||[]).filter(function(id){return CREATORS.some(function(c){return c.id===id})}).slice(0,3);
+var cat='All';
+
+function renderGrid(){
+  var city=$('#fCity').value,size=$('#fSize').value;
+  var list=CREATORS.filter(function(c){return (cat==='All'||c.cat===cat)&&(!city||c.city===city)&&(!size||sizeOf(c.f)===size)}).slice(0,8);
+  if(!list.length){$('#grid').innerHTML='<div class="empty"><b>No creators match these filters.</b><p class="mut" style="margin-top:6px">Try another city or size, or ask our team to find creators for you.</p><a class="btn btn-sm" style="margin-top:14px" href="book-call.html">Ask our team</a></div>';return}
+  $('#grid').innerHTML=list.map(function(c){var inS=shortlist.indexOf(c.id)>-1,inC=compare.indexOf(c.id)>-1;
+    return '<article class="card cc'+(inS?' sel':'')+'"><div class="top">'+av(c)+'<div><b>'+c.name+'</b><small>'+c.handle+'</small><br><small>'+c.cat+' · '+c.city+'</small></div></div>'+
+    '<div class="stats"><div><b>'+fmt(c.f)+'</b><span>Followers</span></div><div><b>'+c.eng+'%</b><span>Engagement</span></div><div><b><span class="score '+scoreCls(c.trust)+'" style="padding:0 8px">'+c.trust+'</span></b><span>Trust</span></div></div>'+
+    '<button class="btn btn-sm" data-price="'+c.id+'" style="border:0;background:var(--soft);color:var(--p)">Request price</button>'+
+    '<div class="acts"><button class="btn" data-sl="'+c.id+'" aria-pressed="'+inS+'">'+(inS?'Shortlisted':'Shortlist')+'</button><button class="btn" data-cmp="'+c.id+'" aria-pressed="'+inC+'">'+(inC?'Comparing':'Compare')+'</button></div></article>'}).join('');
+}
+/* Compare (from V2): example until the user adds creators, winner per row, best overall match */
+function renderCompare(){
+  var example=compare.length===0;
+  var cs=example?CREATORS.slice().sort(function(a,b){return b.trust-a.trust}).slice(0,3):compare.map(function(id){return CREATORS.find(function(c){return c.id===id})});
+  var slots=example?cs.length:Math.max(cs.length+(cs.length<3?1:0),2);
+  var rows=[['Followers',function(c){return c.f},function(c){return fmt(c.f)}],['Engagement',function(c){return c.eng},function(c){return c.eng+'%'}],['Audience trust',function(c){return c.trust},function(c){return c.trust+'%'}],['Average views',function(c){return c.views},function(c){return fmt(c.views)}],['Est. cost per view',null,function(){return '🔒 <a href="#" data-login>Log in</a>'}]];
+  var best=null,why='';
+  if(cs.length>=2){
+    var maxE=Math.max.apply(null,cs.map(function(c){return c.eng})),maxT=Math.max.apply(null,cs.map(function(c){return c.trust}));
+    var sc=function(c){return c.trust/maxT*.55+c.eng/maxE*.45};
+    best=cs.slice().sort(function(a,b){return sc(b)-sc(a)})[0];
+    var hT=best.trust===maxT,hE=best.eng===maxE;
+    why=hT&&hE?'the highest audience trust ('+best.trust+'%) and the highest engagement ('+best.eng+'%)':hT?'the highest audience trust ('+best.trust+'%) with '+best.eng+'% engagement':hE?'the highest engagement ('+best.eng+'%) with '+best.trust+'% audience trust':'the best balance of audience trust ('+best.trust+'%) and engagement ('+best.eng+'%)';
+  }
+  var cols='minmax(130px,.9fr) repeat('+slots+',minmax(140px,1fr))',h='<div class="lab hd"></div>';
+  for(var i=0;i<slots;i++){var c=cs[i];
+    if(!c){h+='<div class="hd"><div class="slot-empty"><span class="plus">+</span><span>Add a creator</span><a class="btn btn-sm" href="#browse" style="margin-top:8px">Browse</a></div></div>';continue}
+    h+='<div class="hd'+(c===best?' col-best':'')+'">'+(c===best?'<span class="badge">BEST MATCH</span>':'')+av(c)+'<b>'+c.name+'</b><small>'+c.cat+'</small>'+(example?'':'<button type="button" class="rm" data-rm="'+c.id+'">Remove</button>')+'</div>'}
+  rows.forEach(function(r){h+='<div class="lab">'+r[0]+'</div>';var top=r[1]&&cs.length>=2?Math.max.apply(null,cs.map(r[1])):null;
+    for(var k=0;k<slots;k++){var c2=cs[k];if(!c2){h+='<div class="mut">—</div>';continue}var win=top!==null&&r[1](c2)===top;
+      h+='<div class="'+(c2===best?'col-best ':'')+(win?'win':'')+(r[1]?'':' lock')+'">'+(win?'✓ ':'')+r[2](c2)+'</div>'}});
+  var first=best?(best.name.indexOf('Dr.')===0?best.name:best.name.split(' ')[0]):'';
+  var v=best?'<div><b>'+best.handle+'</b> <span class="mut">leads with '+why+'.</span></div><div>'+(example?'<a class="btn btn-sm btn-p" href="#browse">Compare your own</a>':'<button type="button" class="btn btn-sm btn-p" data-price="'+best.id+'">Book '+first+'</button>')+'</div>':'<div class="mut">Add one more creator to see who fits best.</div>';
+  $('#cmpCard').innerHTML=(example?'<span class="ex-note">ⓘ Example. Add creators with “Compare” to see your own.</span>':'')+'<div class="cmp-scroll"><div class="cmp-grid" style="grid-template-columns:'+cols+'">'+h+'</div></div><div class="verdict">'+v+'</div>';
+}
+/* Tray (from V2): shows compare picks, falls back to shortlist count */
+function renderBar(){
+  var n=compare.length,sN=shortlist.length,show=n>0||sN>0;
+  $('#tray').classList.toggle('show',show);document.body.classList.toggle('tray-on',show);
+  $('#trayFaces').innerHTML=compare.map(function(id){return av(CREATORS.find(function(c){return c.id===id}))}).join('');
+  $('#trayTxt').innerHTML=(n?'<b>'+n+' / 3</b> selected':'<b>'+sN+'</b> shortlisted')+'<small>'+(n?(sN?sN+' shortlisted · ':'')+(n<2?'add '+(2-n)+' more to compare':'ready to compare'):'we can book them for you')+'</small>';
+  var go=$('#trayGo');if(n){go.href='#compare';go.textContent='Compare now →'}else{go.href='#meet';go.textContent='Let us book them →'}
+  if(show)$('#fcard').classList.remove('show');
+}
+$('#trayClear').addEventListener('click',function(){compare=[];shortlist=[];saveAll();renderGrid();renderCompare();renderBar();toast('Selection cleared')});
+function saveAll(){store('fb_shortlist',shortlist);store('fb_compare',compare)}
+
+/* Filters */
+(function(){
+  $('#catChips').innerHTML=CATS.map(function(c,i){return '<button class="chip" aria-pressed="'+(i==0)+'" data-c="'+c+'">'+c+'</button>'}).join('');
+  $('#catChips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;cat=b.dataset.c;$('#catChips').querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b)});renderGrid()});
+  var cities=[...new Set(CREATORS.map(function(c){return c.city}))].sort();
+  $('#fCity').innerHTML+=cities.map(function(c){return '<option>'+c+'</option>'}).join('');
+  $('#fCity').onchange=renderGrid;$('#fSize').onchange=renderGrid;
+})();
+
+/* Click handling for cards, compare, bar */
+document.addEventListener('click',function(e){
+  var t=e.target.closest('[data-sl],[data-cmp],[data-rm],[data-price],[data-go],[data-login],[data-list]');if(!t)return;
+  if(t.dataset.sl){var id=+t.dataset.sl,i=shortlist.indexOf(id);if(i>-1)shortlist.splice(i,1);else{shortlist.push(id);toast('Added to shortlist')}saveAll();renderGrid();renderBar();maybeNudge()}
+  if(t.dataset.cmp){var id2=+t.dataset.cmp,j=compare.indexOf(id2);if(j>-1)compare.splice(j,1);else{if(compare.length>=3){toast('You can compare up to 3 creators. Remove one first.');return}compare.push(id2);toast(compare.length>=2?'Added. Ready to compare':'Added to compare')}saveAll();renderGrid();renderCompare();renderBar()}
+  if(t.dataset.rm){compare.splice(compare.indexOf(+t.dataset.rm),1);saveAll();renderGrid();renderCompare();renderBar()}
+  if(t.dataset.price){var c=CREATORS.find(function(x){return x.id===+t.dataset.price});openModal('Request price for '+c.name,'Our team will WhatsApp you rates and availability within 24 hours.','Request price')}
+  if(t.dataset.list){openModal('Get prices for "'+t.dataset.list+'"','Send one enquiry and we\'ll share prices for the whole list within 24 hours.','Send enquiry')}
+  if(t.dataset.go){document.getElementById(t.dataset.go).scrollIntoView()}
+  if(t.dataset.login!==undefined){e.preventDefault();toast('Log in free to see cost per view')}
+});
+
+/* ============ Ready-made lists ============ */
+(function(){var L=[['25 doctor creators','For health and pharma brands','9.2%','var(--mint)'],['30 Bangalore food creators','For restaurants and QSR','6.8%','var(--peach)'],['40 finance explainers','For fintech app installs','5.1%','var(--sky)'],['50 nano beauty creators','For skincare launches','7.4%','var(--lav)']];
+ $('#listsGrid').innerHTML=L.map(function(l,k){var f=CREATORS.slice(k*3,k*3+3).map(function(c){return av(c)}).join('');return '<button class="list" style="background:'+l[3]+'" data-list="'+l[0]+'"><span class="faces">'+f+'</span><b>'+l[0]+'</b><span class="mut" style="font-size:14px">'+l[1]+'</span><span class="m">Avg. engagement '+l[2]+'</span></button>'}).join('');})();
+
+/* ============ Case studies (from the FameBit FY26 cred deck) ============ */
+var CASES=[
+ {id:'hkvitals',brand:'HK Vitals',chan:'Influencer',product:'Multivitamin and magnesium glycinate',stats:[['16M+','Reach / views'],['25','Content pieces'],['₹8L','Total budget'],['₹0.05','Cost per view']],
+  obj:'Build awareness for HK Vitals multivitamins and magnesium glycinate among fitness-conscious buyers, and make them a daily must-have.',
+  app:'Top-performing fitness creators made one non-collab reel each, with one month of ad rights. Running those reels as ads drove most of the campaign reach.',
+  impact:['Stronger brand awareness','Higher engagement through creator-led promotion','More credibility in health and wellness'],svc:['Influencer collaboration and management','Content creation and strategy','Campaign execution and amplification']},
+ {id:'fastup',brand:'Fast&Up',chan:'Influencer',product:'Fat-loss range',hl:'Became the best-selling fat-loss product',stats:[['9M+','Reach / views'],['60+','Content pieces'],['₹11L','Total budget'],['₹0.14','Cost per view']],
+  obj:'Raise awareness for Fast&Up\'s fat-loss products with fitness-conscious consumers and build buzz in health and wellness.',
+  app:'We partnered with fat-loss and fitness creators whose audiences trust them, so the product benefits landed as advice rather than ads.',
+  impact:['Stronger awareness among fitness audiences','Higher engagement through creator-led promotion','More credibility in health and wellness'],svc:['Influencer collaboration and management','Content creation and strategy','Campaign execution and amplification']},
+ {id:'bebodywise',brand:'BeBodywise',chan:'Influencer',product:'Roll-on and face wash',stats:[['5M+','Reach / views'],['6','Content pieces'],['₹4.31L','Total budget'],['₹0.09','Cost per view']],
+  obj:'Drive awareness and sales of the BeBodywise roll-on and face wash with women, and make them part of daily body care.',
+  app:'A small set of highly engaged beauty creators showed the products in their own routines, keeping cost per view under ten paise.',
+  impact:['Stronger awareness among women','Higher engagement through creator-led promotion','More credibility in the category'],svc:['Influencer collaboration and management','Content creation and strategy','Campaign execution and amplification']},
+ {id:'plix',brand:'Plix',chan:'Influencer',product:'Apple cider vinegar (ACV)',stats:[['2M+','Reach / views'],['20+','Content pieces'],['5.3%','Engagement rate']],
+  obj:'Build awareness for Plix ACV among fitness-conscious buyers looking for help with fat loss.',
+  app:'Fat-loss creators explained the product in their own words, using the trust they had already built with their audience.',
+  impact:['Stronger awareness among fitness audiences','Higher engagement through creator-led promotion','More credibility in health and wellness'],svc:['Influencer collaboration and management','Content creation and strategy','Campaign execution and amplification']},
+ {id:'waterscience',brand:'Waterscience',chan:'Influencer',product:'Shower and tap filters',stats:[['1.3M+','Reach / views'],['10+','Content pieces'],['7.6%','Engagement rate']],
+  obj:'Make Waterscience filters a daily-life essential for Tier 1 and Tier 2 households.',
+  app:'Fashion, lifestyle and home-decor creators showed the filters in everyday use, backed by timed deal posts that sent buyers to Amazon and Flipkart.',
+  impact:['Stronger brand awareness','Higher engagement through creator-led promotion','More credibility in daily use and care'],svc:['Influencer collaboration and management','Content creation and strategy']},
+ {id:'sova',brand:'Sova Health',chan:'UGC',key:'15 days',product:'Gut microbiome test kit',stats:[['5','Quality content'],['₹1.4L','Total budget'],['15 days','Content delivery']],
+  obj:'Get people curious about Sova\'s gut microbiome test, a kit that works from a stool sample, and explain why it\'s worth doing.',
+  app:'Creators made honest user-generated videos walking through the kit, turning an awkward product into something people wanted to talk about.',
+  impact:['Stronger awareness among health-focused audiences','Higher engagement through creator-led content','More credibility for a new category'],svc:['Influencer collaboration and management','Content creation and strategy','Campaign execution and amplification']},
+ {id:'zapvi',brand:'Zapvi',chan:'UGC',key:'',product:'Custom mobile covers',stats:[['UGC','Quality creator content']],
+  obj:'Boost visibility and interest in Zapvi\'s customisable phone covers across social media.',
+  app:'Highly engaged profiles made UGC around the covers, timed and targeted to the audiences most likely to buy.',
+  impact:['Higher brand visibility','More traffic and conversions','Stronger brand credibility'],svc:['Content creation','Cost optimisation','Content strategy']},
+ {id:'zakkas',brand:'Zakkas',chan:'UGC',key:'',product:'Paper dosa range',stats:[['UGC','Quality creator content']],
+  obj:'Boost visibility for Zakkas paper dosa and its different flavours across social media.',
+  app:'Engaged food and lifestyle profiles made taste-test UGC, focused on the right timing, product and audience.',
+  impact:['Higher brand visibility','More traffic and conversions','Stronger brand credibility'],svc:['Content creation','Cost optimisation','Content strategy']},
+ {id:'citykart',brand:'Citykart',chan:'Regional pages',product:'On-ground (BTL) campaign',stats:[['550K+','Reach / views'],['6','Content pieces'],['₹60K','Total budget'],['₹0.11','Cost per view']],
+  obj:'Amplify Citykart\'s banners and auto-rickshaw posters in Lucknow and Prayagraj so people noticed the on-ground campaign.',
+  app:'Local community pages made content about the activity and told their followers where to spot it.',
+  impact:['Stronger local awareness','Higher engagement through city pages'],svc:['Regional page collaboration and management','Content creation and strategy']},
+ {id:'netflix',brand:'Netflix',chan:'Talent',product:'Kurukshetra series launch',stats:[['333K+','Reach / views'],['1','Content piece'],['Exclusive','FameBit talent']],
+  obj:'Build buzz for Kurukshetra on Netflix and get more viewers to tune in.',
+  app:'Our exclusive creator Yash Anand recreated Arjun\'s look from the series in his high-engagement fitness style.',
+  impact:['Stronger awareness of the series'],svc:['Talent management','Content creation']},
+ {id:'amazon',brand:'Amazon',chan:'Telegram',product:'Valentine\'s Day gifting',stats:[['1.4M+','Impressions'],['60','Posts'],['35','Channels']],
+  obj:'Drive Valentine\'s Day sales for an Amazon gifting sub-brand by reaching a large deal-hunting audience at low cost.',
+  app:'Timed promotions across 35 deal channels, picked after a detailed channel analysis, sent buyers straight to the Amazon listings.',
+  impact:['Higher visibility in deal communities','More traffic and conversions on Amazon','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted promotions']},
+ {id:'myupchar',brand:'Myupchar',chan:'Telegram',product:'Hair oil, Biotin+ and face serum',stats:[['885K+','Impressions'],['11','Posts'],['9','Channels']],
+  obj:'Drive sales of Myupchar hair and skin products on Amazon through targeted Telegram marketing.',
+  app:'Offer-led posts in engaged deal channels, timed and targeted after channel analysis, maximised clicks to Amazon.',
+  impact:['Higher visibility in deal communities','More traffic and conversions on Amazon','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted promotions']},
+ {id:'pilgrim',brand:'Pilgrim',chan:'Telegram',product:'Vitamin C face wash',stats:[['427K+','Impressions'],['7','Posts'],['7','Channels']],
+  obj:'Grow sales of Pilgrim\'s Vitamin C face wash on Amazon at an efficient cost.',
+  app:'Coupon-led deal posts across seven engaged channels drove clicks to the Amazon listing.',
+  impact:['Higher visibility in deal communities','More traffic on Amazon','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted execution']},
+ {id:'fastup-tg',brand:'Fast&Up',chan:'Telegram',product:'Amazon and D2C store',stats:[['423K+','Impressions'],['7','Posts'],['3','Channels']],
+  obj:'Grow Fast&Up sales on Amazon and on their own website through targeted Telegram marketing.',
+  app:'Strategic promotions in e-commerce deal groups, focused on timing, offers and audience targeting.',
+  impact:['Higher visibility in deal communities','More traffic and conversions on Amazon and D2C','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted promotions']},
+ {id:'panchamrit',brand:'Panchamrit',chan:'Telegram',product:'Shilajit, gut health and vegan collagen',stats:[['400K+','Impressions'],['28','Posts'],['7','Channels']],
+  obj:'Grow sales of Panchamrit\'s wellness range on Amazon and Flipkart.',
+  app:'Deal-group promotions across seven channels, tuned for timing, offers and audience.',
+  impact:['Higher visibility in deal communities','More traffic and conversions on Amazon and Flipkart','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted promotions']}
+];
+var CHANS=['All','Influencer','UGC','Telegram','Regional pages','Talent'];
+var csChan='All',csSel=CASES[0].id;
+function csRender(){
+  var list=CASES.filter(function(c){return csChan==='All'||c.chan===csChan});
+  if(!list.some(function(c){return c.id===csSel}))csSel=list[0].id;
+  $('#csList').innerHTML=list.map(function(c){return '<button class="cs-item" role="tab" id="tab-'+c.id+'" aria-controls="csCard" aria-selected="'+(c.id===csSel)+'" data-case="'+c.id+'"><span><b>'+c.brand.replace('&','&amp;')+'</b><small>'+c.chan+'</small></span><em>'+(c.key!=null?c.key:c.stats[0][0])+'</em></button>'}).join('');
+  var c=CASES.find(function(x){return x.id===csSel});
+  $('#csCard').setAttribute('aria-labelledby','tab-'+c.id);
+  $('#csCard').innerHTML='<div class="cs-top"><div><h3>'+c.brand.replace('&','&amp;')+'</h3><p class="mut" style="margin-top:4px">'+c.product+'</p></div><span class="pill chan">'+c.chan+(c.chan==='Telegram'?' · 3.5 Cr+ audience':'')+'</span></div>'+
+    '<div class="cs-band">'+c.stats.map(function(s){return '<div><b>'+s[0]+'</b><span>'+s[1]+'</span></div>'}).join('')+'</div>'+
+    (c.hl?'<div class="cs-hl">🏆 '+c.hl+'</div>':'')+
+    '<div class="cs-body"><div><h4>Objective</h4><p>'+c.obj+'</p></div><div><h4>Impact</h4><ul>'+c.impact.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div><div><h4>Approach</h4><p>'+c.app+'</p></div><div><h4>Services</h4><ul>'+c.svc.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></div>'+
+    '<div class="cs-foot"><span class="mut" style="font-size:14px">Want results like '+c.brand.replace('&','&amp;')+'?</span><a class="btn btn-p btn-sm" href="#meet">Book a free call</a></div>';
+}
+(function(){
+  $('#csChips').innerHTML=CHANS.map(function(c,i){return '<button class="chip" aria-pressed="'+(i===0)+'" data-chan="'+c+'">'+c+'</button>'}).join('');
+  $('#csChips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;csChan=b.dataset.chan;$('#csChips').querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b)});csRender()});
+  $('#csList').addEventListener('click',function(e){var b=e.target.closest('[data-case]');if(!b)return;csSel=b.dataset.case;csRender();$('#tab-'+csSel).focus()});
+  $('#csList').addEventListener('keydown',function(e){if(e.key!=='ArrowDown'&&e.key!=='ArrowUp'&&e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;e.preventDefault();var t=[].slice.call($('#csList').children),i=t.indexOf(document.activeElement),d=(e.key==='ArrowDown'||e.key==='ArrowRight')?1:-1,n=t[(i+d+t.length)%t.length];if(n)n.click()});
+  csRender();
+})();
+function openCase(id){csChan='All';$('#csChips').querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.chan==='All')});csSel=id;csRender();document.getElementById('case-studies').scrollIntoView()}
+document.addEventListener('click',function(e){var t=e.target.closest('[data-open-case]');if(!t)return;e.preventDefault();openCase(t.dataset.openCase)});
+
+/* ============ Campaign tiles (deck numbers; replace gradients with video posters) ============ */
+(function(){var C=[['hkvitals','HK VITALS','Multivitamin launch','16M+ views · 25 videos','#6D28D9,#DB2777'],['fastup','FAST&UP','Fat-loss range','9M+ views · 60+ videos','#EA580C,#FACC15'],['bebodywise','BEBODYWISE','Roll-on & face wash','5M+ views · 6 videos','#DB2777,#F472B6'],['plix','PLIX','Apple cider vinegar','2M+ views · 20+ videos','#059669,#0EA5E9'],['waterscience','WATERSCIENCE','Hard water filter','1.3M+ views · 10+ videos','#0284C7,#22D3EE']];
+ $('#camps').innerHTML=C.map(function(c){return '<a class="camp" href="#case-studies" data-open-case="'+c[0]+'" style="background:linear-gradient(160deg,'+c[4]+')"><span class="play" aria-hidden="true">▶</span><b>'+c[1].replace('&','&amp;')+'</b><span>'+c[2]+'</span><span style="font-weight:600;margin-top:4px">'+c[3]+'</span></a>'}).join('');})();
+
+/* ============ Testimonials carousel ============ */
+/* TODO (content): replace quote / name / role with real client testimonials. Metrics come from the cred deck. */
+(function(){
+  var T=[
+   ['hkvitals','HK Vitals','Full name','Brand manager, HK Vitals','#6D28D9',[['16M+','Views'],['₹0.05','Cost per view']]],
+   ['fastup','Fast&Up','Full name','Marketing head, Fast&Up','#EA580C',[['9M+','Views'],['60+','Creator videos']]],
+   ['bebodywise','BeBodywise','Full name','Growth lead, BeBodywise','#DB2777',[['5M+','Views'],['₹0.09','Cost per view']]],
+   ['amazon','Amazon','Full name','Category manager','#0F766E',[['1.4M+','Impressions'],['35','Telegram channels']]],
+   ['sova','Sova Health','Full name','Brand manager, Sova Health','#059669',[['15 days','Content delivered'],['5','UGC videos']]]
+  ];
+  var q='Add the client\'s quote here, one or two lines about what changed for their brand after working with FameBit.';
+  $('#tcar').innerHTML=T.map(function(t){var ini=t[1].replace(/[^A-Za-z ]/g,' ').split(' ').filter(Boolean).map(function(w){return w[0]}).join('').slice(0,2).toUpperCase();
+    return '<article class="tcard"><div class="who"><span class="ph" style="background:'+t[4]+'" aria-hidden="true">'+ini+'</span><div><span class="tag">'+t[1].toUpperCase().replace('&','&amp;')+'</span><b>'+t[2]+'</b><small>'+t[3].replace('&','&amp;')+'</small></div></div>'+
+    '<blockquote>'+q+'</blockquote><div class="foot"><div class="mets">'+t[5].map(function(m){return '<div><b>'+m[0]+'</b><span>'+m[1]+'</span></div>'}).join('')+'</div><button type="button" class="more" data-open-case="'+t[0]+'">Read full case study →</button></div></article>'}).join('');
+  var car=$('#tcar'),cards=car.children;
+  function step(){return cards[0].getBoundingClientRect().width+20}
+  function pages(){return Math.max(1,cards.length-Math.round(car.clientWidth/step())+1)}
+  function idx(){return Math.round(car.scrollLeft/step())}
+  function sync(){var n=pages(),i=Math.min(idx(),n-1);$('#tDots').innerHTML=Array.apply(null,{length:n}).map(function(_,k){return '<i class="'+(k===i?'on':'')+'"></i>'}).join('');$('#tPrev').disabled=i<=0;$('#tNext').disabled=i>=n-1}
+  $('#tPrev').onclick=function(){car.scrollBy({left:-step(),behavior:'smooth'})};
+  $('#tNext').onclick=function(){car.scrollBy({left:step(),behavior:'smooth'})};
+  var tm;car.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(sync,60)},{passive:true});
+  addEventListener('resize',sync);sync();
+})();
+
+/* ============ Meeting scheduler (mock availability) ============
+   TODO (developer): replace with a Cal.com / Calendly embed, or load real slots from the booking API.
+   On confirm: create the booking, send the calendar invite + WhatsApp confirmation, create a lead in admin. */
+(function(){
+  var MN=['January','February','March','April','May','June','July','August','September','October','November','December'],DN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var today=new Date();today.setHours(0,0,0,0);
+  var view=new Date(today.getFullYear(),today.getMonth(),1),sel=null,slot=null,h24=false;
+  var SLOTS=['10:30','11:30','12:30','14:00','15:00','16:00','17:30','18:30'];
+  function avail(d){return d>today&&d.getDay()!==0&&(d-today)/864e5<=45}
+  function t12(s){var p=s.split(':'),h=+p[0];return h24?s:((h%12)||12)+':'+p[1]+(h<12?'am':'pm')}
+  function firstAvail(){var d=new Date(today);do{d.setDate(d.getDate()+1)}while(!avail(d));return d}
+  function drawCal(){
+    $('#sMonth').innerHTML=MN[view.getMonth()]+' <span class="mut" style="font-weight:500">'+view.getFullYear()+'</span>';
+    $('#sPrevM').disabled=view<=new Date(today.getFullYear(),today.getMonth(),1);
+    var start=view.getDay(),days=new Date(view.getFullYear(),view.getMonth()+1,0).getDate(),h='';
+    for(var i=0;i<start;i++)h+='<span></span>';
+    for(var d=1;d<=days;d++){var dt=new Date(view.getFullYear(),view.getMonth(),d),ok=avail(dt),on=sel&&+dt===+sel;
+      h+='<button type="button" data-d="'+d+'" '+(ok?'':'disabled ')+'aria-pressed="'+!!on+'" class="'+(+dt===+today?'today':'')+'" aria-label="'+DN[dt.getDay()]+' '+d+' '+MN[view.getMonth()]+(ok?'':', unavailable')+'">'+d+'</button>'}
+    $('#sDates').innerHTML=h;
+  }
+  function drawSlots(){
+    $('#sDay').textContent=DN[sel.getDay()]+' '+sel.getDate();
+    var seed=sel.getDate()+sel.getMonth(),taken=[seed%8,(seed*3)%8];
+    $('#sSlots').innerHTML=SLOTS.filter(function(_,k){return taken.indexOf(k)<0}).map(function(s){return '<button type="button" data-s="'+s+'">'+t12(s)+'</button>'}).join('');
+  }
+  function nice(){return DN[sel.getDay()]+' '+sel.getDate()+' '+MN[sel.getMonth()].slice(0,3)+', '+t12(slot)+' IST'}
+  function mode(m){var cal=m==='cal';$('.s-cal').hidden=!cal;$('.s-slots').hidden=!cal;$('#sForm').hidden=m!=='form';$('#sDone').hidden=m!=='done';$('.s-info').hidden=m==='done';
+    $('#sPick').hidden=m!=='form';if(m==='form'){$('#sPick').textContent='📅 '+nice();setTimeout(function(){$('#mName').focus()},30)}}
+  $('#sDates').addEventListener('click',function(e){var b=e.target.closest('button[data-d]');if(!b||b.disabled)return;sel=new Date(view.getFullYear(),view.getMonth(),+b.dataset.d);drawCal();drawSlots()});
+  $('#sPrevM').onclick=function(){view.setMonth(view.getMonth()-1);drawCal()};
+  $('#sNextM').onclick=function(){view.setMonth(view.getMonth()+1);drawCal()};
+  document.querySelectorAll('.fmt24 button').forEach(function(b){b.onclick=function(){h24=b.dataset.h==='24';document.querySelectorAll('.fmt24 button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});drawSlots()}});
+  $('#sSlots').addEventListener('click',function(e){var b=e.target.closest('[data-s]');if(!b)return;slot=b.dataset.s;mode('form')});
+  $('#sBack').onclick=function(){mode('cal')};
+  $('#sForm').addEventListener('submit',function(e){e.preventDefault();var err=$('#sErr'),ph=$('#mPhone').value.replace(/\D/g,'').slice(-10);
+    if(!$('#mName').value.trim()){err.textContent='Add your name.';$('#mName').focus();return}
+    if(!$('#mBrand').value.trim()){err.textContent='Add your brand name.';$('#mBrand').focus();return}
+    if(!/^\S+@\S+\.\S+$/.test($('#mEmail').value)){err.textContent='Enter a valid work email.';$('#mEmail').focus();return}
+    if(!/^[6-9]\d{9}$/.test(ph)){err.textContent='Enter a valid 10-digit Indian mobile number.';$('#mPhone').focus();return}
+    err.textContent='';
+    var p=slot.split(':'),s=new Date(sel);s.setHours(+p[0],+p[1],0);var en=new Date(s.getTime()+30*6e4);
+    function g(x){return x.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')}
+    $('#sGcal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('FameBit strategy call')+'&dates='+g(s)+'/'+g(en);
+    $('#sDoneTxt').textContent='You\'re booked for '+nice()+'. We\'ve sent the invite to '+$('#mEmail').value+' and a confirmation on WhatsApp.';
+    mode('done');
+  });
+  sel=firstAvail();view=new Date(sel.getFullYear(),sel.getMonth(),1);drawCal();drawSlots();
+})();
+
+/* ============ Modal ============ */
+var lastFocus;
+function openModal(title,lead,btn){lastFocus=document.activeElement;$('#mTitle').textContent=title;$('#mLead').textContent=lead;$('#eSubmit').textContent=btn;$('#mForm').hidden=false;$('#mDone').hidden=true;$('#eErr').textContent='';$('#modal').classList.add('open');setTimeout(function(){$('#eName').focus()},50)}
+function closeModal(){$('#modal').classList.remove('open');if(lastFocus)lastFocus.focus()}
+$('#modal').addEventListener('click',function(e){if(e.target.id==='modal'||e.target.closest('[data-close]'))closeModal()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&$('#modal').classList.contains('open'))closeModal()});
+$('#enqForm').addEventListener('submit',function(e){e.preventDefault();
+  var ph=$('#ePhone').value.replace(/\D/g,'').slice(-10);
+  if(!$('#eName').value.trim()||!$('#eBrand').value.trim()){$('#eErr').textContent='Add your name and brand name.';return}
+  if(!/^[6-9]\d{9}$/.test(ph)){$('#eErr').textContent='Enter a valid 10-digit Indian mobile number.';return}
+  /* TODO (developer): POST to /api/leads with name, phone, brand, budget, shortlist, page URL, UTM params. Verify phone by OTP. */
+  $('#mForm').hidden=true;$('#mDone').hidden=false;});
+
+/* ============ Floating card: shows after hero ============ */
+(function(){var fc=$('#fcard'),vis={};
+  function upd(){fc.classList.toggle('show',!vis.hero&&!vis.meet&&!$('#nudge').classList.contains('show')&&!document.body.classList.contains('tray-on'))}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){vis[x.target.id==='meet'?'meet':'hero']=x.isIntersecting});upd()});
+  io.observe(document.querySelector('.hero'));io.observe(document.getElementById('meet'));})();
+
+/* ============ Nudge: triggers + frequency cap ============ */
+var nudged=false;
+function canNudge(){try{if(sessionStorage.getItem('fb_nudged'))return false;var until=+localStorage.getItem('fb_nudge_hide')||0;return Date.now()>until}catch(e){return !nudged}}
+function showNudge(title){if(nudged||!canNudge())return;nudged=true;if(title)$('#nudgeTitle').textContent=title;$('#nudge').classList.add('show');$('#fcard').classList.remove('show');try{sessionStorage.setItem('fb_nudged','1')}catch(e){}}
+function maybeNudge(){if(shortlist.length>=3)showNudge("You've shortlisted "+shortlist.length+" creators. Want us to negotiate with them for you?")}
+$('#nudgeX').onclick=function(){$('#nudge').classList.remove('show');try{localStorage.setItem('fb_nudge_hide',Date.now()+3*864e5)}catch(e){}};
+(function(){var t;var sec=document.getElementById('browse');
+  new IntersectionObserver(function(en){if(en[0].isIntersecting){t=setTimeout(function(){showNudge()},60000)}else clearTimeout(t)}).observe(sec);
+  if(matchMedia('(pointer:fine)').matches)document.addEventListener('mouseout',function(e){if(!e.relatedTarget&&e.clientY<8&&shortlist.length)showNudge()});})();
+
+renderGrid();renderBar();renderCompare();
+</script>
+</body>
+</html>
