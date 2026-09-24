@@ -110,8 +110,8 @@ body.tray-on .nudge{bottom:100px}
 .tcard .tag{display:inline-block;background:var(--mint);color:var(--mint-ink);font-size:11px;font-weight:700;border-radius:var(--r-pill);padding:3px 10px;letter-spacing:.02em}
 .tcard .who b{display:block;font-size:16px;margin-top:6px}
 .tcard .who small{color:var(--mut);font-size:13px}
-.tcard blockquote{margin:20px 0 22px;font-size:16.5px;line-height:1.65;flex:1;position:relative;padding-left:22px}
-.tcard blockquote::before{content:"“";position:absolute;left:0;top:-8px;font-size:38px;line-height:1;color:var(--p);font-weight:700}
+.tcard blockquote{margin:20px 0 22px;font-size:16.5px;line-height:1.65;flex:1;position:relative;padding-left:30px}
+.tcard blockquote::before{content:"“";position:absolute;left:0;top:-4px;font-size:38px;line-height:1;color:var(--p);font-weight:700}
 .tcard .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
 .tcard .mets{display:flex;gap:10px}
 .tcard .mets div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
@@ -254,7 +254,7 @@ body.tray-on .nudge{bottom:100px}
 .svc a.more{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;color:var(--p)}
 
 /* ---------- Results ---------- */
-.camps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:56px}
+.camps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 .camp{border-radius:18px;aspect-ratio:9/13;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
 .camp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(21,17,42,.75))}
 .camp>*{position:relative;z-index:1}
@@ -314,7 +314,6 @@ body.tray-on .nudge{bottom:100px}
 }
 @media (max-width:600px){
   .grid,.lists,.svc{grid-template-columns:1fr}
-  .camps{grid-template-columns:1fr 1fr}
   .hero .ctas .btn{width:100%}
   .stat{min-height:0}
   .stat .big{margin-top:20px}
@@ -328,6 +327,21 @@ body.tray-on .nudge{bottom:100px}
   .frame{padding:6px;border-radius:24px}
   .tcard .foot{flex-direction:column;align-items:flex-start}
   .tbl .hide-s{display:none}
+  .tbl th,.tbl td{padding-left:6px;padding-right:6px}
+  .tbl .who .av{width:34px;height:34px;font-size:12px}
+  .tbl .who b{white-space:nowrap}
+  .demo-chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .demo-chips::-webkit-scrollbar{display:none}
+  .demo .demo-chips{margin:0 -20px;padding:0 20px}
+  .filters .demo-chips{flex:none;width:calc(100% + 48px);margin:0 -24px;padding:0 24px}
+  .prob{padding:24px;gap:28px}
+  .prob h3{font-size:24px}
+  /* Long card rows scroll sideways instead of stacking into a very tall page */
+  .grid,.camps{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -24px;padding:4px 24px 12px;scroll-padding:0 24px}
+  .grid::-webkit-scrollbar,.camps::-webkit-scrollbar{display:none}
+  .grid>.cc{flex:0 0 82%;scroll-snap-align:start}
+  .grid>.empty{flex:1 0 100%}
+  .camps>.camp{flex:0 0 62%;scroll-snap-align:start}
 }
 </style>
 </head>
@@ -481,7 +495,7 @@ body.tray-on .nudge{bottom:100px}
   <div class="wrap cmp-wrap">
     <div class="cmp-side">
       <span class="kicker">Compare</span>
-      <h2>Confused? Whom to choose</h2>
+      <h2>Confused about whom to choose?</h2>
       <p>We got you. Compare up to 3 creators side by side for free. We highlight the winner in every row and pick the best overall match.</p>
       <a class="btn btn-p" href="#browse">+ Add creators</a>
       <p class="micro" id="cmpNote">3 free comparisons a day as a guest. Log in for more.</p>

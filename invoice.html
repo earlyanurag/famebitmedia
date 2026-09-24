@@ -92,6 +92,8 @@ body{background:#F4F2F9}
 #qr img,#qr canvas{width:96px!important;height:96px!important}
 .pay .rows{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:13px;align-items:center}
 .pay .rows span{color:var(--mut)}
+.pay .rows input{min-width:0}
+.pay>.rows{flex:1;min-width:0}
 .tot{display:grid;gap:6px}
 .tot div{display:flex;justify-content:space-between;gap:10px}
 .tot div span{color:var(--mut)}
@@ -135,7 +137,9 @@ body{background:#F4F2F9}
   .studio{grid-template-columns:1fr}.side{position:static}.right{grid-template-columns:1fr}
   .paper{padding:28px 20px}.p-top,.bottom,.foot{grid-template-columns:1fr;display:grid}.meta{text-align:left}.meta .num input,.dates input{text-align:left}.dates{justify-content:start}
   .to{grid-template-columns:1fr}.paper.midnight .p-top{margin:-28px -20px 0;padding:28px 20px}
-  .ih{display:none}.ir{grid-template-columns:70px 1fr 1fr 30px}.ir .d{grid-column:1/-1}.ir .t{text-align:right}
+  .ih{display:none}.ir{grid-template-columns:70px 1fr 1fr 30px;align-items:end}.ir .d{grid-column:1/-1}.ir .t{text-align:right;padding-bottom:3px}
+  .ir .q::before,.ir .r::before{display:block;font-size:11px;color:var(--mut);margin-bottom:2px}.ir .q::before{content:"Qty"}.ir .r::before{content:"Rate (₹)"}
+  .ir .q input,.ir .r input{text-align:left}
   .paper{order:-1;width:100%}
   .bar .hide-m{display:none}
   .bar-in{gap:8px;padding:0 12px}.bar .btn-sm{padding:0 12px;font-size:13px}
@@ -296,7 +300,7 @@ body{background:#F4F2F9}
 </main>
 
 <div class="drawer" id="drawer"><div class="in" role="dialog" aria-modal="true" aria-labelledby="dTitle">
-  <div style="display:flex;justify-content:space-between;align-items:center"><h2 id="dTitle" style="margin:0">My invoices</h2><button class="btn btn-sm" id="dClose">Close</button></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><h2 id="dTitle" style="margin:0;flex:1">My invoices</h2><button class="btn btn-sm btn-p" id="dNew">New invoice</button><button class="btn btn-sm" id="dClose">Close</button></div>
   <p class="hint" style="margin:6px 0 16px">Saved in this browser. Log in to keep them across devices.</p>
   <div id="dList"></div>
 </div></div>
@@ -367,9 +371,11 @@ function calc(){
 }
 /* UPI QR */
 var qrObj=null,lastQR='';
-function drawQR(){$('#qrWrap').style.display=inv.qr?'':'none';if(!inv.qr||typeof QRCode==='undefined')return;
+function qrNote(t){$('#qr').innerHTML='<div style="font-size:11px;color:#9C96B0;padding:14px 8px;text-align:center;line-height:1.4">'+t+'</div>'}
+function drawQR(){$('#qrWrap').style.display=inv.qr?'':'none';if(!inv.qr)return;
  var key=inv.upi+'|'+(inv._due||0).toFixed(2);if(key===lastQR)return;lastQR=key;$('#qr').innerHTML='';
- if(!/^[\w.\-]{2,}@[\w]{2,}$/.test(inv.upi||'')){$('#qr').innerHTML='<div style="font-size:11px;color:#9C96B0;padding:14px 8px;text-align:center;line-height:1.4">Add UPI ID to show QR</div>';return}
+ if(!/^[\w.\-]{2,}@[\w]{2,}$/.test(inv.upi||'')){qrNote('Add UPI ID to show QR');return}
+ if(typeof QRCode==='undefined'){lastQR='';qrNote('QR code needs an internet connection');return}
  var url='upi://pay?pa='+encodeURIComponent(inv.upi)+'&pn='+encodeURIComponent(inv.fromName||'Creator')+'&am='+(inv._due||0).toFixed(2)+'&cu=INR&tn='+encodeURIComponent('Invoice '+inv.num);
  qrObj=new QRCode($('#qr'),{text:url,width:192,height:192,correctLevel:QRCode.CorrectLevel.M});}
 
@@ -406,6 +412,7 @@ var saveT;function save(){clearTimeout(saveT);$('#saved').textContent='Saving…
 $('#newBtn').onclick=function(){put('fbi_counter',get('fbi_counter',0)+1);var keep=inv;inv=blank();['fromName','fromAddr','fromTax','fromEmail','upi','accName','bank','acc','ifsc','signer','logo','sig','state','tpl','accent','gst','gstRate'].forEach(function(k){inv[k]=keep[k]});lastQR='';load();save();toast('New invoice '+inv.num+' started')};
 $('#histBtn').onclick=function(){var h=get('fbi_history',[]);$('#dList').innerHTML=h.length?h.map(function(x){return '<button class="inv" data-id="'+x.id+'"><div><b>'+x.num+'</b><div class="hint" style="margin:2px 0 0">'+(x.toName||'No brand yet')+' · '+(x.issued||'')+'</div></div><div style="text-align:right"><b>'+money(x._due||0)+'</b><br><span class="st '+x.status+'">'+x.status.charAt(0).toUpperCase()+x.status.slice(1)+'</span></div></button>'}).join(''):'<p class="mut">No invoices yet. Your first one saves automatically.</p>';$('#drawer').classList.add('open');$('#dClose').focus()};
 $('#dClose').onclick=function(){$('#drawer').classList.remove('open')};
+$('#dNew').onclick=function(){$('#drawer').classList.remove('open');$('#newBtn').click()};
 $('#drawer').onclick=function(e){if(e.target.id==='drawer')$('#drawer').classList.remove('open');var b=e.target.closest('.inv');if(b){var h=get('fbi_history',[]);inv=h.find(function(x){return x.id===+b.dataset.id});lastQR='';load();$('#drawer').classList.remove('open');toast('Opened '+inv.num)}};
 document.addEventListener('keydown',function(e){if(e.key==='Escape')$('#drawer').classList.remove('open')});
 
