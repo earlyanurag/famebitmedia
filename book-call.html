@@ -67,7 +67,7 @@
 
 <main id="main" class="bk">
   <div class="wrap">
-    <div class="bk-head"><h1>Book a free strategy call</h1><p id="bkSub">30 minutes on Google Meet. Pick a day, then choose a time on our Cal ID booking page.</p></div>
+    <div class="bk-head"><h1>Book a free strategy call</h1><p id="bkSub">30 minutes on Google Meet. Pick a day and time that works for you.</p></div>
     <div class="bk-grid">
       <div id="calCard">
         <div class="border-glow-inner embed" id="bkCal"></div>
@@ -135,7 +135,7 @@
 (function(){
   var plan=new URLSearchParams(location.search).get('plan');
   if(plan)document.getElementById('bkSub').textContent='You picked the '+plan.charAt(0).toUpperCase()+plan.slice(1)+' package. Pick a time and we\'ll walk you through it on a 30-minute call.';
-  CalPicker(document.getElementById('bkCal'),{url:'https://cal.id/famebitmedia/product-walkthrough'});
+  CalEmbed(document.getElementById('bkCal'),{calLink:'famebitmedia/product-walkthrough'});
   BorderGlow(document.getElementById('calCard'),{backgroundColor:'#ffffff',borderRadius:22,glowColor:'268 85 65',glowRadius:36,edgeSensitivity:25,animated:true,colors:['#7C3AED','#C026D3','#FB923C']});
 })();
 </script>

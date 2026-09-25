@@ -147,6 +147,12 @@ section{padding:104px 0}
 .calp-tz{font-size:12px;color:var(--mut);margin-top:8px;text-align:center}
 @media (max-width:760px){.calp{grid-template-columns:1fr}.calp-side{border-left:0;border-top:1px solid var(--line)}.calp-cal{padding:18px}}
 
+.cal-embed{min-width:0;display:flex;flex-direction:column}
+.cal-inline{width:100%;min-height:640px;overflow:auto}
+.cal-inline iframe{width:100%!important;border:0}
+.cal-alt{padding:10px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--mut);text-align:center}
+.cal-alt a{color:var(--p);font-weight:600}
+
 /* ---------- GradualBlur (React Bits port, see effects.js) ---------- */
 .gradual-blur{pointer-events:none;isolation:isolate}
 .gradual-blur-parent{overflow:hidden}

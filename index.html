@@ -918,9 +918,9 @@ var CASES=[
   addEventListener('resize',sync);sync();
 })();
 
-/* ============ Meeting: calendar that opens Cal ID on the chosen day, in a BorderGlow card ============
+/* ============ Meeting: Cal ID inline embed (falls back to the day picker), in a BorderGlow card ============
    TODO (developer): on booking, create the lead in the admin panel (Cal ID webhook). */
-CalPicker($('#meetCal'),{url:'https://cal.id/famebitmedia/product-walkthrough'});
+CalEmbed($('#meetCal'),{calLink:'famebitmedia/product-walkthrough'});
 BorderGlow($('#meetCard'),{backgroundColor:'#ffffff',borderRadius:24,glowColor:'268 85 65',glowRadius:36,glowIntensity:1,edgeSensitivity:25,coneSpread:25,animated:'scroll',colors:['#7C3AED','#C026D3','#FB923C']});
 
 /* ============ Modal ============ */
