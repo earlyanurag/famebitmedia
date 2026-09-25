@@ -58,3 +58,9 @@ Open `index.html` in a browser. All pages share `styles.css`.
 - Ready-made lists: each "Top 10" bar has its own soft colour.
 - What we run for you: light background graphics (growth line, video frames, chat bubbles, sales bars).
 - Recent campaigns: tiles dissolve into the page at both edges (CSS mask, no blur panels); "Show more" button to case-studies.html.
+
+## Phone layout (round 4)
+- Below 600px, long card stacks become swipe rows (next card peeks in): stats, browse creators, paths, ready-made lists, services, case studies, and on hire-team the steps and plans.
+- Hero feature chips become one compact 3-up row; category filter chips scroll on one line.
+- Tighter section spacing and smaller headings on phones. Homepage on a phone went from about 20,000px to about 12,000px tall.
+- Invoice Studio top bar fits 360px screens.

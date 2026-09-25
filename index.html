@@ -309,6 +309,55 @@ body.tray-on .nudge{bottom:100px}
   .tray{padding-left:16px;gap:8px}
   .tbl .hide-s{display:none}
 }
+
+/* ---------- Phone layout: tighter spacing, swipe rows instead of long stacks ---------- */
+@media (max-width:600px){
+  section{padding:52px 0}
+  .sec-head{margin-bottom:26px}.sec-head p,.tst-head p,.meet-head p{font-size:15px;margin-top:10px}
+  h2,.cmp-side h2{font-size:26px}
+  .hero{padding-top:36px}.hero h1{font-size:34px;margin-top:18px}.hero .sub{font-size:16px;margin-top:14px}.hero .ctas{margin-top:22px}
+  /* hero feature chips: one compact row */
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px}
+  .float-chip{flex-direction:column;align-items:center;text-align:center;gap:6px;padding:12px 6px;min-width:0;border-radius:14px;animation:none}
+  .float-chip i{width:32px;height:32px;font-size:15px}.float-chip b{font-size:12px;line-height:1.3}.float-chip span{display:none}
+  .demo-wrap{margin-top:18px}.demo{padding:16px 14px 6px}
+  /* swipe rows */
+  .bento,.grid,.paths,.lists,.svc,.collage{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -24px;padding:4px 24px 14px;scroll-padding:0 24px;scrollbar-width:none;grid-template-columns:none}
+  .bento::-webkit-scrollbar,.grid::-webkit-scrollbar,.paths::-webkit-scrollbar,.lists::-webkit-scrollbar,.svc::-webkit-scrollbar,.collage::-webkit-scrollbar{display:none}
+  .bento>*,.grid>*,.paths>*,.lists>*,.svc>*,.collage>*{flex:0 0 82%;scroll-snap-align:start}
+  .grid>.empty{flex-basis:100%}
+  .bento{margin:0}  /* .bento is also the .wrap, so it already sits inside the page gutter */
+  .proof{padding:28px 0 12px}.stat{min-height:200px;padding:22px}.stat .big{font-size:36px}
+  /* problem */
+  .prob{padding:22px;gap:20px;border-radius:22px}.prob h3{font-size:21px}.prob p{font-size:15px}.q{padding:12px 14px;font-size:14px}
+  /* browse filters on one scrolling line */
+  .browse-head{margin-bottom:18px;gap:14px}.browse-head .btn{min-height:40px;font-size:14px}
+  .filters{margin-bottom:18px}
+  #catChips{flex-wrap:nowrap;overflow-x:auto;margin:0 -24px;padding:2px 24px;scrollbar-width:none;width:calc(100% + 48px)}
+  #catChips::-webkit-scrollbar{display:none}#catChips .chip{flex:none}
+  .filters select{flex:1;min-width:0}
+  .see-all{margin-top:14px}
+  /* paths, lists, services, bars */
+  .path{padding:24px}.path p{margin:8px 0 18px}
+  .list{min-height:180px}
+  .bars{gap:8px;margin-top:10px}.bar{padding:9px 12px}.bar b{font-size:13px}
+  .svc .card{padding:22px 22px 90px}
+  /* campaigns + closing band */
+  .camp{width:150px}.camp .play{top:36%;width:40px;height:40px}
+  .camps{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
+  .band{padding:26px;border-radius:24px;gap:22px}.band p{font-size:15px}.band .ctas .btn{width:100%}.band ul{padding:20px}
+  /* case studies */
+  .ct{min-height:230px;padding:22px}.ct.big h3{font-size:28px}
+  .cs-ctas{margin-top:18px}.cs-ctas .btn{width:100%;white-space:normal;text-align:center}
+  /* testimonials */
+  .tst-head{margin-bottom:24px}.tcard{padding:22px}.tcard blockquote{font-size:15px}
+  /* booking */
+  .meet-head{margin-bottom:24px}
+  .sched>div{padding:20px}.s-info h3{font-size:18px;margin-top:10px}
+  .s-info ul{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:13px}.s-info>p{display:none}
+  /* footer */
+  .ftr{padding:48px 0 24px}
+}
 </style>
 </head>
 <body>
