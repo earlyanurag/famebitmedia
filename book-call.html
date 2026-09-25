@@ -13,30 +13,15 @@
 .bk h1{font-size:clamp(30px,3.6vw,42px)}
 .bk-head{max-width:640px;margin-bottom:36px}
 .bk-head p{color:var(--mut);margin-top:12px;font-size:17px}
-.bk-grid{display:grid;grid-template-columns:1fr 1.05fr 300px;gap:20px;align-items:start}
-.panel{padding:28px;border-radius:22px}
-.panel h2{font-size:19px;letter-spacing:-.01em}
-.progress{display:flex;gap:6px;margin-bottom:22px}.progress span{height:4px;flex:1;border-radius:2px;background:var(--line)}.progress span.on{background:var(--p)}
-.grp{margin-top:20px}
-.grp>.lbl{font-size:14px;font-weight:500;margin-bottom:10px;display:block}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.cal-top{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
-.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:18px}
-.day{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:10px 4px;text-align:center;cursor:pointer}
-.day small{display:block;font-size:12px;color:var(--mut)}.day b{font-size:18px}
-.day[aria-pressed="true"]{background:var(--p);border-color:var(--p);color:#fff}.day[aria-pressed="true"] small{color:#E9DDFF}
-.day:disabled{opacity:.4;cursor:not-allowed}
-.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
-.slot{border:1.5px solid var(--line);background:#fff;border-radius:12px;min-height:44px;font-weight:600;cursor:pointer}
-.slot[aria-pressed="true"]{border-color:var(--p);color:var(--p);background:var(--lav)}
+.bk-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+.embed{background:#fff;min-width:0}
+.embed iframe{width:100%;min-height:700px;border:0;display:block}
+.embed .alt{padding:10px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--mut);text-align:center}
+.embed .alt a{color:var(--p);font-weight:600}
 .after{background:var(--mint);border-radius:22px;padding:26px}
 .after ol{margin:14px 0 0;padding-left:20px;display:grid;gap:10px;font-size:14px}
-.err{color:#B42318;font-size:14px;min-height:20px;margin-top:10px}
-.confirm{max-width:560px;margin:0 auto;text-align:center;padding:48px 36px}
-.confirm .tick{width:64px;height:64px;border-radius:50%;background:var(--mint);color:var(--mint-ink);font-size:30px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.confirm .ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
-@media (max-width:1100px){.bk-grid{grid-template-columns:1fr 1fr}.after{grid-column:1/-1}}
-@media (max-width:760px){.bk-grid{grid-template-columns:1fr}.days{grid-template-columns:repeat(5,1fr)}}
+.bk{overflow-x:clip}
+@media (max-width:900px){.bk-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -85,45 +70,24 @@
 
 <main id="main" class="bk">
   <div class="wrap">
-    <div id="flow">
-      <div class="bk-head"><h1>Book a free strategy call</h1><p>30 minutes on Google Meet. Tell us a little about your campaign, then pick a time that works.</p></div>
-      <form id="bkForm" class="bk-grid" novalidate>
-        <div class="card panel">
-          <div class="progress"><span class="on"></span><span id="p2"></span><span id="p3"></span></div>
-          <h2>About your campaign</h2>
-          <div class="grp"><span class="lbl" id="lBudget">Monthly influencer budget</span><div class="chips" data-group="budget" role="group" aria-labelledby="lBudget"><button type="button" class="chip">Under ₹1 lakh</button><button type="button" class="chip">₹1–5 lakh</button><button type="button" class="chip">₹5–20 lakh</button><button type="button" class="chip">₹20 lakh+</button></div></div>
-          <div class="grp"><span class="lbl" id="lNeed">What do you need?</span><div class="chips" data-group="need" data-multi role="group" aria-labelledby="lNeed"><button type="button" class="chip">Influencer campaign</button><button type="button" class="chip">UGC videos</button><button type="button" class="chip">Meme pages</button><button type="button" class="chip">Telegram marketing</button></div></div>
-          <div class="grp">
-            <div class="field"><label for="bName">Your name</label><input class="input" id="bName" autocomplete="name"></div>
-            <div class="field"><label for="bEmail">Work email</label><input class="input" id="bEmail" type="email" autocomplete="email"></div>
-            <div class="field"><label for="bPhone">WhatsApp number</label><input class="input" id="bPhone" inputmode="tel" placeholder="10-digit mobile number" autocomplete="tel"></div>
-            <div class="field" style="margin-bottom:0"><label for="bSite">Brand website or Instagram</label><input class="input" id="bSite" placeholder="yourbrand.com"></div>
-          </div>
+    <div class="bk-head"><h1>Book a free strategy call</h1><p id="bkSub">30 minutes on Google Meet. Pick a time that works and tell us a little about your campaign.</p></div>
+    <div class="bk-grid">
+      <div id="calCard">
+        <div class="border-glow-inner embed">
+          <iframe src="https://cal.id/famebitmedia/product-walkthrough" title="Book a call with FameBit Media" allow="fullscreen"></iframe>
+          <p class="alt">Calendar not loading? <a href="https://cal.id/famebitmedia/product-walkthrough" target="_blank" rel="noopener">Open the booking page</a></p>
         </div>
-        <div class="card panel">
-          <div class="cal-top"><h2>Pick a time</h2><span class="mut" style="font-size:13px">India time (IST)</span></div>
-          <div class="days" id="days"></div>
-          <div class="slots" id="slots"></div>
-          <button class="btn btn-p btn-lg btn-block" style="margin-top:22px" id="bkBtn" type="submit">Confirm call</button>
-          <p class="err" id="bkErr" role="alert"></p>
-        </div>
-        <aside class="after">
-          <h2 style="font-size:17px">After you book</h2>
-          <ol>
-            <li>You get a calendar invite and a WhatsApp confirmation.</li>
-            <li>A strategist reviews your brand before the call.</li>
-            <li>On the call, we preview matching creators and share a quote.</li>
-            <li>Your full shortlist arrives within 48 hours.</li>
-          </ol>
-          <a class="btn btn-sm" style="margin-top:20px;background:#fff" href="https://wa.me/918115767101" target="_blank" rel="noopener">Can't wait? WhatsApp us</a>
-        </aside>
-      </form>
-    </div>
-    <div class="card confirm" id="done" hidden>
-      <div class="tick">✓</div>
-      <h1 style="font-size:30px">Call booked</h1>
-      <p class="mut" style="margin-top:12px" id="doneTxt"></p>
-      <div class="ctas"><a class="btn btn-p" id="gcal" target="_blank" rel="noopener">Add to Google Calendar</a><a class="btn" href="index.html#lists">Browse ready-made lists</a></div>
+      </div>
+      <aside class="after">
+        <h2 style="font-size:17px">After you book</h2>
+        <ol>
+          <li>You get a calendar invite by email.</li>
+          <li>A strategist reviews your brand before the call.</li>
+          <li>On the call, we preview matching creators and share a quote.</li>
+          <li>Your full shortlist arrives within 48 hours.</li>
+        </ol>
+        <a class="btn btn-sm" style="margin-top:20px;background:#fff" href="https://wa.me/918115767101" target="_blank" rel="noopener">Can't wait? WhatsApp us</a>
+      </aside>
     </div>
   </div>
 </main>
@@ -172,46 +136,11 @@
 </script>
 
 <script>
+/* Booking via Cal ID. TODO (developer): use a Cal ID webhook to create the lead in the admin panel. */
 (function(){
-  var $=function(s){return document.querySelector(s)},sel={budget:null,need:[],day:null,slot:null};
   var plan=new URLSearchParams(location.search).get('plan');
-  if(plan)$('.bk-head p').textContent='You picked the '+plan.charAt(0).toUpperCase()+plan.slice(1)+' package. Pick a time and we\'ll walk you through it on a 30-minute call.';
-  /* Chip groups */
-  document.querySelectorAll('[data-group]').forEach(function(g){
-    g.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed','false')});
-    g.addEventListener('click',function(e){var c=e.target.closest('.chip');if(!c)return;
-      if(g.hasAttribute('data-multi')){var on=c.getAttribute('aria-pressed')!=='true';c.setAttribute('aria-pressed',on);sel.need=[].map.call(g.querySelectorAll('[aria-pressed=true]'),function(x){return x.textContent})}
-      else{g.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c)});sel.budget=c.textContent}
-      prog()});
-  });
-  /* Next 5 working days. TODO (developer): load real availability from Calendly / Cal.com / Google Calendar API. */
-  var DN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  var d=new Date(),list=[];while(list.length<5){d.setDate(d.getDate()+1);if(d.getDay()!==0)list.push(new Date(d))}
-  $('#days').innerHTML=list.map(function(x,i){return '<button type="button" class="day" aria-pressed="false" data-i="'+i+'"><small>'+DN[x.getDay()]+'</small><b>'+x.getDate()+'</b><small>'+MN[x.getMonth()]+'</small></button>'}).join('');
-  var SLOTS=['11:00','12:30','14:00','15:30','17:00','18:30'];
-  function drawSlots(i){var taken=[(i*2)%6,(i*3+1)%6];$('#slots').innerHTML=SLOTS.map(function(s,k){return '<button type="button" class="slot" aria-pressed="false" '+(taken.indexOf(k)>-1?'disabled style="opacity:.35;text-decoration:line-through"':'')+'>'+s+'</button>'}).join('')}
-  $('#days').addEventListener('click',function(e){var b=e.target.closest('.day');if(!b)return;$('#days').querySelectorAll('.day').forEach(function(x){x.setAttribute('aria-pressed',x===b)});sel.day=list[+b.dataset.i];sel.slot=null;drawSlots(+b.dataset.i);label();prog()});
-  $('#slots').addEventListener('click',function(e){var b=e.target.closest('.slot');if(!b||b.disabled)return;$('#slots').querySelectorAll('.slot').forEach(function(x){x.setAttribute('aria-pressed',x===b)});sel.slot=b.textContent;label();prog()});
-  $('#days .day').click();
-  function nice(){return DN[sel.day.getDay()]+' '+sel.day.getDate()+' '+MN[sel.day.getMonth()]+', '+sel.slot}
-  function label(){$('#bkBtn').textContent=sel.slot?'Confirm call for '+nice():'Confirm call'}
-  function prog(){$('#p2').classList.toggle('on',!!sel.budget);$('#p3').classList.toggle('on',!!sel.slot)}
-  $('#bkForm').addEventListener('submit',function(e){e.preventDefault();var err=$('#bkErr');
-    var ph=$('#bPhone').value.replace(/\D/g,'').slice(-10);
-    if(!sel.budget){err.textContent='Choose a monthly budget so we can prepare the right creators.';return}
-    if(!$('#bName').value.trim()){err.textContent='Add your name.';$('#bName').focus();return}
-    if(!/^\S+@\S+\.\S+$/.test($('#bEmail').value)){err.textContent='Enter a valid work email.';$('#bEmail').focus();return}
-    if(!/^[6-9]\d{9}$/.test(ph)){err.textContent='Enter a valid 10-digit Indian mobile number.';$('#bPhone').focus();return}
-    if(!sel.slot){err.textContent='Pick a time slot.';return}
-    err.textContent='';
-    /* TODO (developer): POST booking {name,email,phone,site,budget,need,datetime,plan,utm,shortlist from localStorage 'fb_shortlist'}
-       then send calendar invite + WhatsApp confirmation and create a lead in the admin panel. */
-    var p=sel.slot.split(':'),s=new Date(sel.day);s.setHours(+p[0],+p[1],0);var en=new Date(s.getTime()+30*6e4);
-    function g(x){return x.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')}
-    $('#gcal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('FameBit strategy call')+'&dates='+g(s)+'/'+g(en);
-    $('#doneTxt').textContent='You\'re booked for '+nice()+' IST. We\'ve sent the invite to '+$('#bEmail').value+' and a confirmation on WhatsApp.';
-    $('#flow').hidden=true;$('#done').hidden=false;scrollTo(0,0);
-  });
+  if(plan)document.getElementById('bkSub').textContent='You picked the '+plan.charAt(0).toUpperCase()+plan.slice(1)+' package. Pick a time and we\'ll walk you through it on a 30-minute call.';
+  BorderGlow(document.getElementById('calCard'),{backgroundColor:'#ffffff',borderRadius:22,glowColor:'268 85 65',glowRadius:36,edgeSensitivity:25,animated:true,colors:['#7C3AED','#C026D3','#FB923C']});
 })();
 </script>
 </body>

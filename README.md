@@ -11,7 +11,7 @@ Open `index.html` in a browser. All pages share `styles.css`.
 
 ## What the developer must connect (search the code for `TODO (developer)`)
 1. **Leads**: request-price / list-enquiry form in index.html → POST to your leads API (add OTP phone check).
-2. **Bookings**: book-call.html → real availability (Calendly / Cal.com / Google Calendar API), send invite + WhatsApp confirmation, create lead in admin.
+2. **Bookings**: book-call.html and the homepage `#meet` section embed Cal ID (cal.id/famebitmedia/product-walkthrough). Add a Cal ID webhook to create the lead in admin.
 3. **Creator data**: replace the `CREATORS` sample array in index.html with the API. Use cached profile photos; keep the initials fallback.
 4. **Logo**: `.logo` is a text placeholder — replace with the official FameBit SVG logo (do not redesign it).
 5. **Placeholders to replace**: all stats (10,000+, 300+, ₹10 Cr+), testimonials, campaign results, package prices (₹X,XX,XXX), GSTIN/CIN in footer, emails.
