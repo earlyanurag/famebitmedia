@@ -16,7 +16,7 @@
 .hero h1{max-width:880px;margin:24px auto 0}
 .hero .sub{max-width:620px;margin:20px auto 0;font-size:19px;color:var(--mut)}
 .hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
-.demo-wrap{position:relative;max-width:940px;margin:56px auto 0}
+.demo-wrap{position:relative;max-width:940px;margin:28px auto 0}
 .demo{text-align:left;border-radius:22px 22px 0 0;border-bottom:0;padding:20px 20px 8px;box-shadow:0 -10px 60px rgba(124,58,237,.12)}
 .demo-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
 .demo-top b{font-size:15px}
@@ -28,10 +28,11 @@
 .tbl tr:last-child td{border-bottom:0}
 .who{display:flex;align-items:center;gap:10px}.who b{display:block;font-size:14px}.who small{font-size:12px;color:var(--mut)}
 .lockprice{color:var(--mut);letter-spacing:2px}
-.float-chip{position:absolute;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:0 16px 36px rgba(21,17,42,.12);text-align:left;animation:bob 6s ease-in-out infinite}
+.feats{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:44px auto 0;max-width:940px}
+.float-chip{position:relative;flex:1 1 0;min-width:220px;max-width:300px;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:0 16px 36px rgba(21,17,42,.12);text-align:left;animation:bob 6s ease-in-out infinite}
 .float-chip i{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:17px}
 .float-chip b{display:block;font-size:14px}.float-chip span{font-size:12px;color:var(--mut)}
-.fc1{left:-222px;top:60px}.fc2{right:-200px;top:150px;animation-delay:-2s}.fc3{left:-190px;top:230px;animation-delay:-4s}
+.fc2{animation-delay:-2s}.fc3{animation-delay:-4s}
 @keyframes bob{50%{transform:translateY(-6px)}}
 .row-in{animation:rowin .35s ease both}
 @keyframes rowin{from{opacity:0;transform:translateY(6px)}}
@@ -42,6 +43,9 @@
 .logos .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .logos .marquee-track{display:flex;gap:48px;width:max-content;animation:mq 40s linear infinite;padding:4px 0}
 .logos .marquee:hover .marquee-track{animation-play-state:paused}
+.logos .marquee img{height:28px;width:auto;max-width:140px;object-fit:contain;filter:grayscale(1) brightness(.62) contrast(.9);opacity:.55;transition:opacity .2s}
+.logos .marquee img:hover{opacity:.8}
+.logos .marquee-track{align-items:center}
 .logos .marquee span{font-weight:800;font-size:19px;letter-spacing:-.01em;color:#A7A2BC;white-space:nowrap;text-transform:uppercase}
 @keyframes mq{to{transform:translateX(-50%)}}
 
@@ -86,14 +90,14 @@
 .ex-note{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--peach-ink);background:var(--peach);padding:4px 12px;border-radius:var(--r-pill);margin:16px 16px 0}
 
 /* Selection tray (from V2: "2 / 3 selected · Compare now") */
-.tray{position:fixed;left:50%;bottom:24px;transform:translate(-50%,150%);z-index:56;background:var(--ink);color:#fff;border-radius:var(--r-pill);padding:8px 8px 8px 12px;display:flex;align-items:center;gap:12px;box-shadow:0 18px 40px rgba(21,17,42,.3);transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility .35s;visibility:hidden;max-width:calc(100vw - 24px)}
+.tray{position:fixed;left:50%;bottom:24px;transform:translate(-50%,150%);z-index:56;background:linear-gradient(120deg,#FFFFFF 0%,var(--lav) 55%,#FCEBF6 100%);color:var(--ink);border:1px solid var(--p-soft);border-radius:var(--r-pill);padding:8px 8px 8px 12px;display:flex;align-items:center;gap:12px;box-shadow:0 18px 40px rgba(124,58,237,.18);transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility .35s;visibility:hidden;max-width:calc(100vw - 24px)}
 .tray.show{transform:translate(-50%,0);visibility:visible}
 .tray .faces{display:flex}
-.tray .faces .av{width:32px;height:32px;font-size:11px;border:2px solid var(--ink);margin-left:-8px}
+.tray .faces .av{width:32px;height:32px;font-size:11px;border:2px solid #fff;margin-left:-8px}
 .tray .faces .av:first-child{margin-left:0}
 .tray .t{font-size:14px;white-space:nowrap}
-.tray .t small{display:block;color:#B9B3CF;font-size:12px}
-.tray .clr{border:0;background:none;color:#C9C3DD;font-size:13px;padding:8px;text-decoration:underline;cursor:pointer}
+.tray .t small{display:block;color:var(--mut);font-size:12px}
+.tray .clr{border:0;background:none;color:var(--mut);font-size:13px;padding:8px;text-decoration:underline;cursor:pointer}
 .tray .btn{min-height:40px}
 body.tray-on .nudge{bottom:100px}
 
@@ -113,11 +117,7 @@ body.tray-on .nudge{bottom:100px}
 .tcard blockquote{margin:20px 0 22px;font-size:16.5px;line-height:1.65;flex:1;position:relative;padding-left:22px}
 .tcard blockquote::before{content:"“";position:absolute;left:0;top:-8px;font-size:38px;line-height:1;color:var(--p);font-weight:700}
 .tcard .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
-.tcard .mets{display:flex;gap:10px}
-.tcard .mets div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
-.tcard .mets b{display:block;font-size:20px;color:var(--p);letter-spacing:-.02em;line-height:1.1}
-.tcard .mets span{font-size:12px;color:var(--mut)}
-.tcard .more{font-size:14px;font-weight:600;color:var(--p);background:none;border:0;cursor:pointer;padding:6px 0}
+.tcard .more{font-size:14px;font-weight:600;color:var(--p);padding:6px 0}
 .tnav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:28px}
 .tnav .arr{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-size:16px}
 .tnav .arr:disabled{opacity:.4;cursor:default}
@@ -125,40 +125,37 @@ body.tray-on .nudge{bottom:100px}
 .dots i{width:7px;height:7px;border-radius:50%;background:#D9D4E8;transition:width .2s,background .2s}
 .dots i.on{width:22px;border-radius:4px;background:var(--p)}
 
-/* ---------- Case studies ---------- */
+/* ---------- Case studies (collage teaser; full list lives on the case studies page) ---------- */
 .cs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
 .cs-head .sec-head{margin-bottom:0}
-.cs{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start}
-.cs-list{display:grid;gap:6px;max-height:560px;overflow:auto;padding-right:4px}
-.cs-item{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;border:1.5px solid transparent;background:#fff;border-radius:14px;padding:12px 16px;cursor:pointer}
-.cs-item b{font-size:15px}
-.cs-item small{display:block;font-size:12px;color:var(--mut)}
-.cs-item em{font-style:normal;font-size:13px;font-weight:700;color:var(--p);white-space:nowrap}
-.cs-item:hover{border-color:var(--line)}
-.cs-item[aria-selected="true"]{border-color:var(--p);background:var(--lav)}
-.cs-card{padding:32px;border-radius:var(--r-lg)}
-.cs-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
-.cs-top h3{font-size:30px;letter-spacing:-.02em}
-.cs-top .chan{margin-top:8px}
-.cs-band{display:flex;flex-wrap:wrap;margin-top:22px;border-radius:16px;overflow:hidden;background:linear-gradient(100deg,var(--p-deep),var(--p) 55%,#B57CF8);color:#fff}
-.cs-band div{flex:1 1 120px;padding:16px 20px;border-right:1px solid rgba(255,255,255,.18)}
-.cs-band div:last-child{border-right:0}
-.cs-band b{display:block;font-size:28px;letter-spacing:-.02em;line-height:1.1}
-.cs-band span{font-size:13px;opacity:.85}
-.cs-hl{margin-top:14px;display:inline-flex;gap:8px;align-items:center;background:var(--mint);color:var(--mint-ink);font-weight:600;font-size:14px;border-radius:var(--r-pill);padding:6px 14px}
-.cs-body{display:grid;grid-template-columns:1fr 1fr;gap:28px 36px;margin-top:28px}
-.cs-body h4{margin:0 0 8px;font-size:14px;font-weight:700;color:var(--p)}
-.cs-body p{font-size:15px;color:var(--mut)}
-.cs-body ul{margin:0;padding-left:18px;font-size:15px;color:var(--mut);display:grid;gap:4px}
-.cs-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+.collage{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:repeat(2,minmax(210px,auto));gap:16px}
+.ct{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:26px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;min-height:210px;transition:transform .2s}
+.ct:hover{transform:translateY(-3px)}
+.ct::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,17,42,0) 30%,rgba(21,17,42,.55));z-index:0}
+.ct>*{position:relative;z-index:1}
+.ct.big{grid-row:span 2}
+.ct.wide{grid-column:span 2}
+.ct .ch{align-self:flex-start;margin-bottom:auto;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);border-radius:var(--r-pill);padding:4px 12px;font-size:12px;font-weight:600}
+.ct h3{font-size:24px;margin-top:18px}.ct.big h3{font-size:34px}
+.ct p{font-size:14px;opacity:.9;margin-top:6px;max-width:420px}
+.ct .kpis{display:flex;gap:22px;margin-top:14px;flex-wrap:wrap}
+.ct .kpis b{display:block;font-size:22px;letter-spacing:-.02em;line-height:1.1}.ct.big .kpis b{font-size:30px}
+.ct .kpis span{font-size:12px;opacity:.85}
+.ct .go{margin-top:14px;font-size:14px;font-weight:600}
+.cs-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
 
 /* ---------- Meeting (booking with gradient border) ---------- */
+#meet{overflow-x:clip} /* keeps the booking card glow from widening the page */
 .meet-head{text-align:center;max-width:720px;margin:0 auto 44px}
 .meet-head .pill{background:var(--lav);border-color:var(--p-soft);color:var(--p);font-weight:600}
 .meet-head h2{margin-top:16px}
 .meet-head p{color:var(--mut);margin-top:14px;font-size:17px}
-.frame{max-width:1000px;margin:0 auto;padding:10px;border-radius:30px;background:linear-gradient(135deg,var(--p) 0%,#C026D3 45%,#FB923C 100%);box-shadow:0 30px 70px rgba(124,58,237,.22)}
-.sched{background:#fff;border-radius:22px;display:grid;grid-template-columns:250px minmax(0,1fr) 220px;min-height:470px;overflow:hidden}
+.frame{max-width:1040px;margin:0 auto}
+.sched{background:#fff;display:grid;grid-template-columns:270px minmax(0,1fr);min-height:640px}
+.s-embed{padding:0!important;min-width:0;display:flex;flex-direction:column}
+.s-embed iframe{flex:1;width:100%;min-height:640px;border:0;display:block}
+.s-embed .alt{padding:10px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--mut);text-align:center}
+.s-embed .alt a{color:var(--p);font-weight:600}
 .sched>div{padding:26px}
 .s-info{border-right:1px solid var(--line)}
 .s-info .org{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mut)}
@@ -167,35 +164,6 @@ body.tray-on .nudge{bottom:100px}
 .s-info ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px;font-size:14px;color:var(--mut)}
 .s-info li{display:flex;gap:10px;align-items:center}
 .s-info .pick{margin-top:22px;padding:12px 14px;background:var(--lav);border-radius:12px;font-size:14px;font-weight:600;color:var(--p)}
-.s-cal .mh{display:flex;justify-content:space-between;align-items:center}
-.s-cal .mh b{font-size:16px}
-.s-cal .mh div{display:flex;gap:6px}
-.s-cal .mh button{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer}
-.s-cal .mh button:disabled{opacity:.35;cursor:default}
-.dow,.dates{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
-.dow{margin-top:18px;font-size:12px;font-weight:600;color:var(--mut)}
-.dates{margin-top:8px}
-.dates button{aspect-ratio:1;border:0;border-radius:12px;background:var(--soft);font-weight:600;font-size:14px;cursor:pointer;color:var(--ink);position:relative}
-.dates button:disabled{background:transparent;color:#C4C0D4;cursor:default;font-weight:500}
-.dates button:not(:disabled):hover{background:var(--p-soft)}
-.dates button[aria-pressed="true"]{background:var(--p);color:#fff}
-.dates button.today::after{content:"";position:absolute;bottom:6px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:currentColor}
-.s-slots{border-left:1px solid var(--line);display:flex;flex-direction:column}
-.s-slots .sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.s-slots .sh b{font-size:15px}
-.fmt24{display:flex;border:1.5px solid var(--line);border-radius:8px;overflow:hidden}
-.fmt24 button{border:0;background:#fff;font-size:12px;padding:4px 8px;cursor:pointer}
-.fmt24 button[aria-pressed="true"]{background:var(--lav);color:var(--p);font-weight:700}
-.slotlist{display:grid;gap:8px;overflow:auto;max-height:360px}
-.slotlist button{min-height:44px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-weight:600;cursor:pointer}
-.slotlist button:hover{border-color:var(--p);color:var(--p)}
-.s-form{grid-column:2/4;border-left:0}
-.s-form h3{font-size:19px}
-.s-form .row{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;margin-top:18px}
-.s-form .back{background:none;border:0;color:var(--p);font-weight:600;cursor:pointer;padding:0;margin-bottom:10px}
-.s-done{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px}
-.s-done .tick{width:60px;height:60px;border-radius:50%;background:var(--mint);color:var(--mint-ink);font-size:28px;display:flex;align-items:center;justify-content:center}
-.s-err{color:#B42318;font-size:14px;min-height:20px}
 .meet-note{text-align:center;font-size:13px;color:var(--mut);margin-top:18px}
 
 /* ---------- Problem ---------- */
@@ -230,6 +198,7 @@ body.tray-on .nudge{bottom:100px}
 .cc .top{display:flex;gap:12px;align-items:center}
 .cc .av{width:52px;height:52px;font-size:17px}
 .cc .top b{display:block;font-size:15px;line-height:1.3}.cc .top small{color:var(--mut);font-size:12px}
+.cc .loc{display:inline-flex;align-items:center;gap:4px}.cc .loc svg{width:12px;height:12px;flex:none;color:var(--p)}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--soft);border-radius:12px;padding:10px}
 .stats div{text-align:center}.stats b{display:block;font-size:15px}.stats span{font-size:11px;color:var(--mut)}
 .cc .acts{display:flex;gap:8px}
@@ -246,16 +215,29 @@ body.tray-on .nudge{bottom:100px}
 .list b{font-size:18px;line-height:1.3}
 .list .m{margin-top:auto;font-size:13px;font-weight:600}
 
+.bars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.bar{display:flex;flex-direction:column;gap:2px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 14px;cursor:pointer;transition:border-color .15s,background .15s}
+.bar:hover{border-color:var(--p);background:var(--lav)}
+.bar b{font-size:14px;font-weight:600;line-height:1.35}
+.bar small{font-size:11px;color:var(--p);font-weight:500}
+
 /* ---------- Services ---------- */
 .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .svc .card{padding:26px;border-radius:20px}
 .svc h3{font-size:18px;margin:16px 0 8px}
 .svc p{font-size:14px;color:var(--mut)}
+.svc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px;color:var(--mut)}
+.svc li{display:flex;gap:8px;align-items:flex-start}.svc li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--p);margin-top:8px}
 .svc a.more{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;color:var(--p)}
 
 /* ---------- Results ---------- */
-.camps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:56px}
-.camp{border-radius:18px;aspect-ratio:9/13;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.camps{position:relative;overflow:hidden;display:grid;gap:14px;padding:4px 0}
+.camp-row{display:flex;gap:14px;width:max-content;animation:mq 48s linear infinite}
+.camp-row.rev{animation-direction:reverse}
+.camps:hover .camp-row,.camps:focus-within .camp-row{animation-play-state:paused}
+.camps .fade{position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.camps .fade.l{left:0;background:linear-gradient(90deg,#fff,rgba(255,255,255,0))}.camps .fade.r{right:0;background:linear-gradient(270deg,#fff,rgba(255,255,255,0))}
+.camp{flex:none;width:190px;border-radius:18px;aspect-ratio:9/13;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
 .camp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(21,17,42,.75))}
 .camp>*{position:relative;z-index:1}
 .camp b{font-size:13px;letter-spacing:.02em}.camp span{font-size:12px;opacity:.9}
@@ -292,19 +274,17 @@ body.tray-on .nudge{bottom:100px}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 /* ---------- Responsive ---------- */
-@media (max-width:1380px){.fc1,.fc2,.fc3{display:none}}
 @media (max-width:980px){
-  .bento,.paths,.band,.prob,.cmp-wrap,.cs{grid-template-columns:1fr}
+  .bento,.paths,.band,.prob,.cmp-wrap{grid-template-columns:1fr}
+  .collage{grid-template-columns:1fr 1fr;grid-template-rows:auto}.ct.big{grid-row:auto;grid-column:span 2}
+  .bars{grid-template-columns:1fr 1fr}
   .cmp-wrap{gap:28px}
   .tcard{flex-basis:88%}
-  .cs-list{display:flex;overflow-x:auto;max-height:none;padding:2px 2px 8px;scrollbar-width:thin}
-  .cs-item{flex:none}
-  .sched{grid-template-columns:1fr 1fr}
-  .s-info{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line)}
-  .s-form{grid-column:1/-1}
+  .sched{grid-template-columns:1fr}
+  .s-info{border-right:0;border-bottom:1px solid var(--line)}
   .path.dark{transform:none}
   .grid,.lists,.svc{grid-template-columns:1fr 1fr}
-  .camps{grid-template-columns:repeat(3,1fr)}
+  .camp{width:160px}.camps .fade{width:40px}
   .prob,.band{padding:32px}
   .fcard{display:none}
   .nudge{left:16px;right:16px;bottom:84px;width:auto}
@@ -314,19 +294,13 @@ body.tray-on .nudge{bottom:100px}
 }
 @media (max-width:600px){
   .grid,.lists,.svc{grid-template-columns:1fr}
-  .camps{grid-template-columns:1fr 1fr}
+  .collage{grid-template-columns:1fr}.ct.big,.ct.wide{grid-column:auto}
+  .feats{gap:8px}.float-chip{min-width:0;flex-basis:100%;max-width:none;padding:10px 14px}
   .hero .ctas .btn{width:100%}
   .stat{min-height:0}
   .stat .big{margin-top:20px}
-  .cs-body,.s-form .row{grid-template-columns:1fr}
-  .cs-card{padding:22px}
-  .sched{grid-template-columns:1fr}
-  .s-slots{border-left:0;border-top:1px solid var(--line)}
-  .slotlist{grid-template-columns:repeat(3,1fr);max-height:none}
   .tray .t small,.tray .faces{display:none}
   .tray{padding-left:16px;gap:8px}
-  .frame{padding:6px;border-radius:24px}
-  .tcard .foot{flex-direction:column;align-items:flex-start}
   .tbl .hide-s{display:none}
 }
 </style>
@@ -352,7 +326,7 @@ body.tray-on .nudge{bottom:100px}
           <a href="index.html#services"><b>Influencer marketing</b><span>Discovery to final report</span></a>
           <a href="index.html#services"><b>AI UGC content</b><span>Ad-ready creator videos</span></a>
           <a href="index.html#services"><b>Meme marketing</b><span>Reach through meme pages</span></a>
-          <a href="index.html#services"><b>Telegram ads</b><span>Niche channel promotions</span></a>
+          <a href="index.html#services"><b>Telegram marketing</b><span>Niche channel promotions</span></a>
         </div>
       </div>
       <div class="nav-item"><a class="nav-link" href="hire-team.html#pricing">Pricing</a></div>
@@ -389,10 +363,12 @@ body.tray-on .nudge{bottom:100px}
     </div>
     <p class="micro">30-minute call. No commitment. Free creator shortlist in 48 hours.</p>
 
-    <div class="demo-wrap">
+    <div class="feats">
       <div class="float-chip fc1"><i style="background:var(--lav)">🔎</i><div><b>Find creators</b><span>By niche, city and audience</span></div></div>
       <div class="float-chip fc2"><i style="background:var(--mint)">⚖️</i><div><b>Compare side by side</b><span>Get a best-match pick</span></div></div>
       <div class="float-chip fc3"><i style="background:var(--peach)">🤝</i><div><b>Or hire our team</b><span>We negotiate for you</span></div></div>
+    </div>
+    <div class="demo-wrap">
       <div class="card demo" aria-label="Preview of the creator directory">
         <div class="demo-top">
           <b>Try it: pick a niche</b>
@@ -410,7 +386,7 @@ body.tray-on .nudge{bottom:100px}
 <!-- LOGO STRIP (from V2) -->
 <div class="logos" aria-label="Brands we have worked with">
   <p>Campaigns delivered for</p>
-  <!-- TODO (developer): swap the text for the real brand logo SVGs (grey, 28px tall) -->
+  <!-- Logos: put the image files in /logos and set `src` in the LOGOS list in the script below. Brands without a file show as grey text. -->
   <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
 </div>
 
@@ -496,7 +472,7 @@ body.tray-on .nudge{bottom:100px}
     <div class="sec-head center"><h2>Do it yourself, or let us do it for you</h2><p>Start free and switch any time. Most brands start exploring, then hand the campaign to our team.</p></div>
     <div class="paths">
       <div class="card path"><div class="ico">🔎</div><div class="tagline" style="color:var(--p)">Free</div><h3>Explore and shortlist</h3><p>Browse vetted creators, filter by niche and city, compare up to three and request prices.</p><a class="btn btn-block" href="#browse">Explore influencers</a></div>
-      <div class="card path dark"><div class="ico">🤝</div><div class="tagline">Most brands choose this</div><h3>Hire the FameBit team</h3><p>We negotiate rates, brief creators, approve content and send one final report. You just approve.</p><a class="btn btn-p btn-block" href="book-call.html">Book a free call</a></div>
+      <div class="card path dark"><div class="ico">🤝</div><div class="tagline">Most brands choose this</div><h3>Hire the FameBit team</h3><p>We research creators, onboard them, brief them, negotiate rates and approve the content with you, then send one final report.</p><a class="btn btn-p btn-block" href="book-call.html">Book a free call</a></div>
       <div class="card path"><div class="ico">📦</div><div class="tagline" style="color:var(--peach-ink)">Fixed price</div><h3>Ready-made packages</h3><p>25, 50 or 100 creators with fixed deliverables and a fixed price. Launch in days.</p><a class="btn btn-block" href="hire-team.html#pricing">See packages</a></div>
     </div>
   </div>
@@ -507,6 +483,8 @@ body.tray-on .nudge{bottom:100px}
   <div class="wrap">
     <div class="browse-head"><div><h2>Ready-made creator lists</h2><p class="mut" style="margin-top:10px">Hand-picked by our team. Send one enquiry, get prices for the whole list in 24 hours.</p></div><a class="btn" href="#">View all lists</a></div>
     <div class="lists" id="listsGrid"></div>
+    <div class="bars" id="barsCity"></div>
+    <div class="bars" id="barsCat"></div>
   </div>
 </section>
 
@@ -515,10 +493,10 @@ body.tray-on .nudge{bottom:100px}
   <div class="wrap">
     <div class="sec-head"><h2>What we run for you</h2><p>From one creator to a hundred, across the channels your customers actually use.</p></div>
     <div class="svc">
-      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--lav);display:flex;align-items:center;justify-content:center">📣</div><h3>Influencer marketing</h3><p>Discovery, negotiation, briefs, approvals, payouts and reporting.</p><a class="more" href="#">Learn more</a></div>
-      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center">🎬</div><h3>AI UGC content</h3><p>Ad-ready creator-style videos for Meta and YouTube ads.</p><a class="more" href="https://famebit.ai" target="_blank" rel="noopener">Visit famebit.ai</a></div>
-      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--peach);display:flex;align-items:center;justify-content:center">😂</div><h3>Meme marketing</h3><p>Placements on meme pages your audience already follows.</p><a class="more" href="#">Learn more</a></div>
-      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--sky);display:flex;align-items:center;justify-content:center">✈️</div><h3>Telegram ads</h3><p>Promote SKUs inside niche deal and interest channels.</p><a class="more" href="#">Learn more</a></div>
+      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--lav);display:flex;align-items:center;justify-content:center">📣</div><h3>Influencer marketing</h3><ul><li>Creator discovery and vetting</li><li>Rate negotiation and briefs</li><li>Content approvals and payouts</li><li>One final report</li></ul><a class="more" href="#">Learn more</a></div>
+      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center">🎬</div><h3>AI UGC content</h3><ul><li>Ad-ready creator-style videos</li><li>Built for Meta and YouTube ads</li><li>Fast turnaround, many variations</li></ul><a class="more" href="https://famebit.ai" target="_blank" rel="noopener">Visit famebit.ai</a></div>
+      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--peach);display:flex;align-items:center;justify-content:center">😂</div><h3>Meme marketing</h3><ul><li>Placements on popular meme pages</li><li>Pages your audience already follows</li><li>Trend-led, shareable content</li></ul><a class="more" href="#">Learn more</a></div>
+      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--sky);display:flex;align-items:center;justify-content:center">✈️</div><h3>Telegram marketing</h3><ul><li>Promote SKUs in niche deal channels</li><li>Channel selection after analysis</li><li>Timed, offer-led posts</li></ul><a class="more" href="#">Learn more</a></div>
     </div>
   </div>
 </section>
@@ -526,8 +504,8 @@ body.tray-on .nudge{bottom:100px}
 <!-- RESULTS -->
 <section id="results">
   <div class="wrap">
-    <div class="sec-head"><h2>Recent campaigns</h2><p>Real work for real brands. Tap a campaign to see the numbers.</p></div>
-    <div class="camps" id="camps"></div>
+    <div class="sec-head"><h2>Recent campaigns</h2><p>Real work for real brands. Tap a campaign to read the case study.</p></div>
+    <div class="camps" id="camps" aria-label="Recent campaign videos"><div class="camp-row" id="campRow1"></div><div class="camp-row rev" id="campRow2"></div><span class="fade l"></span><span class="fade r"></span></div>
   </div>
 </section>
 
@@ -567,12 +545,12 @@ body.tray-on .nudge{bottom:100px}
 <section id="case-studies" style="background:var(--soft)">
   <div class="wrap">
     <div class="cs-head">
-      <div class="sec-head"><span class="kicker">Case studies</span><h2>The numbers behind our campaigns</h2><p>Reach, content and cost per view from real FameBit campaigns. Pick a brand to see how we did it.</p></div>
-      <div class="demo-chips" id="csChips" role="group" aria-label="Filter by channel"></div>
+      <div class="sec-head"><span class="kicker">Case studies</span><h2>The numbers behind our campaigns</h2><p>Reach, content and cost per view from real FameBit campaigns.</p></div>
     </div>
-    <div class="cs">
-      <div class="cs-list" id="csList" role="tablist" aria-label="Case studies" aria-orientation="vertical"></div>
-      <article class="card cs-card" id="csCard" role="tabpanel" aria-live="polite"></article>
+    <div class="collage" id="collage"></div>
+    <div class="cs-ctas">
+      <a class="btn btn-p btn-lg" href="case-studies.html">Read all case studies</a>
+      <a class="btn btn-lg" href="case-studies.html#competitors">Read your competitor's case studies</a>
     </div>
   </div>
 </section>
@@ -586,37 +564,19 @@ body.tray-on .nudge{bottom:100px}
       <p>You've spent years building creator lists, chasing replies and stitching reports together. Tell us what you're launching and our team will run it, from shortlist to final report.</p>
     </div>
     <div class="frame">
-      <!-- TODO (developer): replace with a real Cal.com / Calendly embed, or load availability from the booking API -->
-      <div class="sched" id="sched">
-        <div class="s-info">
-          <div class="org"><i>F</i>FameBit Media</div>
-          <h3>Influencer strategy call</h3>
-          <ul><li>🕒 30 min</li><li>🎥 Google Meet</li><li>🌏 India time (IST)</li></ul>
-          <p class="mut" style="font-size:14px;margin-top:18px">We'll preview matching creators on the call and send your free shortlist of 10 within 48 hours.</p>
-          <div class="pick" id="sPick" hidden></div>
-        </div>
-        <div class="s-cal">
-          <div class="mh"><b id="sMonth"></b><div><button type="button" id="sPrevM" aria-label="Previous month">‹</button><button type="button" id="sNextM" aria-label="Next month">›</button></div></div>
-          <div class="dow" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
-          <div class="dates" id="sDates"></div>
-        </div>
-        <div class="s-slots">
-          <div class="sh"><b id="sDay"></b><div class="fmt24" role="group" aria-label="Time format"><button type="button" data-h="12" aria-pressed="true">12h</button><button type="button" data-h="24" aria-pressed="false">24h</button></div></div>
-          <div class="slotlist" id="sSlots"></div>
-        </div>
-        <form class="s-form" id="sForm" hidden novalidate>
-          <button type="button" class="back" id="sBack">← Change time</button>
-          <h3>Your details</h3>
-          <div class="row">
-            <div class="field"><label for="mName">Your name</label><input class="input" id="mName" autocomplete="name"></div>
-            <div class="field"><label for="mBrand">Brand name</label><input class="input" id="mBrand" autocomplete="organization"></div>
-            <div class="field"><label for="mEmail">Work email</label><input class="input" id="mEmail" type="email" autocomplete="email"></div>
-            <div class="field"><label for="mPhone">WhatsApp number</label><input class="input" id="mPhone" inputmode="tel" placeholder="10-digit mobile number" autocomplete="tel"></div>
+      <div id="meetCard">
+        <div class="border-glow-inner sched">
+          <div class="s-info">
+            <div class="org"><i>F</i>FameBit Media</div>
+            <h3>Influencer strategy call</h3>
+            <ul><li>🕒 30 min</li><li>🎥 Google Meet</li><li>🌏 India time (IST)</li></ul>
+            <p class="mut" style="font-size:14px;margin-top:18px">We'll preview matching creators on the call and send your free shortlist of 10 within 48 hours.</p>
           </div>
-          <p class="s-err" id="sErr" role="alert"></p>
-          <button class="btn btn-p btn-lg" type="submit" id="sConfirm">Confirm call</button>
-        </form>
-        <div class="s-done" id="sDone" hidden><div class="tick">✓</div><h3 style="font-size:24px">Call booked</h3><p class="mut" id="sDoneTxt" style="max-width:460px"></p><a class="btn btn-p" id="sGcal" target="_blank" rel="noopener" style="margin-top:8px">Add to Google Calendar</a></div>
+          <div class="s-embed">
+            <iframe src="https://cal.id/famebitmedia/product-walkthrough" title="Book a call with FameBit Media" loading="lazy" allow="fullscreen"></iframe>
+            <p class="alt">Calendar not loading? <a href="https://cal.id/famebitmedia/product-walkthrough" target="_blank" rel="noopener">Open the booking page</a></p>
+          </div>
+        </div>
       </div>
     </div>
     <p class="meet-note">Prefer to chat first? <a href="https://wa.me/918115767101" target="_blank" rel="noopener" style="color:var(--p);font-weight:600">WhatsApp our team</a></p>
@@ -687,6 +647,7 @@ body.tray-on .nudge{bottom:100px}
   </div>
 </footer>
 <div class="mbar"><a class="btn" href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-p" href="book-call.html">Book a free call</a></div>
+<script src="effects.js"></script>
 <script>
 /* Header: sticky border, dropdowns, mobile menu */
 (function(){
@@ -710,6 +671,7 @@ body.tray-on .nudge{bottom:100px}
 
 <script>
 /* ============ Sample data (replace with API data) ============ */
+var CASE_PAGE='case-studies.html'; /* the separate case studies page */
 var COLORS=['#8B5CF6','#EC4899','#F97316','#10B981','#0EA5E9','#6366F1','#14B8A6','#E11D48'];
 var CREATORS=[
  {id:1,name:'Meera Nair',handle:'@meera.eats',cat:'Food',city:'Bangalore',f:684000,eng:7.8,trust:91,views:210000},
@@ -733,6 +695,7 @@ function $(s){return document.querySelector(s)}
 function fmt(n){return n>=1e6?(n/1e6).toFixed(1).replace('.0','')+'M':n>=1e3?Math.round(n/1e3)+'K':n}
 function initials(n){return n.replace('Dr. ','').split(' ').map(function(x){return x[0]}).join('').slice(0,2)}
 function av(c,cls){return '<i class="av'+(cls?' '+cls:'')+'" style="background:'+c.color+'">'+initials(c.name)+'</i>'}
+var PIN='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
 function scoreCls(t){return t>=85?'hi':'mid'}
 function sizeOf(f){return f<1e4?'nano':f<1e5?'micro':f<5e5?'mid':f<1e6?'macro':'mega'}
 function store(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k));localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
@@ -750,9 +713,17 @@ function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('show');c
   draw('Health');
 })();
 
-/* ============ Logo strip (client names from the FY26 cred deck; replace text with real logo SVGs) ============ */
-(function(){var L=['HK Vitals','Fast&Up','Plix','Sova Health','BeBodywise','Waterscience','Netflix','Amazon','Pilgrim','Myupchar','Citykart','Panchamrit','Zakkas','Zapvi'];
-  var h=L.map(function(x){return '<span>'+x.replace('&','&amp;')+'</span>'}).join('');$('#marquee').innerHTML=h+h;$('#marquee').parentNode.setAttribute('aria-label',L.join(', '));})();
+/* ============ Logo strip ============
+   Logos are shown in grey (same tone as the old text). Add each file to /logos and set its src.
+   A brand with no src (or a file that fails to load) falls back to grey text. */
+var LOGOS=[
+ {name:'HK Vitals',src:''},{name:'Fast&Up',src:''},{name:'Plix',src:''},{name:'Sova Health',src:''},{name:'BeBodywise',src:''},{name:'Waterscience',src:''},{name:'Netflix',src:''},
+ {name:'Amazon',src:''},{name:'Pilgrim',src:''},{name:'Myupchar',src:''},{name:'Citykart',src:''},{name:'Panchamrit',src:''},{name:'Zakkas',src:''},{name:'Zapvi',src:''}
+];
+(function(){
+  function one(l,dup){var n=l.name.replace('&','&amp;');return l.src?'<img src="'+l.src+'" alt="'+(dup?'':n)+'" loading="lazy" onerror="this.outerHTML=\'<span>'+n+'</span>\'">':'<span>'+n+'</span>'}
+  $('#marquee').innerHTML=LOGOS.map(function(l){return one(l)}).join('')+LOGOS.map(function(l){return one(l,true)}).join('');
+  $('#marquee').parentNode.setAttribute('aria-label',LOGOS.map(function(l){return l.name}).join(', '));})();
 
 /* ============ Shortlist + compare state ============ */
 var shortlist=store('fb_shortlist')||[];
@@ -764,8 +735,8 @@ function renderGrid(){
   var list=CREATORS.filter(function(c){return (cat==='All'||c.cat===cat)&&(!city||c.city===city)&&(!size||sizeOf(c.f)===size)}).slice(0,8);
   if(!list.length){$('#grid').innerHTML='<div class="empty"><b>No creators match these filters.</b><p class="mut" style="margin-top:6px">Try another city or size, or ask our team to find creators for you.</p><a class="btn btn-sm" style="margin-top:14px" href="book-call.html">Ask our team</a></div>';return}
   $('#grid').innerHTML=list.map(function(c){var inS=shortlist.indexOf(c.id)>-1,inC=compare.indexOf(c.id)>-1;
-    return '<article class="card cc'+(inS?' sel':'')+'"><div class="top">'+av(c)+'<div><b>'+c.name+'</b><small>'+c.handle+'</small><br><small>'+c.cat+' · '+c.city+'</small></div></div>'+
-    '<div class="stats"><div><b>'+fmt(c.f)+'</b><span>Followers</span></div><div><b>'+c.eng+'%</b><span>Engagement</span></div><div><b><span class="score '+scoreCls(c.trust)+'" style="padding:0 8px">'+c.trust+'</span></b><span>Trust</span></div></div>'+
+    return '<article class="card cc'+(inS?' sel':'')+'"><div class="top">'+av(c)+'<div><b>'+c.name+'</b><small>'+c.handle+'</small><br><small class="loc">'+c.cat+' · '+PIN+c.city+'</small></div></div>'+
+    '<div class="stats"><div><b>'+fmt(c.f)+'</b><span>Followers</span></div><div><b>'+fmt(c.views)+'</b><span>Avg. views</span></div><div><b><span class="score '+scoreCls(c.trust)+'" style="padding:0 8px">'+c.trust+'</span></b><span>Trust</span></div></div>'+
     '<button class="btn btn-sm" data-price="'+c.id+'" style="border:0;background:var(--soft);color:var(--p)">Request price</button>'+
     '<div class="acts"><button class="btn" data-sl="'+c.id+'" aria-pressed="'+inS+'">'+(inS?'Shortlisted':'Shortlist')+'</button><button class="btn" data-cmp="'+c.id+'" aria-pressed="'+inC+'">'+(inC?'Comparing':'Compare')+'</button></div></article>'}).join('');
 }
@@ -831,6 +802,10 @@ document.addEventListener('click',function(e){
 (function(){var L=[['25 doctor creators','For health and pharma brands','9.2%','var(--mint)'],['30 Bangalore food creators','For restaurants and QSR','6.8%','var(--peach)'],['40 finance explainers','For fintech app installs','5.1%','var(--sky)'],['50 nano beauty creators','For skincare launches','7.4%','var(--lav)']];
  $('#listsGrid').innerHTML=L.map(function(l,k){var f=CREATORS.slice(k*3,k*3+3).map(function(c){return av(c)}).join('');return '<button class="list" style="background:'+l[3]+'" data-list="'+l[0]+'"><span class="faces">'+f+'</span><b>'+l[0]+'</b><span class="mut" style="font-size:14px">'+l[1]+'</span><span class="m">Avg. engagement '+l[2]+'</span></button>'}).join('');})();
 
+(function(){function bars(el,L){$(el).innerHTML=L.map(function(t){return '<button type="button" class="bar" data-list="'+t+'"><b>'+t+'</b><small>Click to access</small></button>'}).join('')}
+ bars('#barsCity',['Top 10 influencers in Bangalore','Top 10 influencers in Delhi','Top 10 influencers in Northeast','Top 10 influencers in South India']);
+ bars('#barsCat',['Top 10 fashion creators','Top 10 skincare creators','Top 10 celeb creators','Top 10 comedy creators']);})();
+
 /* ============ Case studies (from the FameBit FY26 cred deck) ============ */
 var CASES=[
  {id:'hkvitals',brand:'HK Vitals',chan:'Influencer',product:'Multivitamin and magnesium glycinate',stats:[['16M+','Reach / views'],['25','Content pieces'],['₹8L','Total budget'],['₹0.05','Cost per view']],
@@ -894,36 +869,23 @@ var CASES=[
   app:'Deal-group promotions across seven channels, tuned for timing, offers and audience.',
   impact:['Higher visibility in deal communities','More traffic and conversions on Amazon and Flipkart','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted promotions']}
 ];
-var CHANS=['All','Influencer','UGC','Telegram','Regional pages','Talent'];
-var csChan='All',csSel=CASES[0].id;
-function csRender(){
-  var list=CASES.filter(function(c){return csChan==='All'||c.chan===csChan});
-  if(!list.some(function(c){return c.id===csSel}))csSel=list[0].id;
-  $('#csList').innerHTML=list.map(function(c){return '<button class="cs-item" role="tab" id="tab-'+c.id+'" aria-controls="csCard" aria-selected="'+(c.id===csSel)+'" data-case="'+c.id+'"><span><b>'+c.brand.replace('&','&amp;')+'</b><small>'+c.chan+'</small></span><em>'+(c.key!=null?c.key:c.stats[0][0])+'</em></button>'}).join('');
-  var c=CASES.find(function(x){return x.id===csSel});
-  $('#csCard').setAttribute('aria-labelledby','tab-'+c.id);
-  $('#csCard').innerHTML='<div class="cs-top"><div><h3>'+c.brand.replace('&','&amp;')+'</h3><p class="mut" style="margin-top:4px">'+c.product+'</p></div><span class="pill chan">'+c.chan+(c.chan==='Telegram'?' · 3.5 Cr+ audience':'')+'</span></div>'+
-    '<div class="cs-band">'+c.stats.map(function(s){return '<div><b>'+s[0]+'</b><span>'+s[1]+'</span></div>'}).join('')+'</div>'+
-    (c.hl?'<div class="cs-hl">🏆 '+c.hl+'</div>':'')+
-    '<div class="cs-body"><div><h4>Objective</h4><p>'+c.obj+'</p></div><div><h4>Impact</h4><ul>'+c.impact.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div><div><h4>Approach</h4><p>'+c.app+'</p></div><div><h4>Services</h4><ul>'+c.svc.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></div>'+
-    '<div class="cs-foot"><span class="mut" style="font-size:14px">Want results like '+c.brand.replace('&','&amp;')+'?</span><a class="btn btn-p btn-sm" href="#meet">Book a free call</a></div>';
-}
-(function(){
-  $('#csChips').innerHTML=CHANS.map(function(c,i){return '<button class="chip" aria-pressed="'+(i===0)+'" data-chan="'+c+'">'+c+'</button>'}).join('');
-  $('#csChips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;csChan=b.dataset.chan;$('#csChips').querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b)});csRender()});
-  $('#csList').addEventListener('click',function(e){var b=e.target.closest('[data-case]');if(!b)return;csSel=b.dataset.case;csRender();$('#tab-'+csSel).focus()});
-  $('#csList').addEventListener('keydown',function(e){if(e.key!=='ArrowDown'&&e.key!=='ArrowUp'&&e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;e.preventDefault();var t=[].slice.call($('#csList').children),i=t.indexOf(document.activeElement),d=(e.key==='ArrowDown'||e.key==='ArrowRight')?1:-1,n=t[(i+d+t.length)%t.length];if(n)n.click()});
-  csRender();
-})();
-function openCase(id){csChan='All';$('#csChips').querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.chan==='All')});csSel=id;csRender();document.getElementById('case-studies').scrollIntoView()}
-document.addEventListener('click',function(e){var t=e.target.closest('[data-open-case]');if(!t)return;e.preventDefault();openCase(t.dataset.openCase)});
+/* Collage: 4 featured cases. The full list lives on the case studies page. */
+(function(){var F=[['hkvitals','big','#6D28D9,#DB2777'],['fastup','','#EA580C,#F59E0B'],['amazon','','#0F766E,#14B8A6'],['bebodywise','wide','#BE185D,#F472B6']];
+ $('#collage').innerHTML=F.map(function(f){var c=CASES.find(function(x){return x.id===f[0]}),n=c.brand.replace('&','&amp;');
+  return '<a class="ct '+f[1]+'" href="'+CASE_PAGE+'#'+c.id+'" style="background:linear-gradient(150deg,'+f[2]+')"><span class="ch">'+c.chan+'</span><h3>'+n+'</h3><p>'+c.product+'</p><div class="kpis">'+c.stats.slice(0,f[1]?3:2).map(function(k){return '<div><b>'+k[0]+'</b><span>'+k[1]+'</span></div>'}).join('')+'</div><span class="go">Read case study →</span></a>'}).join('');})();
 
-/* ============ Campaign tiles (deck numbers; replace gradients with video posters) ============ */
-(function(){var C=[['hkvitals','HK VITALS','Multivitamin launch','16M+ views · 25 videos','#6D28D9,#DB2777'],['fastup','FAST&UP','Fat-loss range','9M+ views · 60+ videos','#EA580C,#FACC15'],['bebodywise','BEBODYWISE','Roll-on & face wash','5M+ views · 6 videos','#DB2777,#F472B6'],['plix','PLIX','Apple cider vinegar','2M+ views · 20+ videos','#059669,#0EA5E9'],['waterscience','WATERSCIENCE','Hard water filter','1.3M+ views · 10+ videos','#0284C7,#22D3EE']];
- $('#camps').innerHTML=C.map(function(c){return '<a class="camp" href="#case-studies" data-open-case="'+c[0]+'" style="background:linear-gradient(160deg,'+c[4]+')"><span class="play" aria-hidden="true">▶</span><b>'+c[1].replace('&','&amp;')+'</b><span>'+c[2]+'</span><span style="font-weight:600;margin-top:4px">'+c[3]+'</span></a>'}).join('');})();
+/* ============ Campaign tiles: two rows scrolling in opposite directions, with blurred edges ============
+   TODO (developer): replace the gradients with video posters / reels (8 videos). */
+(function(){var C=[['hkvitals','HK VITALS','Multivitamin launch','16M+ views · 25 videos','#6D28D9,#DB2777'],['fastup','FAST&UP','Fat-loss range','9M+ views · 60+ videos','#EA580C,#FACC15'],['bebodywise','BEBODYWISE','Roll-on & face wash','5M+ views · 6 videos','#DB2777,#F472B6'],['plix','PLIX','Apple cider vinegar','2M+ views · 20+ videos','#059669,#0EA5E9'],
+  ['waterscience','WATERSCIENCE','Hard water filter','1.3M+ views · 10+ videos','#0284C7,#22D3EE'],['sova','SOVA HEALTH','Gut microbiome kit','5 UGC videos · 15 days','#0F766E,#34D399'],['citykart','CITYKART','City pages campaign','550K+ views · 6 videos','#B45309,#F59E0B'],['netflix','NETFLIX','Kurukshetra launch','333K+ views · 1 video','#991B1B,#EF4444']];
+ function tile(c,dup){return '<a class="camp" href="'+CASE_PAGE+'#'+c[0]+'"'+(dup?' tabindex="-1" aria-hidden="true"':'')+' style="background:linear-gradient(160deg,'+c[4]+')"><span class="play" aria-hidden="true">▶</span><b>'+c[1].replace('&','&amp;')+'</b><span>'+c[2].replace('&','&amp;')+'</span><span style="font-weight:600;margin-top:4px">'+c[3]+'</span></a>'}
+ function row(list){return list.map(function(c){return tile(c)}).join('')+list.map(function(c){return tile(c,1)}).join('')}
+ $('#campRow1').innerHTML=row(C);$('#campRow2').innerHTML=row(C.slice(4).concat(C.slice(0,4)));
+ GradualBlur($('#camps'),{position:'left',height:'5rem',strength:1.5,divCount:5,curve:'bezier',exponential:true,zIndex:3});
+ GradualBlur($('#camps'),{position:'right',height:'5rem',strength:1.5,divCount:5,curve:'bezier',exponential:true,zIndex:3});})();
 
 /* ============ Testimonials carousel ============ */
-/* TODO (content): replace quote / name / role with real client testimonials. Metrics come from the cred deck. */
+/* TODO (content): replace quote / name / role with real client testimonials. */
 (function(){
   var T=[
    ['hkvitals','HK Vitals','Full name','Brand manager, HK Vitals','#6D28D9',[['16M+','Views'],['₹0.05','Cost per view']]],
@@ -935,7 +897,7 @@ document.addEventListener('click',function(e){var t=e.target.closest('[data-open
   var q='Add the client\'s quote here, one or two lines about what changed for their brand after working with FameBit.';
   $('#tcar').innerHTML=T.map(function(t){var ini=t[1].replace(/[^A-Za-z ]/g,' ').split(' ').filter(Boolean).map(function(w){return w[0]}).join('').slice(0,2).toUpperCase();
     return '<article class="tcard"><div class="who"><span class="ph" style="background:'+t[4]+'" aria-hidden="true">'+ini+'</span><div><span class="tag">'+t[1].toUpperCase().replace('&','&amp;')+'</span><b>'+t[2]+'</b><small>'+t[3].replace('&','&amp;')+'</small></div></div>'+
-    '<blockquote>'+q+'</blockquote><div class="foot"><div class="mets">'+t[5].map(function(m){return '<div><b>'+m[0]+'</b><span>'+m[1]+'</span></div>'}).join('')+'</div><button type="button" class="more" data-open-case="'+t[0]+'">Read full case study →</button></div></article>'}).join('');
+    '<blockquote>'+q+'</blockquote><div class="foot"><a class="more" href="'+CASE_PAGE+'#'+t[0]+'">Read full case study →</a></div></article>'}).join('');
   var car=$('#tcar'),cards=car.children;
   function step(){return cards[0].getBoundingClientRect().width+20}
   function pages(){return Math.max(1,cards.length-Math.round(car.clientWidth/step())+1)}
@@ -947,54 +909,9 @@ document.addEventListener('click',function(e){var t=e.target.closest('[data-open
   addEventListener('resize',sync);sync();
 })();
 
-/* ============ Meeting scheduler (mock availability) ============
-   TODO (developer): replace with a Cal.com / Calendly embed, or load real slots from the booking API.
-   On confirm: create the booking, send the calendar invite + WhatsApp confirmation, create a lead in admin. */
-(function(){
-  var MN=['January','February','March','April','May','June','July','August','September','October','November','December'],DN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  var today=new Date();today.setHours(0,0,0,0);
-  var view=new Date(today.getFullYear(),today.getMonth(),1),sel=null,slot=null,h24=false;
-  var SLOTS=['10:30','11:30','12:30','14:00','15:00','16:00','17:30','18:30'];
-  function avail(d){return d>today&&d.getDay()!==0&&(d-today)/864e5<=45}
-  function t12(s){var p=s.split(':'),h=+p[0];return h24?s:((h%12)||12)+':'+p[1]+(h<12?'am':'pm')}
-  function firstAvail(){var d=new Date(today);do{d.setDate(d.getDate()+1)}while(!avail(d));return d}
-  function drawCal(){
-    $('#sMonth').innerHTML=MN[view.getMonth()]+' <span class="mut" style="font-weight:500">'+view.getFullYear()+'</span>';
-    $('#sPrevM').disabled=view<=new Date(today.getFullYear(),today.getMonth(),1);
-    var start=view.getDay(),days=new Date(view.getFullYear(),view.getMonth()+1,0).getDate(),h='';
-    for(var i=0;i<start;i++)h+='<span></span>';
-    for(var d=1;d<=days;d++){var dt=new Date(view.getFullYear(),view.getMonth(),d),ok=avail(dt),on=sel&&+dt===+sel;
-      h+='<button type="button" data-d="'+d+'" '+(ok?'':'disabled ')+'aria-pressed="'+!!on+'" class="'+(+dt===+today?'today':'')+'" aria-label="'+DN[dt.getDay()]+' '+d+' '+MN[view.getMonth()]+(ok?'':', unavailable')+'">'+d+'</button>'}
-    $('#sDates').innerHTML=h;
-  }
-  function drawSlots(){
-    $('#sDay').textContent=DN[sel.getDay()]+' '+sel.getDate();
-    var seed=sel.getDate()+sel.getMonth(),taken=[seed%8,(seed*3)%8];
-    $('#sSlots').innerHTML=SLOTS.filter(function(_,k){return taken.indexOf(k)<0}).map(function(s){return '<button type="button" data-s="'+s+'">'+t12(s)+'</button>'}).join('');
-  }
-  function nice(){return DN[sel.getDay()]+' '+sel.getDate()+' '+MN[sel.getMonth()].slice(0,3)+', '+t12(slot)+' IST'}
-  function mode(m){var cal=m==='cal';$('.s-cal').hidden=!cal;$('.s-slots').hidden=!cal;$('#sForm').hidden=m!=='form';$('#sDone').hidden=m!=='done';$('.s-info').hidden=m==='done';
-    $('#sPick').hidden=m!=='form';if(m==='form'){$('#sPick').textContent='📅 '+nice();setTimeout(function(){$('#mName').focus()},30)}}
-  $('#sDates').addEventListener('click',function(e){var b=e.target.closest('button[data-d]');if(!b||b.disabled)return;sel=new Date(view.getFullYear(),view.getMonth(),+b.dataset.d);drawCal();drawSlots()});
-  $('#sPrevM').onclick=function(){view.setMonth(view.getMonth()-1);drawCal()};
-  $('#sNextM').onclick=function(){view.setMonth(view.getMonth()+1);drawCal()};
-  document.querySelectorAll('.fmt24 button').forEach(function(b){b.onclick=function(){h24=b.dataset.h==='24';document.querySelectorAll('.fmt24 button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});drawSlots()}});
-  $('#sSlots').addEventListener('click',function(e){var b=e.target.closest('[data-s]');if(!b)return;slot=b.dataset.s;mode('form')});
-  $('#sBack').onclick=function(){mode('cal')};
-  $('#sForm').addEventListener('submit',function(e){e.preventDefault();var err=$('#sErr'),ph=$('#mPhone').value.replace(/\D/g,'').slice(-10);
-    if(!$('#mName').value.trim()){err.textContent='Add your name.';$('#mName').focus();return}
-    if(!$('#mBrand').value.trim()){err.textContent='Add your brand name.';$('#mBrand').focus();return}
-    if(!/^\S+@\S+\.\S+$/.test($('#mEmail').value)){err.textContent='Enter a valid work email.';$('#mEmail').focus();return}
-    if(!/^[6-9]\d{9}$/.test(ph)){err.textContent='Enter a valid 10-digit Indian mobile number.';$('#mPhone').focus();return}
-    err.textContent='';
-    var p=slot.split(':'),s=new Date(sel);s.setHours(+p[0],+p[1],0);var en=new Date(s.getTime()+30*6e4);
-    function g(x){return x.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')}
-    $('#sGcal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('FameBit strategy call')+'&dates='+g(s)+'/'+g(en);
-    $('#sDoneTxt').textContent='You\'re booked for '+nice()+'. We\'ve sent the invite to '+$('#mEmail').value+' and a confirmation on WhatsApp.';
-    mode('done');
-  });
-  sel=firstAvail();view=new Date(sel.getFullYear(),sel.getMonth(),1);drawCal();drawSlots();
-})();
+/* ============ Meeting: Cal ID booking embed with BorderGlow ============
+   TODO (developer): on booking, create the lead in the admin panel (Cal ID webhook). */
+BorderGlow($('#meetCard'),{backgroundColor:'#ffffff',borderRadius:24,glowColor:'268 85 65',glowRadius:36,glowIntensity:1,edgeSensitivity:25,coneSpread:25,animated:'scroll',colors:['#7C3AED','#C026D3','#FB923C']});
 
 /* ============ Modal ============ */
 var lastFocus;

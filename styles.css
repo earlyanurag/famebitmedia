@@ -8,7 +8,7 @@
   --r-sm:10px; --r-md:16px; --r-lg:24px; --r-pill:999px;
   --shadow:0 10px 30px rgba(21,17,42,.07);
   --shadow-p:0 8px 22px rgba(124,58,237,.28);
-  --max:1200px;
+  --max:1280px;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -105,6 +105,11 @@ section{padding:104px 0}
 .input{width:100%;min-height:48px;border:1.5px solid var(--line);border-radius:12px;padding:10px 14px;background:#fff}
 .input:focus{outline:none;border-color:var(--p);box-shadow:0 0 0 4px var(--lav)}
 
+@media (max-width:1200px){
+  .hdr-in{gap:18px}
+  .nav-link{padding:10px 9px}
+  .hdr-cta .btn:not(.btn-p){display:none}
+}
 @media (max-width:980px){
   .nav,.hdr-cta .login,.hdr-cta .btn:not(.btn-p){display:none}
   .burger{display:inline-flex;align-items:center;justify-content:center;margin-left:auto}
@@ -118,4 +123,37 @@ section{padding:104px 0}
   .mbar .btn{flex:1}
   body{padding-bottom:72px}
 }
+/* ---------- GradualBlur (React Bits port, see effects.js) ---------- */
+.gradual-blur{pointer-events:none;isolation:isolate}
+.gradual-blur-parent{overflow:hidden}
+.gradual-blur-inner{position:relative;width:100%;height:100%;pointer-events:none}
+.gradual-blur-inner>div{-webkit-backdrop-filter:inherit;backdrop-filter:inherit}
+@supports not (backdrop-filter:blur(1px)){.gradual-blur-inner>div{background:rgba(255,255,255,.3);opacity:.5}}
+
+/* ---------- BorderGlow (React Bits port, see effects.js) ---------- */
+.border-glow-card{--edge-proximity:0;--cursor-angle:45deg;--edge-sensitivity:30;--color-sensitivity:calc(var(--edge-sensitivity) + 20);--border-radius:28px;--glow-padding:40px;--cone-spread:25;
+  position:relative;border-radius:var(--border-radius);isolation:isolate;transform:translate3d(0,0,.01px);display:grid;border:1px solid rgb(255 255 255 / 15%);background:var(--card-bg,#120F17);overflow:visible;
+  box-shadow:rgba(0,0,0,.1) 0 1px 2px,rgba(0,0,0,.1) 0 2px 4px,rgba(0,0,0,.1) 0 4px 8px,rgba(0,0,0,.1) 0 8px 16px,rgba(0,0,0,.1) 0 16px 32px,rgba(0,0,0,.1) 0 32px 64px}
+.border-glow-card--light{border-color:rgb(24 24 27 / 12%);box-shadow:rgb(24 24 27 / 4%) 0 1px 2px,rgb(24 24 27 / 5%) 0 8px 24px}
+.border-glow-card--light::after,.border-glow-card--light>.edge-light{mix-blend-mode:normal}
+.border-glow-card::before,.border-glow-card::after,.border-glow-card>.edge-light{content:"";position:absolute;inset:0;border-radius:inherit;transition:opacity .25s ease-out;z-index:-1}
+.border-glow-card:not(:hover):not(.sweep-active)::before,.border-glow-card:not(:hover):not(.sweep-active)::after,.border-glow-card:not(:hover):not(.sweep-active)>.edge-light{opacity:0;transition:opacity .75s ease-in-out}
+.border-glow-card::before{border:1px solid transparent;
+  background:linear-gradient(var(--card-bg,#120F17) 0 100%) padding-box,linear-gradient(rgb(255 255 255 / 0%) 0% 100%) border-box,var(--gradient-one) border-box,var(--gradient-two) border-box,var(--gradient-three) border-box,var(--gradient-four) border-box,var(--gradient-five) border-box,var(--gradient-six) border-box,var(--gradient-seven) border-box,var(--gradient-base) border-box;
+  opacity:calc((var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+  -webkit-mask-image:conic-gradient(from var(--cursor-angle) at center,black calc(var(--cone-spread) * 1%),transparent calc((var(--cone-spread) + 15) * 1%),transparent calc((100 - var(--cone-spread) - 15) * 1%),black calc((100 - var(--cone-spread)) * 1%));
+  mask-image:conic-gradient(from var(--cursor-angle) at center,black calc(var(--cone-spread) * 1%),transparent calc((var(--cone-spread) + 15) * 1%),transparent calc((100 - var(--cone-spread) - 15) * 1%),black calc((100 - var(--cone-spread)) * 1%))}
+.border-glow-card::after{border:1px solid transparent;
+  background:var(--gradient-one) padding-box,var(--gradient-two) padding-box,var(--gradient-three) padding-box,var(--gradient-four) padding-box,var(--gradient-five) padding-box,var(--gradient-six) padding-box,var(--gradient-seven) padding-box,var(--gradient-base) padding-box;
+  mask-image:linear-gradient(to bottom,black,black),radial-gradient(ellipse at 50% 50%,black 40%,transparent 65%),radial-gradient(ellipse at 66% 66%,black 5%,transparent 40%),radial-gradient(ellipse at 33% 33%,black 5%,transparent 40%),radial-gradient(ellipse at 66% 33%,black 5%,transparent 40%),radial-gradient(ellipse at 33% 66%,black 5%,transparent 40%),conic-gradient(from var(--cursor-angle) at center,transparent 5%,black 15%,black 85%,transparent 95%);
+  mask-composite:subtract,add,add,add,add,add;
+  opacity:calc(var(--fill-opacity,.5) * (var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));mix-blend-mode:soft-light}
+.border-glow-card>.edge-light{inset:calc(var(--glow-padding) * -1);pointer-events:none;z-index:1;
+  -webkit-mask-image:conic-gradient(from var(--cursor-angle) at center,black 2.5%,transparent 10%,transparent 90%,black 97.5%);
+  mask-image:conic-gradient(from var(--cursor-angle) at center,black 2.5%,transparent 10%,transparent 90%,black 97.5%);
+  opacity:calc((var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity)));mix-blend-mode:plus-lighter}
+.border-glow-card>.edge-light::before{content:"";position:absolute;inset:var(--glow-padding);border-radius:inherit;
+  box-shadow:inset 0 0 0 1px var(--glow-color),inset 0 0 1px 0 var(--glow-color-60),inset 0 0 3px 0 var(--glow-color-50),inset 0 0 6px 0 var(--glow-color-40),inset 0 0 15px 0 var(--glow-color-30),inset 0 0 25px 2px var(--glow-color-20),inset 0 0 50px 2px var(--glow-color-10),0 0 1px 0 var(--glow-color-60),0 0 3px 0 var(--glow-color-50),0 0 6px 0 var(--glow-color-40),0 0 15px 0 var(--glow-color-30),0 0 25px 2px var(--glow-color-20),0 0 50px 2px var(--glow-color-10)}
+.border-glow-inner{display:flex;flex-direction:column;position:relative;z-index:1;border-radius:inherit;overflow:hidden}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
