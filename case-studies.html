@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Influencer marketing case studies | FameBit Media</title>
+<meta name="description" content="Reach, content and cost per view from real FameBit campaigns for HK Vitals, Fast&amp;Up, BeBodywise, Amazon, Netflix and more. Filter by channel or find your competitor.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.pg-head{padding:56px 0 28px;background:linear-gradient(180deg,#fff,var(--soft))}
+.pg-head h1{font-size:clamp(30px,4vw,46px)}
+.pg-head p{color:var(--mut);margin-top:12px;font-size:17px;max-width:640px}
+.csp{padding:24px 0 88px;background:var(--soft)}
+.fbar{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:end;margin-bottom:22px}
+.fbar>*{min-width:0}
+.fbar .lab{display:block;font-size:13px;font-weight:600;color:var(--mut);margin-bottom:8px}
+#kChan{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:2px 0 4px}#kChan::-webkit-scrollbar{display:none}#kChan .chip{flex:none}
+.comp{background:#fff;border:1.5px solid var(--p-soft);border-radius:18px;padding:14px 16px;scroll-margin-top:100px;transition:box-shadow .3s}
+.comp.flash{box-shadow:0 0 0 4px var(--lav)}
+.comp b{font-size:14px;display:block;margin-bottom:8px}
+.comp select{width:100%;min-height:44px;border:1.5px solid var(--line);border-radius:12px;padding:0 38px 0 14px;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23625E78' stroke-width='2'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 14px center;font-size:14px;cursor:pointer}
+.kres{font-size:14px;color:var(--mut);margin-bottom:14px}.kres b{color:var(--ink)}
+.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.kc{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;scroll-margin-top:100px;box-shadow:var(--shadow)}
+.kc.open{grid-column:1/-1}
+.kc.hit{box-shadow:0 0 0 3px var(--p),var(--shadow)}
+.kc .top{position:relative;padding:22px;color:#fff;min-height:170px;display:flex;flex-direction:column}
+.kc .top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,17,42,0) 35%,rgba(21,17,42,.45))}
+.kc .top>*{position:relative;z-index:1}
+.kc .pills{display:flex;gap:6px;flex-wrap:wrap}
+.kc .pills span{background:rgba(255,255,255,.2);border-radius:var(--r-pill);padding:3px 10px;font-size:11px;font-weight:600}
+.kc h3{font-size:24px;margin-top:auto;padding-top:18px}
+.kc .top p{font-size:13px;opacity:.9;margin-top:4px}
+.kc .kp{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.kc .kp div{flex:1 1 90px;padding:14px 16px;border-right:1px solid var(--line)}
+.kc .kp div:last-child{border-right:0}
+.kc .kp b{display:block;font-size:20px;letter-spacing:-.02em;color:var(--p);line-height:1.15}
+.kc .kp span{font-size:12px;color:var(--mut)}
+.kc .tog{display:flex;justify-content:space-between;align-items:center;width:100%;border:0;background:none;padding:14px 18px;font-weight:600;font-size:14px;color:var(--p);cursor:pointer}
+.kc .tog::after{content:"+";font-size:20px;line-height:1}
+.kc.open .tog::after{content:"–"}
+.kc .body{display:none;padding:4px 22px 24px}
+.kc.open .body{display:block}
+.kc .hl{display:inline-flex;gap:8px;align-items:center;background:var(--mint);color:var(--mint-ink);font-weight:600;font-size:14px;border-radius:var(--r-pill);padding:6px 14px;margin-bottom:16px}
+.kc .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px 32px}
+.kc h4{margin:0 0 6px;font-size:14px;color:var(--p)}
+.kc .cols p,.kc .cols ul{font-size:15px;color:var(--mut);margin:0}
+.kc .cols ul{padding-left:18px;display:grid;gap:4px}
+.kc .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.kempty{grid-column:1/-1;text-align:center;padding:48px;border:1.5px dashed var(--line);border-radius:20px;background:#fff}
+.kcta{margin-top:40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--ink);color:#fff;border-radius:24px;padding:28px 32px}
+.kcta h2{font-size:22px;color:#fff}.kcta p{color:#C9C4DA;font-size:15px;margin-top:6px}
+.kcta .ctas{display:flex;gap:10px;flex-wrap:wrap}
+@media (max-width:980px){.kgrid{grid-template-columns:1fr 1fr}.fbar{grid-template-columns:1fr}}
+@media (max-width:600px){
+  .pg-head{padding:32px 0 14px}.pg-head h1{font-size:28px}.pg-head p{font-size:15px}
+  .csp{padding:16px 0 56px}
+  #kChan{margin:0 -24px;padding:2px 24px 4px;width:calc(100% + 48px)}
+  .kgrid{grid-template-columns:1fr;gap:12px}
+  .kc .top{min-height:130px;padding:18px}.kc h3{font-size:21px}
+  .kc .kp div{padding:12px}.kc .kp b{font-size:17px}
+  .kc .body{padding:4px 18px 20px}.kc .cols{grid-template-columns:1fr;gap:16px}
+  .kc .foot .btn{width:100%}
+  .kcta{padding:22px;border-radius:20px}.kcta .ctas .btn{flex:1}
+}
+</style>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="index.html" class="logo" aria-label="FameBit Media home">FameBit<small>Media.com</small></a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false">Find Influencers <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
+        <div class="dd">
+          <a href="creators.html"><b>Browse all creators</b><span>Filter by niche, city and audience</span></a>
+          <a href="lists.html"><b>Ready-made lists</b><span>Hand-picked by our team</span></a>
+          <a href="compare.html"><b>Compare creators</b><span>Up to 3, side by side</span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false">Solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
+        <div class="dd">
+          <a href="hire-team.html" class="feat"><b>Hire the FameBit team</b><span>We run your campaign end to end</span></a>
+          <a href="index.html#services"><b>Influencer marketing</b><span>Discovery to final report</span></a>
+          <a href="index.html#services"><b>AI UGC content</b><span>Ad-ready creator videos</span></a>
+          <a href="index.html#services"><b>Meme marketing</b><span>Reach through meme pages</span></a>
+          <a href="index.html#services"><b>Telegram marketing</b><span>Niche channel promotions</span></a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="hire-team.html#pricing">Pricing</a></div>
+      <div class="nav-item"><a class="nav-link" href="case-studies.html">Case studies</a></div>
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false">For creators <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
+        <div class="dd">
+          <a href="invoice.html"><b>Free invoice maker</b><span>GST-ready invoices in minutes</span></a>
+          <a href="#"><b>Talent management</b><span>Let us manage your brand deals</span></a>
+          <a href="#"><b>Join as a creator</b><span>Get brand deals from FameBit</span></a>
+        </div>
+      </div>
+    </nav>
+    <div class="hdr-cta">
+      <a class="login" href="#">Log in</a>
+      <a class="btn btn-sm" href="creators.html">Explore free</a>
+      <a class="btn btn-sm btn-p" href="book-call.html">Book a free call</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="pg-head">
+  <div class="wrap">
+    <span class="kicker">Case studies</span>
+    <h1>The numbers behind our campaigns</h1>
+    <p>Reach, content and cost per view from real FameBit campaigns. Filter by channel, or find campaigns from brands in your industry.</p>
+  </div>
+</section>
+<section class="csp">
+  <div class="wrap">
+    <div class="fbar">
+      <div><span class="lab" id="lChan">Channel</span><div class="demo-chips" id="kChan" role="group" aria-labelledby="lChan"></div></div>
+      <div class="comp" id="competitors"><b>Read your competitor's case studies</b><label class="sr-only" for="kInd">Your industry</label><select id="kInd"><option value="">Pick your industry</option></select></div>
+    </div>
+    <p class="kres" id="kRes"></p>
+    <div class="kgrid" id="kGrid"></div>
+    <div class="kcta">
+      <div><h2>Want results like these?</h2><p>Book a free 30-minute call. We'll share a plan and matching creators for your brand.</p></div>
+      <div class="ctas"><a class="btn btn-p" href="book-call.html">Book a free call</a><a class="btn btn-light" href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp us</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <a href="index.html" class="logo">FameBit<small>Media.com</small></a>
+        <p style="margin-top:16px;max-width:280px">Influencer marketing and talent management for Indian brands. Vetted creators, fair prices, one report.</p>
+      </div>
+      <div><h4>For brands</h4><ul><li><a href="creators.html">Find influencers</a></li><li><a href="hire-team.html">Hire our team</a></li><li><a href="hire-team.html#pricing">Pricing</a></li><li><a href="book-call.html">Book a call</a></li></ul></div>
+      <div><h4>For creators</h4><ul><li><a href="invoice.html">Free invoice maker</a></li><li><a href="#">Talent management</a></li><li><a href="#">Join as a creator</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:brands@famebitmedia.com">brands@famebitmedia.com</a></li><li><a href="tel:+919631899862">+91 96318 99862</a></li><li><a href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp us</a></li></ul></div>
+    </div>
+    <div class="ftr-seo">
+      <div><h4>Top influencers by category</h4><p><a href="creators.html?cat=Fashion">Fashion</a><a href="creators.html?cat=Beauty">Beauty</a><a href="creators.html?cat=Food">Food</a><a href="creators.html?cat=Fitness">Fitness</a><a href="creators.html?cat=Health">Health &amp; medical</a><a href="creators.html?cat=Tech">Tech</a><a href="creators.html?cat=Finance">Finance</a><a href="creators.html?cat=Comedy">Comedy</a><a href="creators.html?cat=Travel">Travel</a><a href="creators.html?cat=Parenting">Parenting</a><a href="creators.html?cat=Gaming">Gaming</a><a href="creators.html?cat=Lifestyle">Lifestyle</a></p></div>
+      <div><h4>Top influencers by city</h4><p><a href="creators.html?city=Mumbai">Mumbai</a><a href="creators.html?city=Delhi">Delhi</a><a href="creators.html?city=Bangalore">Bangalore</a><a href="creators.html?city=Hyderabad">Hyderabad</a><a href="creators.html?city=Chennai">Chennai</a><a href="creators.html?city=Kolkata">Kolkata</a><a href="creators.html?city=Pune">Pune</a><a href="creators.html?city=Gurgaon">Gurgaon</a><a href="creators.html?city=Noida">Noida</a><a href="creators.html?city=Indore">Indore</a><a href="creators.html?city=Jaipur">Jaipur</a><a href="creators.html?city=Ahmedabad">Ahmedabad</a></p></div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2026 FameBitMedia Private Limited · GSTIN [add] · CIN [add]</span>
+      <span><a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/famebitmedia/" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/company/famebitmedia" target="_blank" rel="noopener">LinkedIn</a></span>
+    </div>
+  </div>
+</footer>
+<div class="mbar"><a class="btn" href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-p" href="book-call.html">Book a free call</a></div>
+<script src="effects.js"></script>
+<script>
+/* Header: sticky border, dropdowns, mobile menu */
+(function(){
+  var h=document.getElementById('hdr');
+  addEventListener('scroll',function(){h.classList.toggle('scrolled',scrollY>80)},{passive:true});
+  document.querySelectorAll('.nav-item > button').forEach(function(b){
+    b.addEventListener('click',function(e){
+      var it=b.parentElement,open=!it.classList.contains('open');
+      document.querySelectorAll('.nav-item.open').forEach(function(x){x.classList.remove('open');x.firstElementChild.setAttribute('aria-expanded','false')});
+      if(open){it.classList.add('open');b.setAttribute('aria-expanded','true')}
+      e.stopPropagation();
+    });
+  });
+  document.addEventListener('click',function(){document.querySelectorAll('.nav-item.open').forEach(function(x){x.classList.remove('open')})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-item.open').forEach(function(x){x.classList.remove('open')})});
+  var bg=document.getElementById('burger');
+  bg.addEventListener('click',function(){var o=h.classList.toggle('menu-open');bg.setAttribute('aria-expanded',o)});
+})();
+</script>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+/* Case studies. #<case-id> opens that case; #competitors jumps to the industry picker. */
+(function(){
+  var $=FB.$,chan='All',ind='',openId=null;
+  var CH=['All'].concat(CASES.map(function(c){return c.chan}).filter(function(c,i,a){return a.indexOf(c)===i}));
+  var INDS=CASES.map(function(c){return c.ind}).filter(function(c,i,a){return a.indexOf(c)===i}).sort();
+  $('#kChan').innerHTML=CH.map(function(c){return '<button type="button" class="chip" data-ch="'+c+'" aria-pressed="'+(c==='All')+'">'+c+'</button>'}).join('');
+  $('#kInd').innerHTML+=INDS.map(function(i){return '<option>'+esc(i)+'</option>'}).join('');
+  function card(c){var n=esc(c.brand),o=c.id===openId;
+    return '<article class="kc'+(o?' open':'')+'" id="'+c.id+'"><div class="top" style="background:linear-gradient(150deg,'+c.grad+')"><div class="pills"><span>'+c.chan+(c.chan==='Telegram'?' · 3.5 Cr+ audience':'')+'</span><span>'+esc(c.ind)+'</span></div><h3>'+n+'</h3><p>'+esc(c.product)+'</p></div>'+
+      '<div class="kp">'+c.stats.slice(0,3).map(function(s){return '<div><b>'+s[0]+'</b><span>'+s[1]+'</span></div>'}).join('')+'</div>'+
+      '<button type="button" class="tog" aria-expanded="'+o+'" aria-controls="b-'+c.id+'">'+(o?'Hide details':'Read case study')+'</button>'+
+      '<div class="body" id="b-'+c.id+'">'+(c.hl?'<div class="hl">🏆 '+esc(c.hl)+'</div>':'')+
+      (c.stats.length>3?'<p class="mut" style="font-size:14px;margin-bottom:14px">'+c.stats.slice(3).map(function(s){return '<b style="color:var(--ink)">'+s[0]+'</b> '+s[1]}).join(' · ')+'</p>':'')+
+      '<div class="cols"><div><h4>Objective</h4><p>'+esc(c.obj)+'</p></div><div><h4>Impact</h4><ul>'+c.impact.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul></div><div><h4>Approach</h4><p>'+esc(c.app)+'</p></div><div><h4>Services</h4><ul>'+c.svc.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul></div></div>'+
+      '<div class="foot"><span class="mut" style="font-size:14px">Want results like '+n+'?</span><a class="btn btn-p btn-sm" href="book-call.html">Book a free call</a></div></div></article>'}
+  function render(){var L=CASES.filter(function(c){return (chan==='All'||c.chan===chan)&&(!ind||c.ind===ind)});
+    $('#kRes').innerHTML='<b>'+L.length+'</b> case stud'+(L.length===1?'y':'ies')+(chan!=='All'?' · '+esc(chan):'')+(ind?' · '+esc(ind):'');
+    $('#kGrid').innerHTML=L.length?L.map(card).join(''):'<div class="kempty"><b>No case studies for this mix yet.</b><p class="mut" style="margin-top:6px">We may still have run similar campaigns. Ask us on a free call.</p><a class="btn btn-sm" style="margin-top:14px" href="book-call.html">Book a free call</a></div>'}
+  $('#kChan').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;chan=b.dataset.ch;$('#kChan').querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b)});render()});
+  $('#kInd').onchange=function(){ind=this.value;render()};
+  $('#kGrid').addEventListener('click',function(e){var t=e.target.closest('.tog');if(!t)return;var id=t.closest('.kc').id;openId=openId===id?null:id;render();
+    if(openId){var el=document.getElementById(openId);el.scrollIntoView({block:'start'});try{history.replaceState(null,'','#'+openId)}catch(x){}}});
+  function fromHash(){var h=location.hash.slice(1);
+    if(h==='competitors'){var c=$('#competitors');c.scrollIntoView({block:'center'});c.classList.add('flash');setTimeout(function(){c.classList.remove('flash')},1600);$('#kInd').focus({preventScroll:true});return}
+    if(CASES.some(function(c){return c.id===h})){openId=h;chan='All';ind='';$('#kInd').value='';$('#kChan').querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.ch==='All')});render();
+      var el=document.getElementById(h);el.classList.add('hit');setTimeout(function(){el.scrollIntoView({block:'start'})},50);setTimeout(function(){el.classList.remove('hit')},2200)}}
+  render();fromHash();addEventListener('hashchange',fromHash);
+})();
+</script>
+</body>
+</html>

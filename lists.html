@@ -3,23 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Book a free strategy call | FameBit Media</title>
-<meta name="description" content="Book a free 30-minute influencer marketing strategy call with FameBit. Get a creator shortlist in 48 hours.">
+<title>Ready-made influencer lists | FameBit Media</title>
+<meta name="description" content="Hand-picked lists of vetted Indian creators by niche and city. Send one enquiry and get prices for the whole list in 24 hours.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-.bk{padding:56px 0 96px;background:var(--soft);min-height:calc(100vh - 76px)}
-.bk h1{font-size:clamp(30px,3.6vw,42px)}
-.bk-head{max-width:640px;margin-bottom:36px}
-.bk-head p{color:var(--mut);margin-top:12px;font-size:17px}
-.bk-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
-.bk-grid>.shine{min-width:0}
-.embed{background:#fff;min-width:0}
-.after{background:var(--mint);border-radius:22px;padding:26px}
-.after ol{margin:14px 0 0;padding-left:20px;display:grid;gap:10px;font-size:14px}
-.bk{overflow-x:clip}
-@media (max-width:900px){.bk-grid{grid-template-columns:1fr}}
+.pg-head{padding:56px 0 28px;background:linear-gradient(180deg,#fff,var(--soft))}
+.pg-head h1{font-size:clamp(30px,4vw,46px)}
+.pg-head p{color:var(--mut);margin-top:12px;font-size:17px;max-width:620px}
+.lsec{padding:36px 0}
+.lsec h2{font-size:24px;margin-bottom:6px}.lsec .sub{color:var(--mut);font-size:15px;margin-bottom:18px}
+.tops{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.top10{--bg:var(--lav);--ink:var(--p);text-align:left;border:1px solid transparent;background:var(--bg);border-radius:18px;padding:18px;cursor:pointer;display:flex;flex-direction:column;gap:6px;min-height:150px;transition:border-color .15s}
+.top10:hover{border-color:var(--ink)}
+.top10 .faces{display:flex;margin-bottom:6px}.top10 .faces .av{width:30px;height:30px;font-size:10px;border:2px solid #fff;margin-left:-8px}.top10 .faces .av:first-child{margin-left:0}
+.top10 b{font-size:16px;line-height:1.3}
+.top10 small{margin-top:auto;font-size:12px;font-weight:600;color:var(--ink)}
+.tops .top10:nth-child(4n+1){--bg:#EDE4FF;--ink:#6D28D9}.tops .top10:nth-child(4n+2){--bg:#DFF7EA;--ink:#0F6B45}.tops .top10:nth-child(4n+3){--bg:#FFEBDD;--ink:#B4480F}.tops .top10:nth-child(4n+4){--bg:#E6F0FF;--ink:#1D4ED8}
+#tCat .top10:nth-child(4n+1){--bg:#FCE7F3;--ink:#BE185D}#tCat .top10:nth-child(4n+2){--bg:#FEF3C7;--ink:#92400E}#tCat .top10:nth-child(4n+3){--bg:#E0F2FE;--ink:#0369A1}#tCat .top10:nth-child(4n+4){--bg:#F3E8FF;--ink:#7E22CE}
+.custom{margin:24px 0 88px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--ink);color:#fff;border-radius:24px;padding:28px 32px}
+.custom h2{font-size:22px;color:#fff}.custom p{color:#C9C4DA;font-size:15px;margin-top:6px}
+.custom .ctas{display:flex;gap:10px;flex-wrap:wrap}
+/* list preview inside the enquiry pop-up */
+.lp{border:1px solid var(--line);border-radius:14px;margin:-6px 0 18px;overflow:hidden}
+.lp a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-top:1px solid var(--line)}
+.lp a:first-child{border-top:0}
+.lp .av{width:34px;height:34px;font-size:12px}
+.lp b{display:block;font-size:13px}.lp small{font-size:11px;color:var(--mut)}
+.lp .n{margin-left:auto;font-size:13px;font-weight:700;text-align:right}.lp .n span{display:block;font-size:10px;font-weight:500;color:var(--mut)}
+.lp p{padding:10px 12px;font-size:12px;color:var(--mut);background:var(--soft);border-top:1px solid var(--line)}
+@media (max-width:980px){.lists,.tops{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){
+  .pg-head{padding:32px 0 14px}.pg-head h1{font-size:28px}.pg-head p{font-size:15px}
+  .lsec{padding:24px 0}.lsec h2{font-size:20px}.lsec .sub{font-size:14px;margin-bottom:14px}
+  .lists,.tops{gap:10px}
+  .list{min-height:0;padding:16px;gap:4px}.list b{font-size:15px}.list .mut{font-size:12px!important}.list .m{font-size:12px;margin-top:8px}
+  .list .faces .av{width:28px;height:28px;font-size:10px}
+  .top10{min-height:0;padding:14px}.top10 b{font-size:14px}
+  .custom{margin-bottom:56px;padding:22px;border-radius:20px}.custom .ctas .btn{flex:1}
+}
 </style>
 </head>
 <body>
@@ -66,27 +89,23 @@
   </div>
 </header>
 
-<main id="main" class="bk">
+<main id="main">
+<section class="pg-head">
   <div class="wrap">
-    <div class="bk-head"><h1>Book a free strategy call</h1><p id="bkSub">30 minutes on Google Meet. Pick a day and time that works for you.</p></div>
-    <div class="bk-grid">
-      <div class="shine" style="--shine-r:22px">
-      <div id="calCard">
-        <div class="border-glow-inner embed" id="bkCal"></div>
-      </div>
-      </div>
-      <aside class="after">
-        <h2 style="font-size:17px">After you book</h2>
-        <ol>
-          <li>You get a calendar invite by email.</li>
-          <li>A strategist reviews your brand before the call.</li>
-          <li>On the call, we preview matching creators and share a quote.</li>
-          <li>Your full shortlist arrives within 48 hours.</li>
-        </ol>
-        <a class="btn btn-sm" style="margin-top:20px;background:#fff" href="https://wa.me/918115767101" target="_blank" rel="noopener">Can't wait? WhatsApp us</a>
-      </aside>
-    </div>
+    <span class="kicker">Ready-made lists</span>
+    <h1>Creator lists, ready to book</h1>
+    <p>Hand-picked by our team. Open a list to preview the creators, then send one enquiry to get prices for the whole list within 24 hours.</p>
   </div>
+</section>
+<div class="wrap">
+  <section class="lsec"><h2>Ready-made campaign lists</h2><p class="sub">Vetted creators grouped for common campaign goals.</p><div class="lists" id="tReady"></div></section>
+  <section class="lsec"><h2>Top 10 by city and region</h2><p class="sub">The highest-trust creators in each location.</p><div class="tops" id="tCity"></div></section>
+  <section class="lsec"><h2>Top 10 by category</h2><p class="sub">The highest-trust creators in each niche.</p><div class="tops" id="tCat"></div></section>
+  <div class="custom">
+    <div><h2>Need a list we don't have?</h2><p>Tell us your niche, city and budget. We'll build a custom list for you, free.</p></div>
+    <div class="ctas"><a class="btn btn-p" href="book-call.html">Book a free call</a><a class="btn btn-light" href="creators.html">Browse all creators</a></div>
+  </div>
+</div>
 </main>
 <footer class="ftr">
   <div class="wrap">
@@ -112,7 +131,6 @@
 </footer>
 <div class="mbar"><a class="btn" href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-p" href="book-call.html">Book a free call</a></div>
 <script src="effects.js"></script>
-<script src="cal.js"></script>
 <script>
 /* Header: sticky border, dropdowns, mobile menu */
 (function(){
@@ -132,14 +150,22 @@
   bg.addEventListener('click',function(){var o=h.classList.toggle('menu-open');bg.setAttribute('aria-expanded',o)});
 })();
 </script>
-
+<script src="data.js"></script>
+<script src="site.js"></script>
 <script>
-/* Booking via Cal ID. TODO (developer): use a Cal ID webhook to create the lead in the admin panel. */
+/* Ready-made lists. TODO (developer): load lists and their creators from the API. */
 (function(){
-  var plan=new URLSearchParams(location.search).get('plan');
-  if(plan)document.getElementById('bkSub').textContent='You picked the '+plan.charAt(0).toUpperCase()+plan.slice(1)+' package. Pick a time and we\'ll walk you through it on a 30-minute call.';
-  CalEmbed(document.getElementById('bkCal'),{calLink:'famebitmedia/product-walkthrough'});
-  BorderGlow(document.getElementById('calCard'),{backgroundColor:'#ffffff',borderRadius:22,glowColor:'268 85 65',glowRadius:36,edgeSensitivity:25,animated:true,colors:['#7C3AED','#C026D3','#FB923C']});
+  var $=FB.$;
+  function faces(l,n){return '<span class="faces">'+l.members.slice(0,n).map(function(c){return av(c)}).join('')+'</span>'}
+  $('#tReady').innerHTML=LISTS.filter(function(l){return l.group==='ready'}).map(function(l){return '<button type="button" class="list" id="'+l.id+'" style="background:'+l.tint+'" data-open="'+l.id+'">'+faces(l,3)+'<b>'+l.name+'</b><span class="mut" style="font-size:14px">'+l.sub+'</span><span class="m">Avg. engagement '+l.eng+' · View list →</span></button>'}).join('');
+  function tops(g){return LISTS.filter(function(l){return l.group===g}).map(function(l){return '<button type="button" class="top10" id="'+l.id+'" data-open="'+l.id+'">'+faces(l,4)+'<b>'+l.name+'</b><small>Click to access →</small></button>'}).join('')}
+  $('#tCity').innerHTML=tops('city');$('#tCat').innerHTML=tops('cat');
+  function open(id){var l=LISTS.find(function(x){return x.id===id});if(!l)return;
+    var rows=l.members.slice(0,5).map(function(c){return '<a href="creators.html?q='+encodeURIComponent(c.name)+'">'+av(c)+'<span><b>'+c.name+'</b><small>'+c.cat+' · '+c.city+'</small></span><span class="n">'+fmt(c.f)+'<span>followers</span></span></a>'}).join('');
+    FB.enquire(l.name,'Get prices for the whole list within 24 hours on WhatsApp.','Get prices for this list','<div class="lp">'+rows+'<p>Preview of '+Math.min(5,l.members.length)+' creators. The full list of '+l.size+' is shared with prices after your enquiry.</p></div>');
+    try{history.replaceState(null,'','#'+id)}catch(e){}}
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-open]');if(b)open(b.dataset.open)});
+  if(location.hash)open(location.hash.slice(1));
 })();
 </script>
 </body>

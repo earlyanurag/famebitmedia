@@ -22,8 +22,6 @@
 .demo{text-align:left;border-radius:22px 22px 0 0;border-bottom:0;padding:20px 20px 8px;box-shadow:0 -10px 60px rgba(124,58,237,.12)}
 .demo-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
 .demo-top b{font-size:15px}
-.demo-chips{display:flex;gap:8px;flex-wrap:wrap}
-.demo-chips .chip{padding:6px 14px;font-size:13px}
 .tbl{width:100%;border-collapse:collapse;font-size:14px}
 .tbl th{font-size:12px;font-weight:500;color:var(--mut);text-align:left;padding:10px 10px;border-bottom:1px solid var(--line)}
 .tbl td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
@@ -72,36 +70,6 @@
 .cmp-side p{color:var(--mut);margin-top:14px;font-size:17px}
 .cmp-side .btn{margin-top:24px}
 .cmp-side p.micro{font-size:13px;margin-top:14px}
-.cmp{padding:0;overflow:hidden}
-.cmp-scroll{overflow-x:auto}
-.cmp-grid{display:grid;min-width:560px}
-.cmp-grid>div{padding:14px 16px;border-top:1px solid var(--line);font-size:15px;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px}
-.cmp-grid>.lab{justify-content:flex-start;text-align:left;color:var(--mut);font-size:14px;position:sticky;left:0;z-index:1;background:#fff}
-.cmp-grid>.hd{border-top:0;flex-direction:column;padding:30px 12px 16px;position:relative}
-.cmp-grid .col-best{background:var(--lav)}
-.cmp-grid .hd .av{width:52px;height:52px;font-size:17px}
-.cmp-grid .hd b{font-size:15px;margin-top:8px;line-height:1.3}
-.cmp-grid .hd small{color:var(--mut);font-size:12px}
-.cmp-grid .win{font-weight:700;color:var(--mint-ink)}
-.cmp-grid .lock a{text-decoration:underline;color:var(--mut)}
-.badge{position:absolute;top:8px;left:50%;transform:translateX(-50%);background:var(--p);color:#fff;border-radius:var(--r-pill);padding:2px 10px;font-size:11px;font-weight:700;white-space:nowrap}
-.rm{margin-top:8px;border:0;background:none;color:var(--mut);font-size:13px;text-decoration:underline;padding:4px;cursor:pointer}
-.rm:hover{color:#B42318}
-.slot-empty{color:#8C88A2;font-size:13px;border:1.5px dashed #D9D4E8;border-radius:var(--r-md);padding:18px;display:flex;flex-direction:column;align-items:center;gap:4px;width:100%}
-.slot-empty .plus{font-size:20px;line-height:1}
-.verdict{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:18px 20px;background:var(--soft);border-top:1px solid var(--line);font-size:15px}
-.ex-note{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--peach-ink);background:var(--peach);padding:4px 12px;border-radius:var(--r-pill);margin:16px 16px 0}
-
-/* Selection tray (from V2: "2 / 3 selected · Compare now") */
-.tray{position:fixed;left:50%;bottom:24px;transform:translate(-50%,150%);z-index:56;background:linear-gradient(120deg,#FFFFFF 0%,var(--lav) 55%,#FCEBF6 100%);color:var(--ink);border:1px solid var(--p-soft);border-radius:var(--r-pill);padding:8px 8px 8px 12px;display:flex;align-items:center;gap:12px;box-shadow:0 18px 40px rgba(124,58,237,.18);transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility .35s;visibility:hidden;max-width:calc(100vw - 24px)}
-.tray.show{transform:translate(-50%,0);visibility:visible}
-.tray .faces{display:flex}
-.tray .faces .av{width:32px;height:32px;font-size:11px;border:2px solid #fff;margin-left:-8px}
-.tray .faces .av:first-child{margin-left:0}
-.tray .t{font-size:14px;white-space:nowrap}
-.tray .t small{display:block;color:var(--mut);font-size:12px}
-.tray .clr{border:0;background:none;color:var(--mut);font-size:13px;padding:8px;text-decoration:underline;cursor:pointer}
-.tray .btn{min-height:40px}
 body.tray-on .nudge{bottom:100px}
 
 /* ---------- Testimonials (carousel) ---------- */
@@ -189,39 +157,8 @@ body.tray-on .nudge{bottom:100px}
 .path.dark .tagline{color:#FDBA74}
 
 /* ---------- Browse ---------- */
-.browse-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
-.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
-.filters select{min-height:42px;border:1.5px solid var(--line);border-radius:var(--r-pill);padding:0 38px 0 16px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23625E78' stroke-width='2'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 14px center;appearance:none;font-size:14px;cursor:pointer}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.cc{padding:22px;border-radius:20px;display:flex;flex-direction:column;gap:14px;transition:border-color .15s}
-.cc.sel{border-color:var(--p);box-shadow:0 0 0 3px var(--lav)}
-.cc .top{display:flex;gap:12px;align-items:center}
-.cc .av{width:52px;height:52px;font-size:17px}
-.cc .top b{display:block;font-size:15px;line-height:1.3}.cc .top small{color:var(--mut);font-size:12px}
-.cc .loc{display:inline-flex;align-items:center;gap:4px}.cc .loc svg{width:12px;height:12px;flex:none;color:var(--p)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--soft);border-radius:12px;padding:10px}
-.stats div{text-align:center}.stats b{display:block;font-size:15px}.stats span{font-size:11px;color:var(--mut)}
-.cc .acts{display:flex;gap:8px}
-.cc .acts .btn{flex:1;min-height:38px;padding:0 10px;font-size:13px}
-.cc .acts .btn[aria-pressed="true"]{background:var(--lav);border-color:var(--p);color:var(--p)}
-.empty{grid-column:1/-1;text-align:center;padding:48px;border:1.5px dashed var(--line);border-radius:20px}
-.see-all{text-align:center;margin-top:32px}
 
 /* ---------- Lists ---------- */
-.lists{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.list{border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:6px;min-height:210px;cursor:pointer;border:1px solid transparent;text-align:left;transition:border-color .15s}
-.list:hover{border-color:rgba(21,17,42,.15)}
-.list .faces{display:flex;margin-bottom:12px}.list .faces .av{width:34px;height:34px;font-size:11px;border:2px solid #fff;margin-left:-8px}.list .faces .av:first-child{margin-left:0}
-.list b{font-size:18px;line-height:1.3}
-.list .m{margin-top:auto;font-size:13px;font-weight:600}
-
-.bars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
-.bar{--bg:var(--lav);--ink:var(--p);display:flex;flex-direction:column;gap:2px;text-align:left;border:1px solid transparent;background:var(--bg);border-radius:12px;padding:10px 14px;cursor:pointer;transition:border-color .15s,background .15s}
-.bar:hover{border-color:var(--ink)}
-.bar:nth-child(4n+1){--bg:#EDE4FF;--ink:#6D28D9}.bar:nth-child(4n+2){--bg:#DFF7EA;--ink:#0F6B45}.bar:nth-child(4n+3){--bg:#FFEBDD;--ink:#B4480F}.bar:nth-child(4n+4){--bg:#E6F0FF;--ink:#1D4ED8}
-#barsCat .bar:nth-child(4n+1){--bg:#FCE7F3;--ink:#BE185D}#barsCat .bar:nth-child(4n+2){--bg:#FEF3C7;--ink:#92400E}#barsCat .bar:nth-child(4n+3){--bg:#E0F2FE;--ink:#0369A1}#barsCat .bar:nth-child(4n+4){--bg:#F3E8FF;--ink:#7E22CE}
-.bar b{font-size:14px;font-weight:600;line-height:1.35}
-.bar small{font-size:11px;color:var(--ink);font-weight:600}
 
 /* ---------- Services ---------- */
 .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -268,16 +205,6 @@ body.tray-on .nudge{bottom:100px}
 .nudge h3{font-size:19px;line-height:1.35;padding-right:30px}
 .nudge p{font-size:14px;color:var(--mut);margin-top:10px}
 .nudge .ctas{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
-.modal{position:fixed;inset:0;z-index:70;background:rgba(21,17,42,.5);display:none;align-items:center;justify-content:center;padding:16px}
-.modal.open{display:flex}
-.modal .box{background:#fff;border-radius:24px;padding:32px;width:100%;max-width:460px;position:relative;max-height:calc(100vh - 32px);overflow:auto}
-.modal .x{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:0;background:var(--soft);cursor:pointer;font-size:16px}
-.modal h3{font-size:22px;padding-right:40px}
-.modal .lead{color:var(--mut);font-size:14px;margin:8px 0 20px}
-.done{text-align:center;padding:12px 0}
-.done .tick{width:56px;height:56px;border-radius:50%;background:var(--mint);color:var(--mint-ink);font-size:26px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
-.toast{position:fixed;left:50%;top:92px;transform:translate(-50%,-20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:var(--r-pill);font-size:14px;opacity:0;transition:.25s;z-index:80;pointer-events:none}
-.toast.show{opacity:1;transform:translate(-50%,0)}
 
 /* ---------- Responsive ---------- */
 @media (max-width:980px){
@@ -402,9 +329,9 @@ body.tray-on .nudge{bottom:100px}
       <div class="nav-item">
         <button class="nav-link" aria-expanded="false">Find Influencers <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
         <div class="dd">
-          <a href="index.html#browse"><b>Browse all creators</b><span>Filter by niche, city and audience</span></a>
-          <a href="index.html#lists"><b>Ready-made lists</b><span>Hand-picked by our team</span></a>
-          <a href="index.html#compare"><b>Compare creators</b><span>Up to 3, side by side</span></a>
+          <a href="creators.html"><b>Browse all creators</b><span>Filter by niche, city and audience</span></a>
+          <a href="lists.html"><b>Ready-made lists</b><span>Hand-picked by our team</span></a>
+          <a href="compare.html"><b>Compare creators</b><span>Up to 3, side by side</span></a>
         </div>
       </div>
       <div class="nav-item">
@@ -418,7 +345,7 @@ body.tray-on .nudge{bottom:100px}
         </div>
       </div>
       <div class="nav-item"><a class="nav-link" href="hire-team.html#pricing">Pricing</a></div>
-      <div class="nav-item"><a class="nav-link" href="index.html#case-studies">Case studies</a></div>
+      <div class="nav-item"><a class="nav-link" href="case-studies.html">Case studies</a></div>
       <div class="nav-item">
         <button class="nav-link" aria-expanded="false">For creators <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
         <div class="dd">
@@ -430,7 +357,7 @@ body.tray-on .nudge{bottom:100px}
     </nav>
     <div class="hdr-cta">
       <a class="login" href="#">Log in</a>
-      <a class="btn btn-sm" href="index.html#browse">Explore free</a>
+      <a class="btn btn-sm" href="creators.html">Explore free</a>
       <a class="btn btn-sm btn-p" href="book-call.html">Book a free call</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
@@ -722,14 +649,14 @@ body.tray-on .nudge{bottom:100px}
         <a href="index.html" class="logo">FameBit<small>Media.com</small></a>
         <p style="margin-top:16px;max-width:280px">Influencer marketing and talent management for Indian brands. Vetted creators, fair prices, one report.</p>
       </div>
-      <div><h4>For brands</h4><ul><li><a href="index.html#browse">Find influencers</a></li><li><a href="hire-team.html">Hire our team</a></li><li><a href="hire-team.html#pricing">Pricing</a></li><li><a href="book-call.html">Book a call</a></li></ul></div>
+      <div><h4>For brands</h4><ul><li><a href="creators.html">Find influencers</a></li><li><a href="hire-team.html">Hire our team</a></li><li><a href="hire-team.html#pricing">Pricing</a></li><li><a href="book-call.html">Book a call</a></li></ul></div>
       <div><h4>For creators</h4><ul><li><a href="invoice.html">Free invoice maker</a></li><li><a href="#">Talent management</a></li><li><a href="#">Join as a creator</a></li></ul></div>
-      <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="index.html#case-studies">Case studies</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:brands@famebitmedia.com">brands@famebitmedia.com</a></li><li><a href="tel:+919631899862">+91 96318 99862</a></li><li><a href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp us</a></li></ul></div>
     </div>
     <div class="ftr-seo">
-      <div><h4>Top influencers by category</h4><p><a href="#">Fashion</a><a href="#">Beauty</a><a href="#">Food</a><a href="#">Fitness</a><a href="#">Health &amp; medical</a><a href="#">Tech</a><a href="#">Finance</a><a href="#">Comedy</a><a href="#">Travel</a><a href="#">Parenting</a><a href="#">Gaming</a><a href="#">Lifestyle</a></p></div>
-      <div><h4>Top influencers by city</h4><p><a href="#">Mumbai</a><a href="#">Delhi</a><a href="#">Bangalore</a><a href="#">Hyderabad</a><a href="#">Chennai</a><a href="#">Kolkata</a><a href="#">Pune</a><a href="#">Gurgaon</a><a href="#">Noida</a><a href="#">Indore</a><a href="#">Jaipur</a><a href="#">Ahmedabad</a></p></div>
+      <div><h4>Top influencers by category</h4><p><a href="creators.html?cat=Fashion">Fashion</a><a href="creators.html?cat=Beauty">Beauty</a><a href="creators.html?cat=Food">Food</a><a href="creators.html?cat=Fitness">Fitness</a><a href="creators.html?cat=Health">Health &amp; medical</a><a href="creators.html?cat=Tech">Tech</a><a href="creators.html?cat=Finance">Finance</a><a href="creators.html?cat=Comedy">Comedy</a><a href="creators.html?cat=Travel">Travel</a><a href="creators.html?cat=Parenting">Parenting</a><a href="creators.html?cat=Gaming">Gaming</a><a href="creators.html?cat=Lifestyle">Lifestyle</a></p></div>
+      <div><h4>Top influencers by city</h4><p><a href="creators.html?city=Mumbai">Mumbai</a><a href="creators.html?city=Delhi">Delhi</a><a href="creators.html?city=Bangalore">Bangalore</a><a href="creators.html?city=Hyderabad">Hyderabad</a><a href="creators.html?city=Chennai">Chennai</a><a href="creators.html?city=Kolkata">Kolkata</a><a href="creators.html?city=Pune">Pune</a><a href="creators.html?city=Gurgaon">Gurgaon</a><a href="creators.html?city=Noida">Noida</a><a href="creators.html?city=Indore">Indore</a><a href="creators.html?city=Jaipur">Jaipur</a><a href="creators.html?city=Ahmedabad">Ahmedabad</a></p></div>
     </div>
     <div class="ftr-bot">
       <span>© 2026 FameBitMedia Private Limited · GSTIN [add] · CIN [add]</span>
@@ -738,6 +665,7 @@ body.tray-on .nudge{bottom:100px}
   </div>
 </footer>
 <div class="mbar"><a class="btn" href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-p" href="book-call.html">Book a free call</a></div>
+<script src="data.js"></script>
 <script src="effects.js"></script>
 <script src="cal.js"></script>
 <script>
@@ -764,33 +692,10 @@ body.tray-on .nudge{bottom:100px}
 <script>
 /* ============ Sample data (replace with API data) ============ */
 var CASE_PAGE='case-studies.html'; /* the separate case studies page */
-var COLORS=['#8B5CF6','#EC4899','#F97316','#10B981','#0EA5E9','#6366F1','#14B8A6','#E11D48'];
-var CREATORS=[
- {id:1,name:'Meera Nair',handle:'@meera.eats',cat:'Food',city:'Bangalore',f:684000,eng:7.8,trust:91,views:210000},
- {id:2,name:'Dr. Arjun Rao',handle:'@drarjunrao',cat:'Health',city:'Hyderabad',f:1200000,eng:9.4,trust:94,views:420000},
- {id:3,name:'Sana Qureshi',handle:'@sanaskin',cat:'Beauty',city:'Mumbai',f:412000,eng:6.2,trust:88,views:150000},
- {id:4,name:'Kabir Malhotra',handle:'@kabirlifts',cat:'Fitness',city:'Delhi',f:936000,eng:5.1,trust:79,views:260000},
- {id:5,name:'Ritika Jain',handle:'@moneywithritika',cat:'Finance',city:'Mumbai',f:318000,eng:8.9,trust:93,views:120000},
- {id:6,name:'Ananth Iyer',handle:'@techwithananth',cat:'Tech',city:'Chennai',f:1540000,eng:4.6,trust:86,views:510000},
- {id:7,name:'Pooja Bisht',handle:'@poojacooks',cat:'Food',city:'Delhi',f:88000,eng:11.2,trust:95,views:40000},
- {id:8,name:'Dr. Neha Kapoor',handle:'@drnehaderm',cat:'Health',city:'Delhi',f:742000,eng:6.1,trust:90,views:190000},
- {id:9,name:'Isha Menon',handle:'@ishaglow',cat:'Beauty',city:'Bangalore',f:56000,eng:9.8,trust:92,views:22000},
- {id:10,name:'Rohan Das',handle:'@rohanruns',cat:'Fitness',city:'Kolkata',f:212000,eng:7.0,trust:74,views:80000},
- {id:11,name:'Tanvi Shah',handle:'@tanviinvests',cat:'Finance',city:'Ahmedabad',f:1020000,eng:5.5,trust:89,views:300000},
- {id:12,name:'Vikram Sethi',handle:'@vikramtech',cat:'Tech',city:'Pune',f:94000,eng:8.3,trust:91,views:36000}
-];
-CREATORS.forEach(function(c,i){c.color=COLORS[i%COLORS.length]});
-var CATS=['All','Food','Health','Beauty','Fitness','Finance','Tech'];
+var CATS=['All','Food','Health','Beauty','Fitness','Finance','Tech']; /* homepage filter chips; data, helpers and CASES live in data.js */
 
 /* ============ Helpers ============ */
 function $(s){return document.querySelector(s)}
-function fmt(n){return n>=1e6?(n/1e6).toFixed(1).replace('.0','')+'M':n>=1e3?Math.round(n/1e3)+'K':n}
-function initials(n){return n.replace('Dr. ','').split(' ').map(function(x){return x[0]}).join('').slice(0,2)}
-function av(c,cls){return '<i class="av'+(cls?' '+cls:'')+'" style="background:'+c.color+'">'+initials(c.name)+'</i>'}
-var PIN='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
-function scoreCls(t){return t>=85?'hi':'mid'}
-function sizeOf(f){return f<1e4?'nano':f<1e5?'micro':f<5e5?'mid':f<1e6?'macro':'mega'}
-function store(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k));localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
 function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){el.classList.remove('show')},2200)}
 
 /* ============ Hero demo ============ */
@@ -897,77 +802,14 @@ document.addEventListener('click',function(e){
   if(t.dataset.login!==undefined){e.preventDefault();toast('Log in free to see cost per view')}
 });
 
-/* ============ Ready-made lists ============ */
-(function(){var L=[['25 doctor creators','For health and pharma brands','9.2%','var(--mint)'],['30 Bangalore food creators','For restaurants and QSR','6.8%','var(--peach)'],['40 finance explainers','For fintech app installs','5.1%','var(--sky)'],['50 nano beauty creators','For skincare launches','7.4%','var(--lav)']];
- $('#listsGrid').innerHTML=L.map(function(l,k){var f=CREATORS.slice(k*3,k*3+3).map(function(c){return av(c)}).join('');return '<button class="list" style="background:'+l[3]+'" data-list="'+l[0]+'"><span class="faces">'+f+'</span><b>'+l[0]+'</b><span class="mut" style="font-size:14px">'+l[1]+'</span><span class="m">Avg. engagement '+l[2]+'</span></button>'}).join('');})();
-
-(function(){function bars(el,L){$(el).innerHTML=L.map(function(t){return '<button type="button" class="bar" data-list="'+t+'"><b>'+t+'</b><small>Click to access</small></button>'}).join('')}
- bars('#barsCity',['Top 10 influencers in Bangalore','Top 10 influencers in Delhi','Top 10 influencers in Northeast','Top 10 influencers in South India']);
- bars('#barsCat',['Top 10 fashion creators','Top 10 skincare creators','Top 10 celeb creators','Top 10 comedy creators']);})();
+/* ============ Ready-made lists (LISTS in data.js). Each card opens that list on lists.html ============ */
+(function(){
+ $('#listsGrid').innerHTML=LISTS.filter(function(l){return l.group==='ready'}).map(function(l){return '<a class="list" style="background:'+l.tint+'" href="lists.html#'+l.id+'"><span class="faces">'+l.members.slice(0,3).map(function(c){return av(c)}).join('')+'</span><b>'+l.name+'</b><span class="mut" style="font-size:14px">'+l.sub+'</span><span class="m">Avg. engagement '+l.eng+'</span></a>'}).join('');
+ function bars(el,g){$(el).innerHTML=LISTS.filter(function(l){return l.group===g}).map(function(l){return '<a class="bar" href="lists.html#'+l.id+'"><b>'+l.name+'</b><small>Click to access</small></a>'}).join('')}
+ bars('#barsCity','city');bars('#barsCat','cat');
+})();
 
 /* ============ Case studies (from the FameBit FY26 cred deck) ============ */
-var CASES=[
- {id:'hkvitals',brand:'HK Vitals',chan:'Influencer',product:'Multivitamin and magnesium glycinate',stats:[['16M+','Reach / views'],['25','Content pieces'],['₹8L','Total budget'],['₹0.05','Cost per view']],
-  obj:'Build awareness for HK Vitals multivitamins and magnesium glycinate among fitness-conscious buyers, and make them a daily must-have.',
-  app:'Top-performing fitness creators made one non-collab reel each, with one month of ad rights. Running those reels as ads drove most of the campaign reach.',
-  impact:['Stronger brand awareness','Higher engagement through creator-led promotion','More credibility in health and wellness'],svc:['Influencer collaboration and management','Content creation and strategy','Campaign execution and amplification']},
- {id:'fastup',brand:'Fast&Up',chan:'Influencer',product:'Fat-loss range',hl:'Became the best-selling fat-loss product',stats:[['9M+','Reach / views'],['60+','Content pieces'],['₹11L','Total budget'],['₹0.14','Cost per view']],
-  obj:'Raise awareness for Fast&Up\'s fat-loss products with fitness-conscious consumers and build buzz in health and wellness.',
-  app:'We partnered with fat-loss and fitness creators whose audiences trust them, so the product benefits landed as advice rather than ads.',
-  impact:['Stronger awareness among fitness audiences','Higher engagement through creator-led promotion','More credibility in health and wellness'],svc:['Influencer collaboration and management','Content creation and strategy','Campaign execution and amplification']},
- {id:'bebodywise',brand:'BeBodywise',chan:'Influencer',product:'Roll-on and face wash',stats:[['5M+','Reach / views'],['6','Content pieces'],['₹4.31L','Total budget'],['₹0.09','Cost per view']],
-  obj:'Drive awareness and sales of the BeBodywise roll-on and face wash with women, and make them part of daily body care.',
-  app:'A small set of highly engaged beauty creators showed the products in their own routines, keeping cost per view under ten paise.',
-  impact:['Stronger awareness among women','Higher engagement through creator-led promotion','More credibility in the category'],svc:['Influencer collaboration and management','Content creation and strategy','Campaign execution and amplification']},
- {id:'plix',brand:'Plix',chan:'Influencer',product:'Apple cider vinegar (ACV)',stats:[['2M+','Reach / views'],['20+','Content pieces'],['5.3%','Engagement rate']],
-  obj:'Build awareness for Plix ACV among fitness-conscious buyers looking for help with fat loss.',
-  app:'Fat-loss creators explained the product in their own words, using the trust they had already built with their audience.',
-  impact:['Stronger awareness among fitness audiences','Higher engagement through creator-led promotion','More credibility in health and wellness'],svc:['Influencer collaboration and management','Content creation and strategy','Campaign execution and amplification']},
- {id:'waterscience',brand:'Waterscience',chan:'Influencer',product:'Shower and tap filters',stats:[['1.3M+','Reach / views'],['10+','Content pieces'],['7.6%','Engagement rate']],
-  obj:'Make Waterscience filters a daily-life essential for Tier 1 and Tier 2 households.',
-  app:'Fashion, lifestyle and home-decor creators showed the filters in everyday use, backed by timed deal posts that sent buyers to Amazon and Flipkart.',
-  impact:['Stronger brand awareness','Higher engagement through creator-led promotion','More credibility in daily use and care'],svc:['Influencer collaboration and management','Content creation and strategy']},
- {id:'sova',brand:'Sova Health',chan:'UGC',key:'15 days',product:'Gut microbiome test kit',stats:[['5','Quality content'],['₹1.4L','Total budget'],['15 days','Content delivery']],
-  obj:'Get people curious about Sova\'s gut microbiome test, a kit that works from a stool sample, and explain why it\'s worth doing.',
-  app:'Creators made honest user-generated videos walking through the kit, turning an awkward product into something people wanted to talk about.',
-  impact:['Stronger awareness among health-focused audiences','Higher engagement through creator-led content','More credibility for a new category'],svc:['Influencer collaboration and management','Content creation and strategy','Campaign execution and amplification']},
- {id:'zapvi',brand:'Zapvi',chan:'UGC',key:'',product:'Custom mobile covers',stats:[['UGC','Quality creator content']],
-  obj:'Boost visibility and interest in Zapvi\'s customisable phone covers across social media.',
-  app:'Highly engaged profiles made UGC around the covers, timed and targeted to the audiences most likely to buy.',
-  impact:['Higher brand visibility','More traffic and conversions','Stronger brand credibility'],svc:['Content creation','Cost optimisation','Content strategy']},
- {id:'zakkas',brand:'Zakkas',chan:'UGC',key:'',product:'Paper dosa range',stats:[['UGC','Quality creator content']],
-  obj:'Boost visibility for Zakkas paper dosa and its different flavours across social media.',
-  app:'Engaged food and lifestyle profiles made taste-test UGC, focused on the right timing, product and audience.',
-  impact:['Higher brand visibility','More traffic and conversions','Stronger brand credibility'],svc:['Content creation','Cost optimisation','Content strategy']},
- {id:'citykart',brand:'Citykart',chan:'Regional pages',product:'On-ground (BTL) campaign',stats:[['550K+','Reach / views'],['6','Content pieces'],['₹60K','Total budget'],['₹0.11','Cost per view']],
-  obj:'Amplify Citykart\'s banners and auto-rickshaw posters in Lucknow and Prayagraj so people noticed the on-ground campaign.',
-  app:'Local community pages made content about the activity and told their followers where to spot it.',
-  impact:['Stronger local awareness','Higher engagement through city pages'],svc:['Regional page collaboration and management','Content creation and strategy']},
- {id:'netflix',brand:'Netflix',chan:'Talent',product:'Kurukshetra series launch',stats:[['333K+','Reach / views'],['1','Content piece'],['Exclusive','FameBit talent']],
-  obj:'Build buzz for Kurukshetra on Netflix and get more viewers to tune in.',
-  app:'Our exclusive creator Yash Anand recreated Arjun\'s look from the series in his high-engagement fitness style.',
-  impact:['Stronger awareness of the series'],svc:['Talent management','Content creation']},
- {id:'amazon',brand:'Amazon',chan:'Telegram',product:'Valentine\'s Day gifting',stats:[['1.4M+','Impressions'],['60','Posts'],['35','Channels']],
-  obj:'Drive Valentine\'s Day sales for an Amazon gifting sub-brand by reaching a large deal-hunting audience at low cost.',
-  app:'Timed promotions across 35 deal channels, picked after a detailed channel analysis, sent buyers straight to the Amazon listings.',
-  impact:['Higher visibility in deal communities','More traffic and conversions on Amazon','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted promotions']},
- {id:'myupchar',brand:'Myupchar',chan:'Telegram',product:'Hair oil, Biotin+ and face serum',stats:[['885K+','Impressions'],['11','Posts'],['9','Channels']],
-  obj:'Drive sales of Myupchar hair and skin products on Amazon through targeted Telegram marketing.',
-  app:'Offer-led posts in engaged deal channels, timed and targeted after channel analysis, maximised clicks to Amazon.',
-  impact:['Higher visibility in deal communities','More traffic and conversions on Amazon','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted promotions']},
- {id:'pilgrim',brand:'Pilgrim',chan:'Telegram',product:'Vitamin C face wash',stats:[['427K+','Impressions'],['7','Posts'],['7','Channels']],
-  obj:'Grow sales of Pilgrim\'s Vitamin C face wash on Amazon at an efficient cost.',
-  app:'Coupon-led deal posts across seven engaged channels drove clicks to the Amazon listing.',
-  impact:['Higher visibility in deal communities','More traffic on Amazon','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted execution']},
- {id:'fastup-tg',brand:'Fast&Up',chan:'Telegram',product:'Amazon and D2C store',stats:[['423K+','Impressions'],['7','Posts'],['3','Channels']],
-  obj:'Grow Fast&Up sales on Amazon and on their own website through targeted Telegram marketing.',
-  app:'Strategic promotions in e-commerce deal groups, focused on timing, offers and audience targeting.',
-  impact:['Higher visibility in deal communities','More traffic and conversions on Amazon and D2C','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted promotions']},
- {id:'panchamrit',brand:'Panchamrit',chan:'Telegram',product:'Shilajit, gut health and vegan collagen',stats:[['400K+','Impressions'],['28','Posts'],['7','Channels']],
-  obj:'Grow sales of Panchamrit\'s wellness range on Amazon and Flipkart.',
-  app:'Deal-group promotions across seven channels, tuned for timing, offers and audience.',
-  impact:['Higher visibility in deal communities','More traffic and conversions on Amazon and Flipkart','Stronger credibility in e-commerce groups'],svc:['Channel selection and placement','Cost optimisation','Content strategy','Targeted promotions']}
-];
 /* Collage: 4 featured cases. The full list lives on the case studies page. */
 (function(){var F=[['hkvitals','big','#6D28D9,#DB2777'],['fastup','','#EA580C,#F59E0B'],['amazon','','#0F766E,#14B8A6'],['bebodywise','wide','#BE185D,#F472B6']];
  $('#collage').innerHTML=F.map(function(f){var c=CASES.find(function(x){return x.id===f[0]}),n=c.brand.replace('&','&amp;');

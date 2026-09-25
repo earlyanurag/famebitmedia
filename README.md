@@ -8,6 +8,10 @@ Open `index.html` in a browser. All pages share `styles.css`.
 | hire-team.html | Hire the FameBit team + pricing | HIRE-01, PKG-01 |
 | book-call.html | Qualify + schedule | BOOK-01 |
 | invoice.html | FameBit Invoice Studio (full rebuild) | INV-01 |
+| creators.html | Creator directory: search, category, city, size, sort, show more; shortlist / compare / request price. Reads ?q ?cat ?city ?size ?sort | new |
+| compare.html | Compare up to 3 creators; best match; phone layout; ?ids=1,2,3 share link | new |
+| lists.html | All ready-made and Top 10 lists; each opens a preview + enquiry (lists.html#<list-id>) | new |
+| case-studies.html | All 15 cases, channel filter, industry picker (#competitors), case-studies.html#<case-id> opens a case | new |
 
 ## What the developer must connect (search the code for `TODO (developer)`)
 1. **Leads**: request-price / list-enquiry form in index.html → POST to your leads API (add OTP phone check).
@@ -70,4 +74,8 @@ Open `index.html` in a browser. All pages share `styles.css`.
 - Header (all pages): hides while scrolling down, slides back on a small scroll up; always shown near the top, with the mobile menu or a dropdown open, or with keyboard focus (`autoHeader` in effects.js).
 - Page-edge GradualBlur kept, but the footer has extra bottom room so its text is never blurred. On phones the blur sits just above the WhatsApp / Book bar.
 - Phone-only (below 600px): Browse shows a 3-creator preview + "Browse all creators" (creators.html); Compare shows a "Compare creators" button (compare.html) instead of the wide table; paths are small rows; Lists shows 2 lists + 4 Top-10 bars + "View all lists" (lists.html); services are a 2x2 grid; case studies are 2x2 tiles; shortlist band, booking section and calendar are compacted.
-- TODO (developer): create creators.html, compare.html, lists.html and case-studies.html (the buttons already link to them).
+
+## Shared files
+- `data.js`: sample CREATORS (28), LISTS, CASES (+ industry and colours) and small helpers, used by every page. Replace with API data, keeping creator ids stable.
+- `site.js`: shared behaviour for the inner pages: shortlist / compare state (shared with the homepage through localStorage), the selection tray, the request-price / list enquiry pop-up, toasts.
+- Footer category and city links open the directory pre-filtered (creators.html?cat=Fashion, ?city=Mumbai).

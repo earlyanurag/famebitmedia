@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Compare influencers side by side | FameBit Media</title>
+<meta name="description" content="Compare up to 3 Indian creators side by side: followers, average views, engagement and audience trust, with a best-match pick.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.pg-head{padding:56px 0 28px;background:linear-gradient(180deg,#fff,var(--soft))}
+.pg-head h1{font-size:clamp(30px,4vw,46px)}
+.pg-head p{color:var(--mut);margin-top:12px;font-size:17px;max-width:620px}
+.cmpg{padding:24px 0 88px;background:var(--soft)}
+.pick{position:relative;max-width:560px;margin-bottom:22px}
+.pick svg{position:absolute;left:16px;top:23px;width:16px;height:16px;margin-top:-8px;color:var(--mut)}
+.pick .input{border-radius:var(--r-pill);padding-left:42px;min-height:46px;background:#fff}
+.sugg{position:absolute;left:0;right:0;top:52px;z-index:20;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 40px rgba(21,17,42,.12);padding:6px;max-height:340px;overflow:auto}
+.sugg button{display:flex;align-items:center;gap:12px;width:100%;border:0;background:none;padding:10px;border-radius:10px;cursor:pointer;text-align:left}
+.sugg button:hover,.sugg button:focus-visible{background:var(--soft)}
+.sugg b{display:block;font-size:14px}.sugg small{font-size:12px;color:var(--mut)}.sugg .add{margin-left:auto;font-size:13px;font-weight:600;color:var(--p)}
+.sugg .none{padding:12px;font-size:14px;color:var(--mut)}
+.cmp{padding:0;overflow:hidden}
+.cmp-grid>.hd{min-height:190px}
+.cmp-m{display:none}
+.helprow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.start{text-align:center;padding:48px 24px}
+.start h2{font-size:22px}.start p{color:var(--mut);margin-top:8px}
+.start .helprow{justify-content:center;margin-top:20px}
+@media (max-width:760px){
+  .cmp-desk{display:none}
+  .cmp-m{display:block}
+  .cm-heads{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:8px;padding:16px 14px 12px}
+  .cm-h{text-align:center;position:relative;padding:22px 4px 10px;border-radius:14px}
+  .cm-h.best{background:var(--lav)}
+  .cm-h .av{width:42px;height:42px;font-size:14px}
+  .cm-h b{display:block;font-size:13px;line-height:1.3;margin-top:6px}.cm-h small{font-size:11px;color:var(--mut)}
+  .cm-h .badge{top:4px;font-size:9px;padding:2px 7px}
+  .cm-h .rm{font-size:12px;margin-top:4px}
+  .cm-h .slot-empty{padding:14px 6px;font-size:12px}
+  .cm-row{border-top:1px solid var(--line);padding:10px 14px}
+  .cm-row>span{display:block;font-size:12px;color:var(--mut);margin-bottom:6px}
+  .cm-vals{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:8px}
+  .cm-vals div{text-align:center;font-size:14px;font-weight:600;padding:6px 2px;border-radius:10px;background:var(--soft)}
+  .cm-vals div.win{background:var(--mint);color:var(--mint-ink)}
+  .cm-vals div.lock{font-weight:500;font-size:12px;color:var(--mut)}
+}
+@media (max-width:600px){
+  .pg-head{padding:32px 0 18px}.pg-head h1{font-size:28px}.pg-head p{font-size:15px}
+  .cmpg{padding:16px 0 56px}
+  .verdict{padding:16px}.verdict .btn{width:100%}
+  .helprow .btn{flex:1}
+}
+</style>
+</head>
+<body data-no-tray>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="index.html" class="logo" aria-label="FameBit Media home">FameBit<small>Media.com</small></a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false">Find Influencers <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
+        <div class="dd">
+          <a href="creators.html"><b>Browse all creators</b><span>Filter by niche, city and audience</span></a>
+          <a href="lists.html"><b>Ready-made lists</b><span>Hand-picked by our team</span></a>
+          <a href="compare.html"><b>Compare creators</b><span>Up to 3, side by side</span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false">Solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
+        <div class="dd">
+          <a href="hire-team.html" class="feat"><b>Hire the FameBit team</b><span>We run your campaign end to end</span></a>
+          <a href="index.html#services"><b>Influencer marketing</b><span>Discovery to final report</span></a>
+          <a href="index.html#services"><b>AI UGC content</b><span>Ad-ready creator videos</span></a>
+          <a href="index.html#services"><b>Meme marketing</b><span>Reach through meme pages</span></a>
+          <a href="index.html#services"><b>Telegram marketing</b><span>Niche channel promotions</span></a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="hire-team.html#pricing">Pricing</a></div>
+      <div class="nav-item"><a class="nav-link" href="case-studies.html">Case studies</a></div>
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false">For creators <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
+        <div class="dd">
+          <a href="invoice.html"><b>Free invoice maker</b><span>GST-ready invoices in minutes</span></a>
+          <a href="#"><b>Talent management</b><span>Let us manage your brand deals</span></a>
+          <a href="#"><b>Join as a creator</b><span>Get brand deals from FameBit</span></a>
+        </div>
+      </div>
+    </nav>
+    <div class="hdr-cta">
+      <a class="login" href="#">Log in</a>
+      <a class="btn btn-sm" href="creators.html">Explore free</a>
+      <a class="btn btn-sm btn-p" href="book-call.html">Book a free call</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="pg-head">
+  <div class="wrap">
+    <span class="kicker">Compare</span>
+    <h1>Compare creators side by side</h1>
+    <p>Pick up to 3 creators. We highlight the winner in every row and pick the best overall match for your campaign.</p>
+  </div>
+</section>
+<section class="cmpg">
+  <div class="wrap">
+    <div class="pick">
+      <label class="sr-only" for="cQ">Add a creator</label>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input class="input" id="cQ" type="search" placeholder="Add a creator: search by name, niche or city" autocomplete="off" aria-controls="cSugg" aria-expanded="false">
+      <div class="sugg" id="cSugg" role="listbox" hidden></div>
+    </div>
+    <div class="card cmp" id="cCard"></div>
+    <div class="helprow"><a class="btn" href="creators.html">Browse all creators</a><button type="button" class="btn" id="cShare">Copy link to this comparison</button></div>
+  </div>
+</section>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <a href="index.html" class="logo">FameBit<small>Media.com</small></a>
+        <p style="margin-top:16px;max-width:280px">Influencer marketing and talent management for Indian brands. Vetted creators, fair prices, one report.</p>
+      </div>
+      <div><h4>For brands</h4><ul><li><a href="creators.html">Find influencers</a></li><li><a href="hire-team.html">Hire our team</a></li><li><a href="hire-team.html#pricing">Pricing</a></li><li><a href="book-call.html">Book a call</a></li></ul></div>
+      <div><h4>For creators</h4><ul><li><a href="invoice.html">Free invoice maker</a></li><li><a href="#">Talent management</a></li><li><a href="#">Join as a creator</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:brands@famebitmedia.com">brands@famebitmedia.com</a></li><li><a href="tel:+919631899862">+91 96318 99862</a></li><li><a href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp us</a></li></ul></div>
+    </div>
+    <div class="ftr-seo">
+      <div><h4>Top influencers by category</h4><p><a href="creators.html?cat=Fashion">Fashion</a><a href="creators.html?cat=Beauty">Beauty</a><a href="creators.html?cat=Food">Food</a><a href="creators.html?cat=Fitness">Fitness</a><a href="creators.html?cat=Health">Health &amp; medical</a><a href="creators.html?cat=Tech">Tech</a><a href="creators.html?cat=Finance">Finance</a><a href="creators.html?cat=Comedy">Comedy</a><a href="creators.html?cat=Travel">Travel</a><a href="creators.html?cat=Parenting">Parenting</a><a href="creators.html?cat=Gaming">Gaming</a><a href="creators.html?cat=Lifestyle">Lifestyle</a></p></div>
+      <div><h4>Top influencers by city</h4><p><a href="creators.html?city=Mumbai">Mumbai</a><a href="creators.html?city=Delhi">Delhi</a><a href="creators.html?city=Bangalore">Bangalore</a><a href="creators.html?city=Hyderabad">Hyderabad</a><a href="creators.html?city=Chennai">Chennai</a><a href="creators.html?city=Kolkata">Kolkata</a><a href="creators.html?city=Pune">Pune</a><a href="creators.html?city=Gurgaon">Gurgaon</a><a href="creators.html?city=Noida">Noida</a><a href="creators.html?city=Indore">Indore</a><a href="creators.html?city=Jaipur">Jaipur</a><a href="creators.html?city=Ahmedabad">Ahmedabad</a></p></div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2026 FameBitMedia Private Limited · GSTIN [add] · CIN [add]</span>
+      <span><a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/famebitmedia/" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/company/famebitmedia" target="_blank" rel="noopener">LinkedIn</a></span>
+    </div>
+  </div>
+</footer>
+<div class="mbar"><a class="btn" href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-p" href="book-call.html">Book a free call</a></div>
+<script src="effects.js"></script>
+<script>
+/* Header: sticky border, dropdowns, mobile menu */
+(function(){
+  var h=document.getElementById('hdr');
+  addEventListener('scroll',function(){h.classList.toggle('scrolled',scrollY>80)},{passive:true});
+  document.querySelectorAll('.nav-item > button').forEach(function(b){
+    b.addEventListener('click',function(e){
+      var it=b.parentElement,open=!it.classList.contains('open');
+      document.querySelectorAll('.nav-item.open').forEach(function(x){x.classList.remove('open');x.firstElementChild.setAttribute('aria-expanded','false')});
+      if(open){it.classList.add('open');b.setAttribute('aria-expanded','true')}
+      e.stopPropagation();
+    });
+  });
+  document.addEventListener('click',function(){document.querySelectorAll('.nav-item.open').forEach(function(x){x.classList.remove('open')})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav-item.open').forEach(function(x){x.classList.remove('open')})});
+  var bg=document.getElementById('burger');
+  bg.addEventListener('click',function(){var o=h.classList.toggle('menu-open');bg.setAttribute('aria-expanded',o)});
+})();
+</script>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+/* Compare up to 3 creators. Picks are shared with the homepage and directory (fb_compare); ?ids=1,2,3 opens a shared comparison. */
+(function(){
+  var $=FB.$,sel=FB.compare,qs=new URLSearchParams(location.search);
+  if(qs.get('ids')){var ids=qs.get('ids').split(',').map(Number).filter(creator).slice(0,3);if(ids.length){sel.length=0;ids.forEach(function(i){sel.push(i)});FB.save()}}
+  var ROWS=[['Followers',function(c){return c.f},function(c){return fmt(c.f)}],['Average views',function(c){return c.views},function(c){return fmt(c.views)}],['Engagement',function(c){return c.eng},function(c){return c.eng+'%'}],['Audience trust',function(c){return c.trust},function(c){return c.trust+'%'}],['Est. cost per view',null,function(){return '🔒 Log in'}]];
+  function best(cs){if(cs.length<2)return null;var mE=Math.max.apply(null,cs.map(function(c){return c.eng})),mT=Math.max.apply(null,cs.map(function(c){return c.trust}));
+    return cs.slice().sort(function(a,b){return (b.trust/mT*.55+b.eng/mE*.45)-(a.trust/mT*.55+a.eng/mE*.45)})[0]}
+  function why(b,cs){var mT=Math.max.apply(null,cs.map(function(c){return c.trust})),mE=Math.max.apply(null,cs.map(function(c){return c.eng})),hT=b.trust===mT,hE=b.eng===mE;
+    return hT&&hE?'the highest audience trust ('+b.trust+'%) and the highest engagement ('+b.eng+'%)':hT?'the highest audience trust ('+b.trust+'%) with '+b.eng+'% engagement':hE?'the highest engagement ('+b.eng+'%) with '+b.trust+'% audience trust':'the best balance of audience trust ('+b.trust+'%) and engagement ('+b.eng+'%)'}
+  function render(){var cs=sel.map(creator);
+    if(!cs.length){$('#cCard').innerHTML='<div class="start"><h2>Add creators to compare</h2><p>Search above, or start with an example.</p><div class="helprow"><button type="button" class="btn btn-p" id="cEx">Try an example</button><a class="btn" href="creators.html">Browse creators</a></div></div>';
+      $('#cEx').onclick=function(){CREATORS.slice().sort(function(a,b){return b.trust-a.trust}).slice(0,3).forEach(function(c){sel.push(c.id)});FB.save()};return}
+    var n=Math.min(3,cs.length+(cs.length<3?1:0)),b=best(cs),tops=ROWS.map(function(r){return r[1]&&cs.length>=2?Math.max.apply(null,cs.map(r[1])):null});
+    function head(c,mob){if(!c)return mob?'<div class="cm-h"><div class="slot-empty"><span class="plus">+</span><span>Add</span></div></div>':'<div class="hd"><div class="slot-empty"><span class="plus">+</span><span>Add a creator</span><span style="font-size:12px">Search above</span></div></div>';
+      return '<div class="'+(mob?'cm-h':'hd')+(c===b?(mob?' best':' col-best'):'')+'">'+(c===b?'<span class="badge">BEST MATCH</span>':'')+av(c)+'<b>'+c.name+'</b><small>'+c.cat+' · '+c.city+'</small><button type="button" class="rm" data-rm="'+c.id+'">Remove</button></div>'}
+    /* desktop grid */
+    var h='<div class="lab hd"></div>';for(var i=0;i<n;i++)h+=head(cs[i]);
+    ROWS.forEach(function(r,k){h+='<div class="lab">'+r[0]+'</div>';for(var j=0;j<n;j++){var c=cs[j];if(!c){h+='<div class="mut">—</div>';continue}var w=tops[k]!==null&&r[1](c)===tops[k];h+='<div class="'+(c===b?'col-best ':'')+(w?'win':'')+(r[1]?'':' lock')+'">'+(w?'✓ ':'')+r[2](c)+'</div>'}});
+    /* phone layout */
+    var m='<div class="cm-heads">';for(i=0;i<n;i++)m+=head(cs[i],1);m+='</div>';
+    ROWS.forEach(function(r,k){m+='<div class="cm-row"><span>'+r[0]+'</span><div class="cm-vals">';for(var j=0;j<n;j++){var c=cs[j];if(!c){m+='<div class="mut">—</div>';continue}var w=tops[k]!==null&&r[1](c)===tops[k];m+='<div class="'+(w?'win':'')+(r[1]?'':' lock')+'">'+(w?'✓ ':'')+r[2](c)+'</div>'}m+='</div></div>'});
+    var v=b?'<div><b>'+b.handle+'</b> <span class="mut">leads with '+why(b,cs)+'.</span></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="btn btn-sm btn-p" data-price="'+b.id+'">Request price for '+(b.name.indexOf('Dr.')===0?b.name:b.name.split(' ')[0])+'</button><a class="btn btn-sm" href="book-call.html">Let our team book them</a></div>':'<div class="mut">Add one more creator to see who fits best.</div>';
+    $('#cCard').style.setProperty('--n',n);
+    $('#cCard').innerHTML='<div class="cmp-desk cmp-scroll"><div class="cmp-grid" style="grid-template-columns:minmax(130px,.9fr) repeat('+n+',minmax(150px,1fr))">'+h+'</div></div><div class="cmp-m">'+m+'</div><div class="verdict">'+v+'</div>'}
+  $('#cCard').addEventListener('click',function(e){var r=e.target.closest('[data-rm]');if(!r)return;sel.splice(sel.indexOf(+r.dataset.rm),1);FB.save()});
+  /* search + suggestions */
+  var q=$('#cQ'),sg=$('#cSugg');
+  function sugg(){var t=q.value.trim().toLowerCase();var L=CREATORS.filter(function(c){return sel.indexOf(c.id)<0&&(!t||(c.name+' '+c.handle+' '+c.cat+' '+c.city).toLowerCase().indexOf(t)>-1)}).slice(0,8);
+    sg.innerHTML=L.length?L.map(function(c){return '<button type="button" role="option" data-add="'+c.id+'">'+av(c)+'<span><b>'+c.name+'</b><small>'+c.cat+' · '+c.city+' · '+fmt(c.f)+'</small></span><span class="add">+ Add</span></button>'}).join(''):'<div class="none">No creators found.</div>';
+    sg.hidden=false;q.setAttribute('aria-expanded','true')}
+  function hide(){sg.hidden=true;q.setAttribute('aria-expanded','false')}
+  q.addEventListener('focus',sugg);q.addEventListener('input',sugg);
+  q.addEventListener('keydown',function(e){if(e.key==='Escape')hide();if(e.key==='ArrowDown'){var f=sg.querySelector('button');if(f){e.preventDefault();f.focus()}}});
+  sg.addEventListener('keydown',function(e){var bs=[].slice.call(sg.querySelectorAll('button')),i=bs.indexOf(document.activeElement);if(e.key==='ArrowDown'&&bs[i+1]){e.preventDefault();bs[i+1].focus()}if(e.key==='ArrowUp'){e.preventDefault();(bs[i-1]||q).focus()}if(e.key==='Escape'){hide();q.focus()}});
+  sg.addEventListener('click',function(e){var b=e.target.closest('[data-add]');if(!b)return;if(FB.toggleCompare(+b.dataset.add)){q.value='';hide()}});
+  document.addEventListener('click',function(e){if(!e.target.closest('.pick'))hide()});
+  $('#cShare').onclick=function(){var u=location.origin+location.pathname+'?ids='+sel.join(',');try{navigator.clipboard.writeText(u).then(function(){FB.toast('Link copied')},function(){prompt('Copy this link',u)})}catch(e){prompt('Copy this link',u)}};
+  FB.onChange(render);render();
+})();
+</script>
+</body>
+</html>
