@@ -76,4 +76,17 @@
   function pageBlur(){if(document.body.hasAttribute('data-no-page-blur'))return;
     GradualBlur(null,{target:'page',position:'bottom',height:'4.5rem',strength:1.5,divCount:5,curve:'bezier',exponential:true,opacity:1,className:'page-blur'}).style.zIndex=45} /* below header (50), tray and mobile bar */
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',pageBlur);else pageBlur();
+
+  /* Header hides while scrolling down and slides back as soon as the visitor scrolls up.
+     Stays visible near the top, while the mobile menu or a dropdown is open, or when it has keyboard focus. */
+  function autoHeader(){var h=document.getElementById('hdr');if(!h)return;
+    var last=scrollY,ticking=false;
+    function upd(){ticking=false;var y=scrollY,d=y-last;
+      var keep=y<90||h.classList.contains('menu-open')||h.querySelector('.nav-item.open')||h.contains(document.activeElement);
+      if(keep)h.classList.remove('hdr-hide');else if(d>6)h.classList.add('hdr-hide');else if(d<-6)h.classList.remove('hdr-hide');
+      if(Math.abs(d)>6||keep)last=y}
+    addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(upd)}},{passive:true});
+    h.addEventListener('focusin',function(){h.classList.remove('hdr-hide')});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',autoHeader);else autoHeader();
 })();

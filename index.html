@@ -310,53 +310,86 @@ body.tray-on .nudge{bottom:100px}
   .tbl .hide-s{display:none}
 }
 
-/* ---------- Phone layout: tighter spacing, swipe rows instead of long stacks ---------- */
+/* ---------- Phone-only pieces (hidden on larger screens) ---------- */
+@media (min-width:601px){.m-only{display:none!important}}
+
+/* ---------- Phone layout: compact sections, previews + buttons to the full pages ---------- */
 @media (max-width:600px){
-  section{padding:52px 0}
-  .sec-head{margin-bottom:26px}.sec-head p,.tst-head p,.meet-head p{font-size:15px;margin-top:10px}
-  h2,.cmp-side h2{font-size:26px}
+  .m-hide{display:none!important}
+  section{padding:48px 0}
+  .sec-head{margin-bottom:22px}.sec-head p,.tst-head p,.meet-head p{font-size:15px;margin-top:10px}
+  h2,.cmp-side h2{font-size:25px}
+  .btn-m{width:100%;margin-top:16px}
   .hero{padding-top:36px}.hero h1{font-size:34px;margin-top:18px}.hero .sub{font-size:16px;margin-top:14px}.hero .ctas{margin-top:22px}
   /* hero feature chips: one compact row */
   .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px}
   .float-chip{flex-direction:column;align-items:center;text-align:center;gap:6px;padding:12px 6px;min-width:0;border-radius:14px;animation:none}
   .float-chip i{width:32px;height:32px;font-size:15px}.float-chip b{font-size:12px;line-height:1.3}.float-chip span{display:none}
   .demo-wrap{margin-top:18px}.demo{padding:16px 14px 6px}
-  /* swipe rows */
-  .bento,.grid,.paths,.lists,.svc,.collage{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -24px;padding:4px 24px 14px;scroll-padding:0 24px;scrollbar-width:none;grid-template-columns:none}
-  .bento::-webkit-scrollbar,.grid::-webkit-scrollbar,.paths::-webkit-scrollbar,.lists::-webkit-scrollbar,.svc::-webkit-scrollbar,.collage::-webkit-scrollbar{display:none}
-  .bento>*,.grid>*,.paths>*,.lists>*,.svc>*,.collage>*{flex:0 0 82%;scroll-snap-align:start}
-  .grid>.empty{flex-basis:100%}
-  .bento{margin:0}  /* .bento is also the .wrap, so it already sits inside the page gutter */
-  .proof{padding:28px 0 12px}.stat{min-height:200px;padding:22px}.stat .big{font-size:36px}
+  /* stats: swipe row */
+  .bento{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:4px 24px 14px;scroll-padding:0 24px;scrollbar-width:none}
+  .bento::-webkit-scrollbar{display:none}.bento>*{flex:0 0 82%;scroll-snap-align:start}
+  .proof{padding:28px 0 8px}.stat{min-height:180px;padding:22px}.stat .big{font-size:34px}
   /* problem */
-  .prob{padding:22px;gap:20px;border-radius:22px}.prob h3{font-size:21px}.prob p{font-size:15px}.q{padding:12px 14px;font-size:14px}
-  /* browse filters on one scrolling line */
-  .browse-head{margin-bottom:18px;gap:14px}.browse-head .btn{min-height:40px;font-size:14px}
-  .filters{margin-bottom:18px}
-  #catChips{flex-wrap:nowrap;overflow-x:auto;margin:0 -24px;padding:2px 24px;scrollbar-width:none;width:calc(100% + 48px)}
-  #catChips::-webkit-scrollbar{display:none}#catChips .chip{flex:none}
-  .filters select{flex:1;min-width:0}
-  .see-all{margin-top:14px}
-  /* paths, lists, services, bars */
-  .path{padding:24px}.path p{margin:8px 0 18px}
-  .list{min-height:180px}
-  .bars{gap:8px;margin-top:10px}.bar{padding:9px 12px}.bar b{font-size:13px}
-  .svc .card{padding:22px 22px 90px}
-  /* campaigns + closing band */
+  .prob{padding:22px;gap:18px;border-radius:22px}.prob h3{font-size:20px}.prob p{font-size:15px}.q{padding:11px 14px;font-size:14px}
+  /* browse: 3-creator preview + button to the directory */
+  .browse-head{margin-bottom:16px;gap:12px}.browse-head .btn{display:none}
+  .mini{display:grid!important;gap:8px}
+  .mini a{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+  .mini .av{width:40px;height:40px;font-size:14px}
+  .mini b{display:block;font-size:14px;line-height:1.3}.mini small{font-size:12px;color:var(--mut);display:inline-flex;align-items:center;gap:4px}
+  .mini small svg{width:11px;height:11px;color:var(--p)}
+  .mini .n{margin-left:auto;text-align:right;font-size:13px;font-weight:700}.mini .n span{display:block;font-size:11px;font-weight:500;color:var(--mut)}
+  .see-all{margin-top:0}
+  /* compare: explanation + button (table is too wide for a phone) */
+  .cmp-side .btn{margin-top:18px}
+  /* paths: small stacked rows */
+  .paths{gap:10px}
+  .path{padding:16px 18px;display:grid;grid-template-columns:40px 1fr;column-gap:14px;align-items:start}
+  .path .ico{width:40px;height:40px;font-size:18px;border-radius:12px;grid-row:span 4}
+  .path .tagline{margin-top:0;font-size:12px}.path h3{margin-top:2px;font-size:16px}
+  .path p{margin:4px 0 10px;font-size:13px;line-height:1.5}
+  .path .btn{min-height:38px;font-size:13px;width:auto;justify-self:start;padding:0 16px}
+  /* lists: 2 lists + 4 top-10 bars, rest behind "View all lists" */
+  #lists .browse-head .btn{display:none}
+  .lists{grid-template-columns:1fr 1fr;gap:10px}
+  .lists>.list:nth-child(n+3){display:none}
+  .list{min-height:0;padding:16px;gap:4px}.list b{font-size:15px}.list .mut{font-size:12px!important}.list .m{font-size:12px;margin-top:8px}
+  .list .faces .av{width:28px;height:28px;font-size:10px}.list .faces{margin-bottom:6px}
+  .bars{grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.bar{padding:9px 12px}.bar b{font-size:13px}
+  .bars>.bar:nth-child(n+3){display:none}
+  /* services: 2 x 2 grid */
+  .svc{grid-template-columns:1fr 1fr;gap:10px}
+  .svc .card{padding:16px 14px 58px;border-radius:16px}
+  .svc .card .ico{width:36px!important;height:36px!important;font-size:16px}
+  .svc h3{font-size:15px;margin:12px 0 0;line-height:1.3}
+  .svc ul{display:none}.svc a.more{font-size:13px;margin-top:8px}
+  .svc .card>.art{width:78%;opacity:.75}
+  /* campaigns */
   .camp{width:150px}.camp .play{top:36%;width:40px;height:40px}
   .camps{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
-  .band{padding:26px;border-radius:24px;gap:22px}.band p{font-size:15px}.band .ctas .btn{width:100%}.band ul{padding:20px}
-  /* case studies */
-  .ct{min-height:230px;padding:22px}.ct.big h3{font-size:28px}
-  .cs-ctas{margin-top:18px}.cs-ctas .btn{width:100%;white-space:normal;text-align:center}
+  .camps-more{margin-top:20px}
+  /* free shortlist band */
+  .band{padding:24px 20px;border-radius:22px;gap:18px}.band h2{font-size:23px}.band p{font-size:14px;margin-top:10px}
+  .band .ctas{margin-top:18px;gap:8px}.band .ctas .btn{width:100%;min-height:48px}
+  .band ul{padding:14px;gap:8px;border-radius:16px}.band li{font-size:13px;gap:10px}.band li::before{width:18px;height:18px;font-size:10px}
+  /* case studies: 2 x 2 tiles */
+  .collage{grid-template-columns:1fr 1fr!important;gap:10px}
+  .ct,.ct.big,.ct.wide{grid-column:auto!important;grid-row:auto!important;min-height:0;padding:14px;border-radius:16px}
+  .ct .ch{font-size:10px;padding:3px 9px}.ct h3,.ct.big h3{font-size:17px;margin-top:14px}
+  .ct p{display:none}.ct .kpis{margin-top:8px;gap:12px}.ct .kpis>div:nth-child(n+2){display:none}
+  .ct .kpis b,.ct.big .kpis b{font-size:20px}.ct .kpis span{font-size:11px}.ct .go{font-size:12px;margin-top:8px}
+  .cs-ctas{margin-top:16px;gap:8px}.cs-ctas .btn{width:100%;white-space:normal;text-align:center;min-height:48px}
   /* testimonials */
-  .tst-head{margin-bottom:24px}.tcard{padding:22px}.tcard blockquote{font-size:15px}
-  /* booking */
-  .meet-head{margin-bottom:24px}
-  .sched>div{padding:20px}.s-info h3{font-size:18px;margin-top:10px}
-  .s-info ul{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:13px}.s-info>p{display:none}
+  .tst-head{margin-bottom:22px}.tcard{padding:20px}.tcard blockquote{font-size:15px}
+  /* 30-minute call */
+  .meet-head{margin-bottom:20px}.meet-head h2{font-size:23px}.meet-head p{display:none}
+  .sched>div{padding:16px}.s-info .org{font-size:12px}.s-info .org i{width:28px;height:28px;font-size:12px}
+  .s-info h3{font-size:17px;margin-top:8px}
+  .s-info ul{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:8px;font-size:12px}.s-info>p{display:none}
+  .meet-note{margin-top:14px}
   /* footer */
-  .ftr{padding:48px 0 24px}
+  .ftr{padding:44px 0 24px}
 }
 </style>
 </head>
@@ -495,15 +528,16 @@ body.tray-on .nudge{bottom:100px}
       <div><h2>Browse creators</h2><p class="mut" style="margin-top:10px">Every creator is checked for fake followers before they're listed.</p></div>
       <a class="btn" href="#">Join as a creator</a>
     </div>
-    <div class="filters">
+    <div class="filters m-hide">
       <div class="demo-chips" id="catChips"></div>
       <label class="sr-only" for="fCity">City</label>
       <select id="fCity"><option value="">All cities</option></select>
       <label class="sr-only" for="fSize">Follower range</label>
       <select id="fSize"><option value="">All sizes</option><option value="nano">Nano, under 10K</option><option value="micro">Micro, 10K–100K</option><option value="mid">Mid, 100K–500K</option><option value="macro">Macro, 500K–1M</option><option value="mega">Mega, 1M+</option></select>
     </div>
-    <div class="grid" id="grid"></div>
-    <div class="see-all"><a class="btn" href="#">See all creators in the directory</a></div>
+    <div class="grid m-hide" id="grid"></div>
+    <div class="mini m-only" id="browseMini"></div>
+    <div class="see-all"><a class="btn btn-m" href="creators.html"><span class="m-hide">See all creators in the directory</span><span class="m-only">Browse all creators →</span></a></div>
   </div>
 </section>
 
@@ -514,10 +548,11 @@ body.tray-on .nudge{bottom:100px}
       <span class="kicker">Compare</span>
       <h2>Confused? Whom to choose</h2>
       <p>We got you. Compare up to 3 creators side by side for free. We highlight the winner in every row and pick the best overall match.</p>
-      <a class="btn btn-p" href="#browse">+ Add creators</a>
+      <a class="btn btn-p m-hide" href="#browse">+ Add creators</a>
+      <a class="btn btn-p btn-m m-only" href="compare.html">Compare creators →</a>
       <p class="micro" id="cmpNote">3 free comparisons a day as a guest. Log in for more.</p>
     </div>
-    <div class="card cmp" id="cmpCard"></div>
+    <div class="card cmp m-hide" id="cmpCard"></div>
   </div>
 </section>
 
@@ -536,10 +571,11 @@ body.tray-on .nudge{bottom:100px}
 <!-- LISTS -->
 <section id="lists">
   <div class="wrap">
-    <div class="browse-head"><div><h2>Ready-made creator lists</h2><p class="mut" style="margin-top:10px">Hand-picked by our team. Send one enquiry, get prices for the whole list in 24 hours.</p></div><a class="btn" href="#">View all lists</a></div>
+    <div class="browse-head"><div><h2>Ready-made creator lists</h2><p class="mut" style="margin-top:10px">Hand-picked by our team. Send one enquiry, get prices for the whole list in 24 hours.</p></div><a class="btn" href="lists.html">View all lists</a></div>
     <div class="lists" id="listsGrid"></div>
     <div class="bars" id="barsCity"></div>
     <div class="bars" id="barsCat"></div>
+    <a class="btn btn-p btn-m m-only" href="lists.html">View all lists →</a>
   </div>
 </section>
 
@@ -801,6 +837,8 @@ function renderGrid(){
     '<button class="btn btn-sm" data-price="'+c.id+'" style="border:0;background:var(--soft);color:var(--p)">Request price</button>'+
     '<div class="acts"><button class="btn" data-sl="'+c.id+'" aria-pressed="'+inS+'">'+(inS?'Shortlisted':'Shortlist')+'</button><button class="btn" data-cmp="'+c.id+'" aria-pressed="'+inC+'">'+(inC?'Comparing':'Compare')+'</button></div></article>'}).join('');
 }
+/* Phone: 3-creator preview linking to the full directory */
+(function(){$('#browseMini').innerHTML=CREATORS.slice(0,3).map(function(c){return '<a href="creators.html">'+av(c)+'<div><b>'+c.name+'</b><small>'+c.cat+' · '+PIN+c.city+'</small></div><div class="n">'+fmt(c.f)+'<span>followers</span></div></a>'}).join('')})();
 /* Compare (from V2): example until the user adds creators, winner per row, best overall match */
 function renderCompare(){
   var example=compare.length===0;

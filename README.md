@@ -65,3 +65,9 @@ Open `index.html` in a browser. All pages share `styles.css`.
 - Tighter section spacing and smaller headings on phones. Homepage on a phone went from about 20,000px to about 12,000px tall.
 - Invoice Studio top bar fits 360px screens.
 - 30-minute call card (homepage and book-call): thin 2px border with a light that travels around it (`.shine` in styles.css, 4.5s loop, still for reduced-motion users).
+
+## Round 5
+- Header (all pages): hides while scrolling down, slides back on a small scroll up; always shown near the top, with the mobile menu or a dropdown open, or with keyboard focus (`autoHeader` in effects.js).
+- Page-edge GradualBlur kept, but the footer has extra bottom room so its text is never blurred. On phones the blur sits just above the WhatsApp / Book bar.
+- Phone-only (below 600px): Browse shows a 3-creator preview + "Browse all creators" (creators.html); Compare shows a "Compare creators" button (compare.html) instead of the wide table; paths are small rows; Lists shows 2 lists + 4 Top-10 bars + "View all lists" (lists.html); services are a 2x2 grid; case studies are 2x2 tiles; shortlist band, booking section and calendar are compacted.
+- TODO (developer): create creators.html, compare.html, lists.html and case-studies.html (the buttons already link to them).
