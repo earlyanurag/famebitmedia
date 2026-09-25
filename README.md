@@ -36,7 +36,7 @@ Open `index.html` in a browser. All pages share `styles.css`.
 ## New developer TODOs
 7. **Testimonials**: quotes, names, roles and photos are placeholders (`T` array in index.html). Metrics come from the deck.
 8. **Booking section** (`#meet`): availability is mocked. Replace it with a Cal.com / Calendly embed or the booking API, and reuse the same POST as book-call.html.
-9. **Logo strip**: 15 client logos in `/logos` (trimmed, 96px tall WebP), shown in flat grey. Edit the `LOGOS` list in index.html to add or reorder.
+9. **Logo strip**: 15 client logos in `/logos` (trimmed, 96px tall WebP), shown in the old text grey (#A7A2BC). Edit the `LOGOS` list in index.html to add or reorder.
 10. **Campaign tiles**: replace the gradients with video posters or reels.
 
 ## Homepage changes (Sep 2026, round 2)

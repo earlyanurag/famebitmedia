@@ -43,9 +43,9 @@
 .logos .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .logos .marquee-track{display:flex;gap:48px;width:max-content;animation:mq 40s linear infinite;padding:4px 0}
 .logos .marquee:hover .marquee-track{animation-play-state:paused}
-.logos .marquee img{height:30px;width:auto;max-width:150px;object-fit:contain;filter:brightness(0);opacity:.36;transition:opacity .2s}
-.logos .marquee img.sq{height:42px}
-.logos .marquee img:hover{opacity:.6}
+.logos .marquee .lg{flex:none;display:block;height:30px;width:calc(30px * var(--r));max-width:150px;background:#A7A2BC;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;transition:background .2s}
+.logos .marquee .lg.sq{height:42px;width:calc(42px * var(--r))}
+.logos .marquee .lg:hover{background:#8C87A3}
 .logos .marquee-track{align-items:center}
 .logos .marquee span{font-weight:800;font-size:19px;letter-spacing:-.01em;color:#A7A2BC;white-space:nowrap;text-transform:uppercase}
 @keyframes mq{to{transform:translateX(-50%)}}
@@ -715,16 +715,17 @@ function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('show');c
 })();
 
 /* ============ Logo strip ============
-   Logos are shown as flat grey silhouettes (same tone as the old text). Files live in /logos.
+   Logos are shown in the same light grey as the old text (#A7A2BC). Files live in /logos.
    A brand with no src (or a file that fails to load) falls back to grey text. */
-var LOGOS=[ /* sq: square-ish logos, shown a little taller so they match the wide ones */
- {name:'HK Vitals',src:'logos/hk-vitals.webp'},{name:'BeBodywise',src:'logos/bebodywise.webp'},{name:'Sova',src:'logos/sova.webp'},{name:'Man Matters',src:'logos/man-matters.webp'},
- {name:'Traya',src:'logos/traya.webp'},{name:'The Good Bug',src:'logos/the-good-bug.webp'},{name:'Liquid I.V.',src:'logos/liquid-iv.webp',sq:1},{name:'Naturali',src:'logos/naturali.webp'},
- {name:'JoyHealth',src:'logos/joyhealth.webp'},{name:'Krishna\'s Herbal & Ayurveda',src:'logos/krishnas.webp'},{name:'Elevate Now',src:'logos/elevate-now.webp'},{name:'Asitis',src:'logos/asitis.webp',sq:1},
- {name:'Red Skull',src:'logos/red-skull.webp'},{name:'UpUrFit',src:'logos/upurfit.webp',sq:1},{name:'Unniyarcha',src:'logos/unniyarcha.webp',sq:1}
+var LOGOS=[ /* r: width / height of the file. sq: square-ish logos, shown a little taller so they match the wide ones */
+ {name:'HK Vitals',src:'logos/hk-vitals.webp',r:5.65},{name:'BeBodywise',src:'logos/bebodywise.webp',r:4.99},{name:'Sova',src:'logos/sova.webp',r:2.6},{name:'Man Matters',src:'logos/man-matters.webp',r:3.64},
+ {name:'Traya',src:'logos/traya.webp',r:3.17},{name:'The Good Bug',src:'logos/the-good-bug.webp',r:4.04},{name:'Liquid I.V.',src:'logos/liquid-iv.webp',r:1.89,sq:1},{name:'Naturali',src:'logos/naturali.webp',r:4.8},
+ {name:'JoyHealth',src:'logos/joyhealth.webp',r:6.52},{name:'Krishna\'s Herbal & Ayurveda',src:'logos/krishnas.webp',r:2.88},{name:'Elevate Now',src:'logos/elevate-now.webp',r:5.16},{name:'Asitis',src:'logos/asitis.webp',r:.75,sq:1},
+ {name:'Red Skull',src:'logos/red-skull.webp',r:3.31},{name:'UpUrFit',src:'logos/upurfit.webp',r:1.15,sq:1},{name:'Unniyarcha',src:'logos/unniyarcha.webp',r:1.41,sq:1}
 ];
 (function(){
-  function one(l,dup){var n=l.name.replace('&','&amp;');return l.src?'<img src="'+l.src+'"'+(l.sq?' class="sq"':'')+' alt="'+(dup?'':n)+'" loading="lazy" onerror="this.outerHTML=\'<span>'+n+'</span>\'">':'<span>'+n+'</span>'}
+  /* Each logo is used as a mask over the text colour, so every logo is exactly the old grey. */
+  function one(l,dup){var n=l.name.replace(/&/g,'&amp;').replace(/'/g,'&#39;');return l.src?'<span class="lg'+(l.sq?' sq':'')+'" style="--m:url('+l.src+');--r:'+l.r+'"'+(dup?' aria-hidden="true"':' role="img" aria-label="'+n+'"')+'></span>':'<span>'+n+'</span>'}
   $('#marquee').innerHTML=LOGOS.map(function(l){return one(l)}).join('')+LOGOS.map(function(l){return one(l,true)}).join('');
   $('#marquee').parentNode.setAttribute('aria-label',LOGOS.map(function(l){return l.name}).join(', '));})();
 
