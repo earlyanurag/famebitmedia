@@ -14,6 +14,7 @@
 .bk-head{max-width:640px;margin-bottom:36px}
 .bk-head p{color:var(--mut);margin-top:12px;font-size:17px}
 .bk-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+.bk-grid>.shine{min-width:0}
 .embed{background:#fff;min-width:0}
 .after{background:var(--mint);border-radius:22px;padding:26px}
 .after ol{margin:14px 0 0;padding-left:20px;display:grid;gap:10px;font-size:14px}
@@ -69,8 +70,10 @@
   <div class="wrap">
     <div class="bk-head"><h1>Book a free strategy call</h1><p id="bkSub">30 minutes on Google Meet. Pick a day and time that works for you.</p></div>
     <div class="bk-grid">
+      <div class="shine" style="--shine-r:22px">
       <div id="calCard">
         <div class="border-glow-inner embed" id="bkCal"></div>
+      </div>
       </div>
       <aside class="after">
         <h2 style="font-size:17px">After you book</h2>

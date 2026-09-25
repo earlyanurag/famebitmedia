@@ -153,6 +153,15 @@ section{padding:104px 0}
 .cal-alt{padding:10px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--mut);text-align:center}
 .cal-alt a{color:var(--p);font-weight:600}
 
+/* ---------- Shining border: a thin ring with a light that travels around it ---------- */
+@property --shine-a{syntax:'<angle>';inherits:false;initial-value:0deg}
+.shine{position:relative;padding:2px;border-radius:calc(var(--shine-r,24px) + 2px);box-shadow:0 10px 40px rgba(124,58,237,.14);
+  background:conic-gradient(from var(--shine-a),#E4DDF5 0deg,#E4DDF5 170deg,#C4B5FD 220deg,#8B5CF6 265deg,#7C3AED 285deg,#F0E9FF 300deg,#F472B6 318deg,#FB923C 338deg,#E4DDF5 360deg);
+  animation:shine-spin 4.5s linear infinite}
+.shine>.border-glow-card{border-color:transparent}
+@keyframes shine-spin{to{--shine-a:360deg}}
+@media (prefers-reduced-motion:reduce){.shine{animation:none}}
+
 /* ---------- GradualBlur (React Bits port, see effects.js) ---------- */
 .gradual-blur{pointer-events:none;isolation:isolate}
 .gradual-blur-parent{overflow:hidden}

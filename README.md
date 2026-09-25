@@ -64,3 +64,4 @@ Open `index.html` in a browser. All pages share `styles.css`.
 - Hero feature chips become one compact 3-up row; category filter chips scroll on one line.
 - Tighter section spacing and smaller headings on phones. Homepage on a phone went from about 20,000px to about 12,000px tall.
 - Invoice Studio top bar fits 360px screens.
+- 30-minute call card (homepage and book-call): thin 2px border with a light that travels around it (`.shine` in styles.css, 4.5s loop, still for reduced-motion users).
