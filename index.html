@@ -43,8 +43,9 @@
 .logos .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .logos .marquee-track{display:flex;gap:48px;width:max-content;animation:mq 40s linear infinite;padding:4px 0}
 .logos .marquee:hover .marquee-track{animation-play-state:paused}
-.logos .marquee img{height:28px;width:auto;max-width:140px;object-fit:contain;filter:grayscale(1) brightness(.62) contrast(.9);opacity:.55;transition:opacity .2s}
-.logos .marquee img:hover{opacity:.8}
+.logos .marquee img{height:30px;width:auto;max-width:150px;object-fit:contain;filter:brightness(0);opacity:.36;transition:opacity .2s}
+.logos .marquee img.sq{height:42px}
+.logos .marquee img:hover{opacity:.6}
 .logos .marquee-track{align-items:center}
 .logos .marquee span{font-weight:800;font-size:19px;letter-spacing:-.01em;color:#A7A2BC;white-space:nowrap;text-transform:uppercase}
 @keyframes mq{to{transform:translateX(-50%)}}
@@ -714,14 +715,16 @@ function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('show');c
 })();
 
 /* ============ Logo strip ============
-   Logos are shown in grey (same tone as the old text). Add each file to /logos and set its src.
+   Logos are shown as flat grey silhouettes (same tone as the old text). Files live in /logos.
    A brand with no src (or a file that fails to load) falls back to grey text. */
-var LOGOS=[
- {name:'HK Vitals',src:''},{name:'Fast&Up',src:''},{name:'Plix',src:''},{name:'Sova Health',src:''},{name:'BeBodywise',src:''},{name:'Waterscience',src:''},{name:'Netflix',src:''},
- {name:'Amazon',src:''},{name:'Pilgrim',src:''},{name:'Myupchar',src:''},{name:'Citykart',src:''},{name:'Panchamrit',src:''},{name:'Zakkas',src:''},{name:'Zapvi',src:''}
+var LOGOS=[ /* sq: square-ish logos, shown a little taller so they match the wide ones */
+ {name:'HK Vitals',src:'logos/hk-vitals.webp'},{name:'BeBodywise',src:'logos/bebodywise.webp'},{name:'Sova',src:'logos/sova.webp'},{name:'Man Matters',src:'logos/man-matters.webp'},
+ {name:'Traya',src:'logos/traya.webp'},{name:'The Good Bug',src:'logos/the-good-bug.webp'},{name:'Liquid I.V.',src:'logos/liquid-iv.webp',sq:1},{name:'Naturali',src:'logos/naturali.webp'},
+ {name:'JoyHealth',src:'logos/joyhealth.webp'},{name:'Krishna\'s Herbal & Ayurveda',src:'logos/krishnas.webp'},{name:'Elevate Now',src:'logos/elevate-now.webp'},{name:'Asitis',src:'logos/asitis.webp',sq:1},
+ {name:'Red Skull',src:'logos/red-skull.webp'},{name:'UpUrFit',src:'logos/upurfit.webp',sq:1},{name:'Unniyarcha',src:'logos/unniyarcha.webp',sq:1}
 ];
 (function(){
-  function one(l,dup){var n=l.name.replace('&','&amp;');return l.src?'<img src="'+l.src+'" alt="'+(dup?'':n)+'" loading="lazy" onerror="this.outerHTML=\'<span>'+n+'</span>\'">':'<span>'+n+'</span>'}
+  function one(l,dup){var n=l.name.replace('&','&amp;');return l.src?'<img src="'+l.src+'"'+(l.sq?' class="sq"':'')+' alt="'+(dup?'':n)+'" loading="lazy" onerror="this.outerHTML=\'<span>'+n+'</span>\'">':'<span>'+n+'</span>'}
   $('#marquee').innerHTML=LOGOS.map(function(l){return one(l)}).join('')+LOGOS.map(function(l){return one(l,true)}).join('');
   $('#marquee').parentNode.setAttribute('aria-label',LOGOS.map(function(l){return l.name}).join(', '));})();
 
