@@ -123,6 +123,30 @@ section{padding:104px 0}
   .mbar .btn{flex:1}
   body{padding-bottom:72px}
 }
+/* ---------- Booking calendar (cal.js) ---------- */
+.calp{display:grid;grid-template-columns:minmax(0,1fr) 240px;min-width:0}
+.calp-go{white-space:normal;text-align:center}
+.calp-cal{padding:26px}
+.calp-mh{display:flex;justify-content:space-between;align-items:center}
+.calp-mh b{font-size:17px}.calp-mh b span{color:var(--mut);font-weight:500}
+.calp-mh div{display:flex;gap:6px}
+.calp-mh button{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-size:16px}
+.calp-mh button:disabled{opacity:.35;cursor:default}
+.calp-dow,.calp-dates{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.calp-dow{margin-top:18px;font-size:12px;font-weight:600;color:var(--mut)}
+.calp-dates{margin-top:8px}
+.calp-dates button{aspect-ratio:1;border:0;border-radius:12px;background:var(--lav);font-weight:600;font-size:14px;cursor:pointer;color:var(--ink);position:relative;min-height:36px}
+.calp-dates button:disabled{background:transparent;color:#C4C0D4;cursor:default;font-weight:500}
+.calp-dates button:not(:disabled):hover{background:var(--p-soft)}
+.calp-dates button[aria-pressed="true"]{background:var(--p);color:#fff}
+.calp-dates button.today::after{content:"";position:absolute;bottom:5px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:currentColor}
+.calp-side{padding:26px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:6px;background:var(--soft)}
+.calp-lab{font-size:12px;color:var(--mut)}
+.calp-day{font-size:20px;letter-spacing:-.01em}
+.calp-note{font-size:14px;color:var(--mut);margin:6px 0 14px}
+.calp-tz{font-size:12px;color:var(--mut);margin-top:8px;text-align:center}
+@media (max-width:760px){.calp{grid-template-columns:1fr}.calp-side{border-left:0;border-top:1px solid var(--line)}.calp-cal{padding:18px}}
+
 /* ---------- GradualBlur (React Bits port, see effects.js) ---------- */
 .gradual-blur{pointer-events:none;isolation:isolate}
 .gradual-blur-parent{overflow:hidden}

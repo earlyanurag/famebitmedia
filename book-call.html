@@ -15,9 +15,6 @@
 .bk-head p{color:var(--mut);margin-top:12px;font-size:17px}
 .bk-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
 .embed{background:#fff;min-width:0}
-.embed iframe{width:100%;min-height:700px;border:0;display:block}
-.embed .alt{padding:10px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--mut);text-align:center}
-.embed .alt a{color:var(--p);font-weight:600}
 .after{background:var(--mint);border-radius:22px;padding:26px}
 .after ol{margin:14px 0 0;padding-left:20px;display:grid;gap:10px;font-size:14px}
 .bk{overflow-x:clip}
@@ -70,13 +67,10 @@
 
 <main id="main" class="bk">
   <div class="wrap">
-    <div class="bk-head"><h1>Book a free strategy call</h1><p id="bkSub">30 minutes on Google Meet. Pick a time that works and tell us a little about your campaign.</p></div>
+    <div class="bk-head"><h1>Book a free strategy call</h1><p id="bkSub">30 minutes on Google Meet. Pick a day, then choose a time on our Cal ID booking page.</p></div>
     <div class="bk-grid">
       <div id="calCard">
-        <div class="border-glow-inner embed">
-          <iframe src="https://cal.id/famebitmedia/product-walkthrough" title="Book a call with FameBit Media" allow="fullscreen"></iframe>
-          <p class="alt">Calendar not loading? <a href="https://cal.id/famebitmedia/product-walkthrough" target="_blank" rel="noopener">Open the booking page</a></p>
-        </div>
+        <div class="border-glow-inner embed" id="bkCal"></div>
       </div>
       <aside class="after">
         <h2 style="font-size:17px">After you book</h2>
@@ -115,6 +109,7 @@
 </footer>
 <div class="mbar"><a class="btn" href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-p" href="book-call.html">Book a free call</a></div>
 <script src="effects.js"></script>
+<script src="cal.js"></script>
 <script>
 /* Header: sticky border, dropdowns, mobile menu */
 (function(){
@@ -140,6 +135,7 @@
 (function(){
   var plan=new URLSearchParams(location.search).get('plan');
   if(plan)document.getElementById('bkSub').textContent='You picked the '+plan.charAt(0).toUpperCase()+plan.slice(1)+' package. Pick a time and we\'ll walk you through it on a 30-minute call.';
+  CalPicker(document.getElementById('bkCal'),{url:'https://cal.id/famebitmedia/product-walkthrough'});
   BorderGlow(document.getElementById('calCard'),{backgroundColor:'#ffffff',borderRadius:22,glowColor:'268 85 65',glowRadius:36,edgeSensitivity:25,animated:true,colors:['#7C3AED','#C026D3','#FB923C']});
 })();
 </script>

@@ -11,7 +11,7 @@ Open `index.html` in a browser. All pages share `styles.css`.
 
 ## What the developer must connect (search the code for `TODO (developer)`)
 1. **Leads**: request-price / list-enquiry form in index.html → POST to your leads API (add OTP phone check).
-2. **Bookings**: book-call.html and the homepage `#meet` section embed Cal ID (cal.id/famebitmedia/product-walkthrough). Add a Cal ID webhook to create the lead in admin.
+2. **Bookings**: book-call.html and the homepage `#meet` section show a month calendar (`cal.js`). Picking a day opens the Cal ID page (cal.id/famebitmedia/product-walkthrough) on that date, where the live slots are. Sundays are shown as closed; change `closedDays` in the `CalPicker` call. Add a Cal ID webhook to create the lead in admin.
 3. **Creator data**: replace the `CREATORS` sample array in index.html with the API. Use cached profile photos; keep the initials fallback.
 4. **Logo**: `.logo` is a text placeholder — replace with the official FameBit SVG logo (do not redesign it).
 5. **Placeholders to replace**: all stats (10,000+, 300+, ₹10 Cr+), testimonials, campaign results, package prices (₹X,XX,XXX), GSTIN/CIN in footer, emails.
@@ -52,3 +52,9 @@ Open `index.html` in a browser. All pages share `styles.css`.
 - Case studies: 4-tile collage + "Read all case studies" / "Read your competitor's case studies" buttons, linking to `case-studies.html` (page to be added; tiles link to `case-studies.html#<case-id>`).
 - Booking (`#meet`): Cal ID embed (cal.id/famebitmedia/product-walkthrough) in a thin-bordered BorderGlow card.
 - `effects.js`: plain-JS ports of React Bits GradualBlur and BorderGlow (no React or mathjs needed). A soft GradualBlur runs along the bottom edge of the screen on index, hire-team and book-call. Not added to the Invoice Studio, where it would blur the invoice being edited.
+
+## Homepage changes (round 3)
+- Hero "Trusted by 300+ Indian brands": the S, P, F circles show the Sova, Plix and Fast&Up marks (`logos/mark-*.webp`).
+- Ready-made lists: each "Top 10" bar has its own soft colour.
+- What we run for you: light background graphics (growth line, video frames, chat bubbles, sales bars).
+- Recent campaigns: tiles dissolve into the page at both edges (CSS mask, no blur panels); "Show more" button to case-studies.html.

@@ -12,7 +12,9 @@
 /* ---------- Hero ---------- */
 .hero{padding:72px 0 0;text-align:center;background:linear-gradient(180deg,#fff 0%,#fff 62%,var(--soft) 100%);overflow:hidden}
 .trust{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:var(--r-pill);padding:6px 14px 6px 6px;font-size:14px;background:#fff}
-.trust .faces{display:flex}.trust .faces .av{width:26px;height:26px;font-size:10px;border:2px solid #fff;margin-left:-8px}.trust .faces .av:first-child{margin-left:0}
+.trust{padding:5px 16px 5px 5px}
+.trust .faces{display:flex}.trust .faces .av{width:34px;height:34px;font-size:10px;border:2px solid #fff;margin-left:-9px;box-shadow:0 0 0 1px var(--line);overflow:hidden}
+.trust .faces .av.bm img{width:100%;height:100%;object-fit:contain;padding:2px}.trust .faces .av:first-child{margin-left:0}
 .hero h1{max-width:880px;margin:24px auto 0}
 .hero .sub{max-width:620px;margin:20px auto 0;font-size:19px;color:var(--mut)}
 .hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
@@ -152,11 +154,8 @@ body.tray-on .nudge{bottom:100px}
 .meet-head h2{margin-top:16px}
 .meet-head p{color:var(--mut);margin-top:14px;font-size:17px}
 .frame{max-width:1040px;margin:0 auto}
-.sched{background:#fff;display:grid;grid-template-columns:270px minmax(0,1fr);min-height:640px}
-.s-embed{padding:0!important;min-width:0;display:flex;flex-direction:column}
-.s-embed iframe{flex:1;width:100%;min-height:640px;border:0;display:block}
-.s-embed .alt{padding:10px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--mut);text-align:center}
-.s-embed .alt a{color:var(--p);font-weight:600}
+.sched{background:#fff;display:grid;grid-template-columns:270px minmax(0,1fr)}
+.s-embed{padding:0!important;min-width:0}
 .sched>div{padding:26px}
 .s-info{border-right:1px solid var(--line)}
 .s-info .org{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mut)}
@@ -217,14 +216,18 @@ body.tray-on .nudge{bottom:100px}
 .list .m{margin-top:auto;font-size:13px;font-weight:600}
 
 .bars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
-.bar{display:flex;flex-direction:column;gap:2px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 14px;cursor:pointer;transition:border-color .15s,background .15s}
-.bar:hover{border-color:var(--p);background:var(--lav)}
+.bar{--bg:var(--lav);--ink:var(--p);display:flex;flex-direction:column;gap:2px;text-align:left;border:1px solid transparent;background:var(--bg);border-radius:12px;padding:10px 14px;cursor:pointer;transition:border-color .15s,background .15s}
+.bar:hover{border-color:var(--ink)}
+.bar:nth-child(4n+1){--bg:#EDE4FF;--ink:#6D28D9}.bar:nth-child(4n+2){--bg:#DFF7EA;--ink:#0F6B45}.bar:nth-child(4n+3){--bg:#FFEBDD;--ink:#B4480F}.bar:nth-child(4n+4){--bg:#E6F0FF;--ink:#1D4ED8}
+#barsCat .bar:nth-child(4n+1){--bg:#FCE7F3;--ink:#BE185D}#barsCat .bar:nth-child(4n+2){--bg:#FEF3C7;--ink:#92400E}#barsCat .bar:nth-child(4n+3){--bg:#E0F2FE;--ink:#0369A1}#barsCat .bar:nth-child(4n+4){--bg:#F3E8FF;--ink:#7E22CE}
 .bar b{font-size:14px;font-weight:600;line-height:1.35}
-.bar small{font-size:11px;color:var(--p);font-weight:500}
+.bar small{font-size:11px;color:var(--ink);font-weight:600}
 
 /* ---------- Services ---------- */
 .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.svc .card{padding:26px;border-radius:20px}
+.svc .card{padding:26px 26px 96px;border-radius:20px;position:relative;overflow:hidden}
+.svc .card>*{position:relative;z-index:1}
+.svc .card>.art{position:absolute;right:-6px;bottom:-4px;width:62%;height:auto;z-index:0;pointer-events:none;opacity:.9}
 .svc h3{font-size:18px;margin:16px 0 8px}
 .svc p{font-size:14px;color:var(--mut)}
 .svc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px;color:var(--mut)}
@@ -232,12 +235,14 @@ body.tray-on .nudge{bottom:100px}
 .svc a.more{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;color:var(--p)}
 
 /* ---------- Results ---------- */
-.camps{position:relative;overflow:hidden;display:grid;gap:14px;padding:4px 0}
+.camps{position:relative;overflow:hidden;display:grid;gap:14px;padding:4px 0;
+  /* videos dissolve into the page at both sides: no hard edge or panel */
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.35) 5%,#000 18%,#000 82%,rgba(0,0,0,.35) 95%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.35) 5%,#000 18%,#000 82%,rgba(0,0,0,.35) 95%,transparent 100%)}
+.camps-more{text-align:center;margin-top:32px}
 .camp-row{display:flex;gap:14px;width:max-content;animation:mq 48s linear infinite}
 .camp-row.rev{animation-direction:reverse}
 .camps:hover .camp-row,.camps:focus-within .camp-row{animation-play-state:paused}
-.camps .fade{position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
-.camps .fade.l{left:0;background:linear-gradient(90deg,#fff,rgba(255,255,255,0))}.camps .fade.r{right:0;background:linear-gradient(270deg,#fff,rgba(255,255,255,0))}
 .camp{flex:none;width:190px;border-radius:18px;aspect-ratio:9/13;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
 .camp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(21,17,42,.75))}
 .camp>*{position:relative;z-index:1}
@@ -285,7 +290,7 @@ body.tray-on .nudge{bottom:100px}
   .s-info{border-right:0;border-bottom:1px solid var(--line)}
   .path.dark{transform:none}
   .grid,.lists,.svc{grid-template-columns:1fr 1fr}
-  .camp{width:160px}.camps .fade{width:40px}
+  .camp{width:160px}
   .prob,.band{padding:32px}
   .fcard{display:none}
   .nudge{left:16px;right:16px;bottom:84px;width:auto}
@@ -355,7 +360,7 @@ body.tray-on .nudge{bottom:100px}
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <span class="trust"><span class="faces"><i class="av" style="background:#8B5CF6">S</i><i class="av" style="background:#F97316">P</i><i class="av" style="background:#10B981">F</i></span>Trusted by 300+ Indian brands</span>
+    <span class="trust"><span class="faces"><i class="av bm" style="background:#fff"><img src="logos/mark-sova.webp" alt=""></i><i class="av bm" style="background:#5DD27C"><img src="logos/mark-plix.webp" alt=""></i><i class="av bm" style="background:#fff"><img src="logos/mark-fast-and-up.webp" alt=""></i></span>Trusted by 300+ Indian brands</span>
     <h1>Launch influencer campaigns that actually sell</h1>
     <p class="sub">Shortlist vetted creators with real audience data, or let our team run the whole campaign for you.</p>
     <div class="ctas">
@@ -494,10 +499,10 @@ body.tray-on .nudge{bottom:100px}
   <div class="wrap">
     <div class="sec-head"><h2>What we run for you</h2><p>From one creator to a hundred, across the channels your customers actually use.</p></div>
     <div class="svc">
-      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--lav);display:flex;align-items:center;justify-content:center">📣</div><h3>Influencer marketing</h3><ul><li>Creator discovery and vetting</li><li>Rate negotiation and briefs</li><li>Content approvals and payouts</li><li>One final report</li></ul><a class="more" href="#">Learn more</a></div>
-      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center">🎬</div><h3>AI UGC content</h3><ul><li>Ad-ready creator-style videos</li><li>Built for Meta and YouTube ads</li><li>Fast turnaround, many variations</li></ul><a class="more" href="https://famebit.ai" target="_blank" rel="noopener">Visit famebit.ai</a></div>
-      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--peach);display:flex;align-items:center;justify-content:center">😂</div><h3>Meme marketing</h3><ul><li>Placements on popular meme pages</li><li>Pages your audience already follows</li><li>Trend-led, shareable content</li></ul><a class="more" href="#">Learn more</a></div>
-      <div class="card"><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--sky);display:flex;align-items:center;justify-content:center">✈️</div><h3>Telegram marketing</h3><ul><li>Promote SKUs in niche deal channels</li><li>Channel selection after analysis</li><li>Timed, offer-led posts</li></ul><a class="more" href="#">Learn more</a></div>
+      <div class="card"><svg class="art" viewBox="0 0 200 120" aria-hidden="true"><defs><linearGradient id="gA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C3AED" stop-opacity=".22"/><stop offset="1" stop-color="#7C3AED" stop-opacity="0"/></linearGradient></defs><g stroke="#7C3AED" stroke-opacity=".10"><path d="M10 30H195M10 60H195M10 90H195"/></g><path d="M10 104 L45 88 L75 94 L105 66 L135 72 L165 40 L195 18 V120 H10Z" fill="url(#gA)"/><path d="M10 104 L45 88 L75 94 L105 66 L135 72 L165 40 L195 18" fill="none" stroke="#7C3AED" stroke-opacity=".45" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><g fill="#7C3AED" fill-opacity=".5"><circle cx="105" cy="66" r="4"/><circle cx="165" cy="40" r="4"/></g><path d="M180 16 L195 18 L191 32" fill="none" stroke="#7C3AED" stroke-opacity=".45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--lav);display:flex;align-items:center;justify-content:center">📣</div><h3>Influencer marketing</h3><ul><li>Creator discovery and vetting</li><li>Rate negotiation and briefs</li><li>Content approvals and payouts</li><li>One final report</li></ul><a class="more" href="#">Learn more</a></div>
+      <div class="card"><svg class="art" viewBox="0 0 200 120" aria-hidden="true"><g fill="#059669"><rect x="92" y="22" width="52" height="92" rx="10" fill-opacity=".10"/><rect x="128" y="10" width="58" height="104" rx="11" fill-opacity=".16"/><path d="M150 50 L168 62 L150 74Z" fill-opacity=".45"/></g><g fill="#059669" fill-opacity=".28"><rect x="14" y="84" width="6" height="22" rx="3"/><rect x="26" y="72" width="6" height="34" rx="3"/><rect x="38" y="90" width="6" height="16" rx="3"/><rect x="50" y="64" width="6" height="42" rx="3"/><rect x="62" y="80" width="6" height="26" rx="3"/><rect x="74" y="92" width="6" height="14" rx="3"/></g></svg><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center">🎬</div><h3>AI UGC content</h3><ul><li>Ad-ready creator-style videos</li><li>Built for Meta and YouTube ads</li><li>Fast turnaround, many variations</li></ul><a class="more" href="https://famebit.ai" target="_blank" rel="noopener">Visit famebit.ai</a></div>
+      <div class="card"><svg class="art" viewBox="0 0 200 120" aria-hidden="true"><g fill="#EA580C"><path d="M118 20h60a12 12 0 0 1 12 12v26a12 12 0 0 1-12 12h-38l-16 14v-14h-6a12 12 0 0 1-12-12V32a12 12 0 0 1 12-12z" fill-opacity=".14"/><path d="M60 58h46a10 10 0 0 1 10 10v20a10 10 0 0 1-10 10H80l-12 11V98h-8a10 10 0 0 1-10-10V68a10 10 0 0 1 10-10z" fill-opacity=".20"/></g><g fill="#EA580C" fill-opacity=".45"><circle cx="138" cy="45" r="4"/><circle cx="150" cy="45" r="4"/><circle cx="162" cy="45" r="4"/></g><path d="M150 112c-9-7-15-11-15-17a7 7 0 0 1 15-3 7 7 0 0 1 15 3c0 6-6 10-15 17z" fill="#EA580C" fill-opacity=".35"/><path d="M14 104 L40 96 L58 100" fill="none" stroke="#EA580C" stroke-opacity=".3" stroke-width="3" stroke-linecap="round"/></svg><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--peach);display:flex;align-items:center;justify-content:center">😂</div><h3>Meme marketing</h3><ul><li>Placements on popular meme pages</li><li>Pages your audience already follows</li><li>Trend-led, shareable content</li></ul><a class="more" href="#">Learn more</a></div>
+      <div class="card"><svg class="art" viewBox="0 0 200 120" aria-hidden="true"><g stroke="#0284C7" stroke-opacity=".10"><path d="M10 30H195M10 60H195M10 90H195"/></g><g fill="#0284C7"><rect x="30" y="86" width="20" height="30" rx="5" fill-opacity=".16"/><rect x="62" y="72" width="20" height="44" rx="5" fill-opacity=".20"/><rect x="94" y="60" width="20" height="56" rx="5" fill-opacity=".24"/><rect x="126" y="42" width="20" height="74" rx="5" fill-opacity=".30"/><rect x="158" y="22" width="20" height="94" rx="5" fill-opacity=".38"/></g><path d="M34 70 L72 56 L104 44 L136 28 L170 10" fill="none" stroke="#0284C7" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M158 8 L171 9 L167 22" fill="none" stroke="#0284C7" stroke-opacity=".5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="16" y="36" font-family="Sora,sans-serif" font-weight="800" font-size="22" fill="#0284C7" fill-opacity=".35">₹</text></svg><div class="ico" style="width:44px;height:44px;border-radius:12px;background:var(--sky);display:flex;align-items:center;justify-content:center">✈️</div><h3>Telegram marketing</h3><ul><li>Promote SKUs in niche deal channels</li><li>Channel selection after analysis</li><li>Timed, offer-led posts</li></ul><a class="more" href="#">Learn more</a></div>
     </div>
   </div>
 </section>
@@ -506,7 +511,8 @@ body.tray-on .nudge{bottom:100px}
 <section id="results">
   <div class="wrap">
     <div class="sec-head"><h2>Recent campaigns</h2><p>Real work for real brands. Tap a campaign to read the case study.</p></div>
-    <div class="camps" id="camps" aria-label="Recent campaign videos"><div class="camp-row" id="campRow1"></div><div class="camp-row rev" id="campRow2"></div><span class="fade l"></span><span class="fade r"></span></div>
+    <div class="camps" id="camps" aria-label="Recent campaign videos"><div class="camp-row" id="campRow1"></div><div class="camp-row rev" id="campRow2"></div></div>
+    <div class="camps-more"><a class="btn btn-lg" href="case-studies.html">Show more</a></div>
   </div>
 </section>
 
@@ -573,10 +579,7 @@ body.tray-on .nudge{bottom:100px}
             <ul><li>🕒 30 min</li><li>🎥 Google Meet</li><li>🌏 India time (IST)</li></ul>
             <p class="mut" style="font-size:14px;margin-top:18px">We'll preview matching creators on the call and send your free shortlist of 10 within 48 hours.</p>
           </div>
-          <div class="s-embed">
-            <iframe src="https://cal.id/famebitmedia/product-walkthrough" title="Book a call with FameBit Media" loading="lazy" allow="fullscreen"></iframe>
-            <p class="alt">Calendar not loading? <a href="https://cal.id/famebitmedia/product-walkthrough" target="_blank" rel="noopener">Open the booking page</a></p>
-          </div>
+          <div class="s-embed" id="meetCal"></div>
         </div>
       </div>
     </div>
@@ -649,6 +652,7 @@ body.tray-on .nudge{bottom:100px}
 </footer>
 <div class="mbar"><a class="btn" href="https://wa.me/918115767101" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-p" href="book-call.html">Book a free call</a></div>
 <script src="effects.js"></script>
+<script src="cal.js"></script>
 <script>
 /* Header: sticky border, dropdowns, mobile menu */
 (function(){
@@ -880,15 +884,14 @@ var CASES=[
  $('#collage').innerHTML=F.map(function(f){var c=CASES.find(function(x){return x.id===f[0]}),n=c.brand.replace('&','&amp;');
   return '<a class="ct '+f[1]+'" href="'+CASE_PAGE+'#'+c.id+'" style="background:linear-gradient(150deg,'+f[2]+')"><span class="ch">'+c.chan+'</span><h3>'+n+'</h3><p>'+c.product+'</p><div class="kpis">'+c.stats.slice(0,f[1]?3:2).map(function(k){return '<div><b>'+k[0]+'</b><span>'+k[1]+'</span></div>'}).join('')+'</div><span class="go">Read case study →</span></a>'}).join('');})();
 
-/* ============ Campaign tiles: two rows scrolling in opposite directions, with blurred edges ============
+/* ============ Campaign tiles: two rows scrolling in opposite directions, dissolving at the edges ============
    TODO (developer): replace the gradients with video posters / reels (8 videos). */
 (function(){var C=[['hkvitals','HK VITALS','Multivitamin launch','16M+ views · 25 videos','#6D28D9,#DB2777'],['fastup','FAST&UP','Fat-loss range','9M+ views · 60+ videos','#EA580C,#FACC15'],['bebodywise','BEBODYWISE','Roll-on & face wash','5M+ views · 6 videos','#DB2777,#F472B6'],['plix','PLIX','Apple cider vinegar','2M+ views · 20+ videos','#059669,#0EA5E9'],
   ['waterscience','WATERSCIENCE','Hard water filter','1.3M+ views · 10+ videos','#0284C7,#22D3EE'],['sova','SOVA HEALTH','Gut microbiome kit','5 UGC videos · 15 days','#0F766E,#34D399'],['citykart','CITYKART','City pages campaign','550K+ views · 6 videos','#B45309,#F59E0B'],['netflix','NETFLIX','Kurukshetra launch','333K+ views · 1 video','#991B1B,#EF4444']];
  function tile(c,dup){return '<a class="camp" href="'+CASE_PAGE+'#'+c[0]+'"'+(dup?' tabindex="-1" aria-hidden="true"':'')+' style="background:linear-gradient(160deg,'+c[4]+')"><span class="play" aria-hidden="true">▶</span><b>'+c[1].replace('&','&amp;')+'</b><span>'+c[2].replace('&','&amp;')+'</span><span style="font-weight:600;margin-top:4px">'+c[3]+'</span></a>'}
  function row(list){return list.map(function(c){return tile(c)}).join('')+list.map(function(c){return tile(c,1)}).join('')}
  $('#campRow1').innerHTML=row(C);$('#campRow2').innerHTML=row(C.slice(4).concat(C.slice(0,4)));
- GradualBlur($('#camps'),{position:'left',height:'5rem',strength:1.5,divCount:5,curve:'bezier',exponential:true,zIndex:3});
- GradualBlur($('#camps'),{position:'right',height:'5rem',strength:1.5,divCount:5,curve:'bezier',exponential:true,zIndex:3});})();
+})();
 
 /* ============ Testimonials carousel ============ */
 /* TODO (content): replace quote / name / role with real client testimonials. */
@@ -915,8 +918,9 @@ var CASES=[
   addEventListener('resize',sync);sync();
 })();
 
-/* ============ Meeting: Cal ID booking embed with BorderGlow ============
+/* ============ Meeting: calendar that opens Cal ID on the chosen day, in a BorderGlow card ============
    TODO (developer): on booking, create the lead in the admin panel (Cal ID webhook). */
+CalPicker($('#meetCal'),{url:'https://cal.id/famebitmedia/product-walkthrough'});
 BorderGlow($('#meetCard'),{backgroundColor:'#ffffff',borderRadius:24,glowColor:'268 85 65',glowRadius:36,glowIntensity:1,edgeSensitivity:25,coneSpread:25,animated:'scroll',colors:['#7C3AED','#C026D3','#FB923C']});
 
 /* ============ Modal ============ */
